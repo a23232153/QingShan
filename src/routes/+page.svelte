@@ -88,11 +88,7 @@ body::before {
 }
 
 
-  .stage {
-    position: relative;
-    height: 350vh;
-    perspective: 1500px;
-  }
+  
 
   .stack {
     position: sticky;
@@ -127,7 +123,7 @@ body::before {
 
 
 <!-- ✅ 圖片渲染 -->
-<div class="stage">
+<div class="relative h-[350vh] [perspective-1500px]">
   <div class="stack">
     {#each images as image, i}
       <div
