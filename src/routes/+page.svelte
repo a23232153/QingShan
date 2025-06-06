@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import Glitch from '../components/Glitch.svelte';
+ 
 
   let items: (HTMLElement | null)[] = [];
  
@@ -64,15 +64,10 @@
 </script>
 
 <style>
-  body {
-  margin: 0;
-  overflow-x: hidden;
-  background: black;
-  position: relative;
-}
+ 
 
 /* 水彩背景容器 */
-body::before {
+.bg-watercolor {
   content: '';
   position: fixed;
   top: -20%;
@@ -116,15 +111,12 @@ body::before {
 </style>
 
 <!-- 🕶️ 暗色水彩背景層 -->
-<div class="fixed inset-0 -z-10 bg-black  bg-center opacity-80 bg-contain bg-no-repeat"
+<div class="bg-watercolor fixed inset-0 -z-10 bg-black  bg-center opacity-80 bg-contain bg-no-repeat"
      style="background-image: url('/images/bc.jpg')"></div>
 
-
-
-
-<!-- ✅ 圖片渲染 -->
-<div class="relative h-[350vh] [perspective-1500px]">
-  <div class="stack">
+  <!-- ✅ 圖片渲染 -->
+  <div class="relative h-[350vh] [perspective-1500px]">
+    <div class="stack">
     {#each images as image, i}
       <div
         bind:this={items[i]}
@@ -137,9 +129,3 @@ body::before {
 
 
 
-<div class="glitch-section">
-  <div class="glitch-gallery">
-    <Glitch />
-  
-  </div>
-</div>
