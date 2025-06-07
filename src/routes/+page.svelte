@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
  
+ 
 
   let items: (HTMLElement | null)[] = [];
  
@@ -14,6 +15,19 @@
     '/images/5.jpg',
     '/images/6.jpg',
   ];
+
+  const Gimages=[
+    '/images/grid1.jpg',
+    '/images/grid2.jpg',
+    '/images/grid3.jpg',
+    '/images/grid4.jpg',
+    '/images/grid5.jpg',
+    '/images/grid6.jpg',
+    '/images/grid7.jpg',
+    '/images/grid8.jpg',
+    '/images/grid9.jpg',
+    '/images/grid10.jpg',
+  ]
 
   
 
@@ -60,72 +74,176 @@
     });
   }
 
-  
+  const imagesForGrid = Array.from({ length: 20 }, (_, i) => `/img/${i + 1}.jpg`);
+
 </script>
 
 <style>
  
 
-/* 水彩背景容器 */
-.bg-watercolor {
-  content: '';
-  position: fixed;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 0, 150, 0.2), transparent 60%),
-              radial-gradient(circle at 70% 70%, rgba(0, 200, 255, 0.2), transparent 60%),
-              radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.15), transparent 70%);
-  filter: blur(80px);
-  z-index: 0;
-  pointer-events: none;
+
+
+.grid {
+  padding: 20vh 0;
+  width: var(--grid-width);
+  max-width: var(--grid-max-width);
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  position: relative;
+  display: grid;
+  gap: var(--grid-gap);
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+
+  --grid-width: 100%;
+  --grid-max-width: 300px;
+  --grid-item-ratio: 1.2;
+  --grid-item-radius: 4px;
+  --grid-gap: 2rem;
+  --grid-columns: 2;
+  --grid-columns-full: 7;
+  --grid-rows-full: 5;
+  --grid-item-translate: 0px;
+  --grid-item-height: auto;
 }
 
 
+
+
+
+
+
+
+.grid__item {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  perspective: 800px;
+  will-change: transform, opacity;
+}
+
+.grid__item > .grid__item-img,
+.grid__item-imgwrap {
+  width: 100%;
+  aspect-ratio: var(--grid-item-ratio);
+  height: var(--grid-item-height);
+  border-radius: var(--grid-item-radius);
+  transform-style: preserve-3d;
+}
+
+.grid__item-imgwrap {
+  position: relative;
+  overflow: hidden;
+  will-change: filter;
+  height: var(--grid-item-height); /* 加這行 */
+  --grid-item-translate: 0px;
+}
+
+.grid__item-img {
+  background-size: cover;
+  background-position: 50% 20%;
+  backface-visibility: hidden;
+  will-change: transform;
+  height: 200px;
   
+  
+}
 
-  .stack {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    transform-style: preserve-3d;
-  }
+.grid__item-imgwrap > .grid__item-img {
+  position: absolute;
+  top: calc(-1 * var(--grid-item-translate));
+  left: calc(-1 * var(--grid-item-translate));
+  height: calc(100% + var(--grid-item-translate) * 2);
+  width: calc(100% + var(--grid-item-translate) * 2);
+}
 
-  .item {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300px;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    transition: transform 0.2s ease;
-    transform: translate(-50%, -50%);
-    
-    transform-style: preserve-3d;
-    will-change: transform;
-  }
+.intro {
+  height: calc(100vh - 4rem);
+  text-align: center;
+  justify-items: center;
+  display: grid;
+  align-content: start;
+  margin-bottom: 30vh;
+  grid-auto-rows: 1fr;
+  --color-bg: #000;
+  gap: 1.5rem;
+  background: linear-gradient(to bottom, var(--color-bg), rgba(0,0,0,0.4), var(--color-bg)), url(/images/bg.jpg) no-repeat 50% -10%;
+  background-size: cover;
+  
+}
+
+.intro__title {
+  margin: 0;
+  line-height: .9;
+  align-self: end;
+  margin: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(2rem,6vw,4rem);
+  color: var(--color-title);
+}
+
+.intro__info {
+  max-width: 12ch;
+  margin-bottom: 4rem;
+  padding-bottom: 1rem;
+  line-height: 1.2;
+  opacity: 0.4;
+  position: relative;
+  align-self: end;
+  text-transform: uppercase;
+  font-size: 13px;
+  align-self: end;
+}
+
+.intro__info::after {
+  content: "";
+  width: 1px;
+  height: 4rem;
+  background: linear-gradient(to bottom, #fff, black);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+}
+
+  
 </style>
 
-<!-- 🕶️ 暗色水彩背景層 -->
-<div class="bg-watercolor fixed inset-0 -z-10 bg-black  bg-center opacity-80 bg-contain bg-no-repeat"
-     style="background-image: url('/images/bc.jpg')"></div>
+<main class=shadow>
+<div class="intro z-10"> 
+      <h1 class="intro__title font-alt">for those who <br>seek for freedom</h1> 
+      <nav class="tags">
+        <a href="https://tympanus.net/codrops/demos/?tag=scroll">#scroll</a>
+        <a href="https://tympanus.net/codrops/demos/?tag=3d">#3d</a>
+        <a href="https://tympanus.net/codrops/demos/?tag=grid">#grid</a>
+      </nav>
+      <span class="intro__info">Scroll gently &amp; enjoy</span> 
+    </div>
+
+<!-- 旋轉區塊 -->
+<div class=" fixed inset-0 -z-9 bg-black  bg-center  bg-contain bg-no-repeat"></div>
 
   <!-- ✅ 圖片渲染 -->
   <div class="relative h-[350vh] [perspective-1500px]">
-    <div class="stack">
-    {#each images as image, i}
-      <div
-        bind:this={items[i]}
-        class="item"
-        style={`background-image: url('${image}')`}
-      ></div>
-    {/each}
+    <div class="sticky top-0 h-screen [transform-style: preserve-3d] ">
+      {#each images as image, i}
+        <div class="absolute top-1/2 left-1/2 w-[300px] h-[200px] bg-cover bg-center rounded-[12px] shadow-[0_10px_30px_rgba(0,0,0,0.6)] transition-transform duration-200 ease-linear [transform:translate(-50%,-50%)] [transform-style:preserve-3d] will-change-transform"
+          bind:this={items[i]} 
+          style={`background-image: url('${image}')`}
+        ></div>
+      {/each}
   </div>
 </div>
 
+<section class=" place-items-center w-full relative">
+  <div class="grid">
+    {#each Gimages as image}
+      <figure class="grid__item">
+        <div class="grid__item-imgwrap">
+          <div class="grid__item-img" style={`background-image: url('${image}')`}></div>
+        </div>
+      </figure>
+    {/each}
+  </div>
+</section>
 
-
+</main>
