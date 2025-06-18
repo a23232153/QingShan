@@ -15,4 +15,12 @@ const config = {
 	}
 };
 
-export default config;
+
+export default {
+  kit: {
+    adapter: adapter(),
+    paths: {
+      base: '' // <<--- 這個路徑要設定為你的 repo 名稱，注意斜線
+    }
+  }
+};

@@ -1,9 +1,16 @@
+  <link rel="stylesheet" href="https://use.typekit.net/pxn8wdc.css">
+
 <script lang="ts">
-  import { onMount } from 'svelte';
+  
+  
+  import { onMount, tick } from 'svelte';
+   // @ts-ignore
+  import imagesLoaded from 'imagesloaded';
  
  
 
   let items: (HTMLElement | null)[] = [];
+  $: console.log('items:', items);
  
 
 
@@ -33,9 +40,26 @@
 
   const count = images.length;
 
-  onMount(() => {
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
+   onMount(() => {
+    (async () => {
+      await tick();
+      const gridEl = document.querySelector('.grid');
+      const rotateEl = document.querySelector('#rotate');
+
+      if (gridEl) {
+        imagesLoaded(gridEl, { background: true }, () => {
+          window.addEventListener('scroll', handleScroll);
+          handleScroll();
+        });
+      }
+      if (rotateEl) {
+        imagesLoaded(rotateEl, { background: true }, () => {
+          // 如果有需要針對 rotate 區塊做額外處理可加
+        });
+      }
+    })();
+
+    // 清理
     return () => window.removeEventListener('scroll', handleScroll);
   });
 
@@ -74,14 +98,15 @@
     });
   }
 
-  const imagesForGrid = Array.from({ length: 20 }, (_, i) => `/img/${i + 1}.jpg`);
+  
 
 </script>
 
 <style>
- 
-
-
+ .font-alt {
+  font-family: "lores-12", sans-serif;
+  font-weight: 400;
+}
 
 .grid {
   padding: 20vh 0;
@@ -105,13 +130,6 @@
   --grid-item-translate: 0px;
   --grid-item-height: auto;
 }
-
-
-
-
-
-
-
 
 .grid__item {
   margin: 0;
@@ -179,7 +197,7 @@
   font-weight: 400;
   text-transform: uppercase;
   font-size: clamp(2rem,6vw,4rem);
-  color: var(--color-title);
+  
 }
 
 .intro__info {
@@ -208,10 +226,19 @@
   
 </style>
 
-<main class=shadow>
-<div class="intro z-10"> 
-      <h1 class="intro__title font-alt">for those who <br>seek for freedom</h1> 
-      <nav class="tags">
+
+
+<main class="relative">
+
+
+  <div
+    class="pointer-events-none absolute inset-0 z-[5000]"
+    style="background: linear-gradient(to right, #000, transparent, #000); background-repeat: no-repeat; background-size: 100%; content: '';">
+  </div>
+
+  <div class="intro "> 
+      <h1 class="intro__title font-alt text-white !text-5xl ">qingshan</h1> 
+      <nav class="tags hidden">
         <a href="https://tympanus.net/codrops/demos/?tag=scroll">#scroll</a>
         <a href="https://tympanus.net/codrops/demos/?tag=3d">#3d</a>
         <a href="https://tympanus.net/codrops/demos/?tag=grid">#grid</a>
@@ -220,19 +247,19 @@
     </div>
 
 <!-- 旋轉區塊 -->
-<div class=" fixed inset-0 -z-9 bg-black  bg-center  bg-contain bg-no-repeat"></div>
-
-  <!-- ✅ 圖片渲染 -->
-  <div class="relative h-[350vh] [perspective-1500px]">
-    <div class="sticky top-0 h-screen [transform-style: preserve-3d] ">
-      {#each images as image, i}
-        <div class="absolute top-1/2 left-1/2 w-[300px] h-[200px] bg-cover bg-center rounded-[12px] shadow-[0_10px_30px_rgba(0,0,0,0.6)] transition-transform duration-200 ease-linear [transform:translate(-50%,-50%)] [transform-style:preserve-3d] will-change-transform"
-          bind:this={items[i]} 
-          style={`background-image: url('${image}')`}
-        ></div>
-      {/each}
-  </div>
-</div>
+<section id="rotate">
+    <div class=" fixed inset-0 -z-9 bg-black  bg-center  bg-contain bg-no-repeat"></div>
+      <div class="relative h-[350vh] [perspective-1500px]">
+        <div class="sticky top-0 h-screen [transform-style: preserve-3d] ">
+          {#each images as image, i}
+            <div class="absolute top-1/2 left-1/2 w-[300px] h-[200px] bg-cover bg-center rounded-[12px] shadow-[0_10px_30px_rgba(0,0,0,0.6)] transition-transform duration-200 ease-linear [transform:translate(-50%,-50%)] [transform-style:preserve-3d] will-change-transform"
+              bind:this={items[i]} 
+              style={`background-image: url('${image}')`}
+            ></div>
+          {/each}
+      </div>
+    </div>
+ </section>
 
 <section class=" place-items-center w-full relative">
   <div class="grid">
