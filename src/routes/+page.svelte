@@ -261,8 +261,9 @@
     </div>
  </section>
 
+ <!-- grid動畫-->
 <section class=" place-items-center w-full relative">
-  <div class="grid">
+  <div class="grid ">
     {#each Gimages as image}
       <figure class="grid__item">
         <div class="grid__item-imgwrap">

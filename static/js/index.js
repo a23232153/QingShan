@@ -182,7 +182,7 @@ const init = () => {
   animateScrollGrid();    // Animate the grid items on scroll
   animateMarquee();       // Animate the marquee on scroll
   animateTextElement();   // Animate the split text on scroll
-  animateGridFull();      // Animate the full grid with staggered delay
+  //animateGridFull();      // Animate the full grid with staggered delay
   animateCredits();       // Call the credits animation
 };
 
