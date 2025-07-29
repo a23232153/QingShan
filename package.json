@@ -31,6 +31,8 @@
 		"@azure/core-sse": "latest",
 		"@lottiefiles/dotlottie-web": "^0.46.0",
 		"dotenv": "^16.5.0",
-		"imagesloaded": "^5.0.0"
+		"gsap": "^3.13.0",
+		"imagesloaded": "^5.0.0",
+		"three": "^0.178.0"
 	}
 }

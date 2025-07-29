@@ -1,12 +1,16 @@
+// tailwind.config.js
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: 'jit',
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        bakudai: ['Bakudai', 'sans-serif'], // 保持這行！
+      },
+    },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-}
+  plugins: [
+    
+  ],
+};

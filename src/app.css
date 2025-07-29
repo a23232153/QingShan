@@ -2,6 +2,14 @@
 
 
 
+@font-face {
+  font-family: 'Bakudai'; /* 這個名稱必須與 tailwind.config.js 中的 'Bakudai' 一致 */
+  src: url("/fonts/Bakudai-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 
 
@@ -18,9 +26,17 @@
 
 }
 
+body {
+  overflow-x: hidden;
 
 
 
 
 
+}
 
+#gridContainer {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+
+}
