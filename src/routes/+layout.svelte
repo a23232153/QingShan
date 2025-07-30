@@ -34,10 +34,7 @@
 
 
 
-.font-alt {
-  font-family: "lores-12", sans-serif;
-  font-weight: 400;
-}
+
 
 
 

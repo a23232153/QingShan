@@ -137,27 +137,30 @@ const count = images.length;
   style="background: linear-gradient(to right, #000, transparent, #000); background-repeat: no-repeat; background-size: 100%; content: '';">
   </div>
 
-    <!-- 粒子動畫 -->
+    
+
+
+
+
+<!-- 粒子動畫 -->
   {#if loading}
-    <Introani on:done={() => loading = false} />
+    <Introani on:done={() => { loading = false;}} />
   {/if}
 
-  {#if !loading}
-    <main in:fade={{ duration: 1500 }} class="relative z-15">
-      <h1 class="text-4xl text-white">主網站內容</h1>
-    </main>
-  {/if}
+  
 
   <!-- 1. intro section（qingshan hero） -->
-  <div class="intro">  <!-- hero -->
-      <h1 class="intro__title font-alt text-white !text-5xl tracking-wider">qingshan</h1> 
-      <nav class="tags hidden">
-        <a href="https://tympanus.net/codrops/demos/?tag=scroll">#scroll</a>
-        <a href="https://tympanus.net/codrops/demos/?tag=3d">#3d</a>
-        <a href="https://tympanus.net/codrops/demos/?tag=grid">#grid</a>
-      </nav>
-      <span class="intro__info font-light tracking-widest">Scroll gently &amp; enjoy</span> 
+  
+  <div class="intro opacity-0 blur-lg transition-all duration-1000 show">
+    <h1 class="intro__title font-alt text-white !text-5xl tracking-wider">qingshan</h1> 
+    <nav class="tags hidden">
+      <a href="https://tympanus.net/codrops/demos/?tag=scroll">#scroll</a>
+      <a href="https://tympanus.net/codrops/demos/?tag=3d">#3d</a>
+      <a href="https://tympanus.net/codrops/demos/?tag=grid">#grid</a>
+    </nav>
+    <span class="intro__info font-light tracking-widest">Scroll gently &amp; enjoy</span> 
   </div>
+
 
   <!-- 2. 引導式前言 -->
   <div 
@@ -317,10 +320,7 @@ const count = images.length;
     z-index: 10; /* 比 Introani 的 z-50 低 */
   }
 
- .font-alt {
-  font-family: "lores-12", sans-serif;
-  font-weight: 400;
-}
+ 
 
 /* 添加 fade-in-text 動畫 */
 .fade-in-text {
@@ -336,6 +336,17 @@ const count = images.length;
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSharp {
+  0% {
+    opacity: 0;
+    filter: blur(25px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
   }
 }
 
@@ -436,6 +447,7 @@ const count = images.length;
   gap: 1.5rem;
   background: linear-gradient(to bottom, var(--color-bg), rgba(0,0,0,0.4), var(--color-bg)), url(/images/bg.jpg) no-repeat 50% -10%;
   background-size: cover;
+  animation: fadeInSharp 2s ease-out forwards;
   
 }
 

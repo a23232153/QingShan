@@ -4,7 +4,8 @@
 
 @font-face {
   font-family: 'Bakudai'; /* 這個名稱必須與 tailwind.config.js 中的 'Bakudai' 一致 */
-  src: url("/fonts/Bakudai-Medium.woff") format("woff");
+  src: url("/fonts/Bakudai-Medium.woff2") format("woff2"),
+       url('/fonts/MyFont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16,7 +17,11 @@
 
 @layer utilities {
  
-
+  .font-bakudai {
+    font-family: 'Bakudai', sans-serif;
+    font-weight: normal;
+  }
+  
   .font-alt {
   font-family: "lores-12", sans-serif;
   font-weight: 400;

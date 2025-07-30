@@ -36,7 +36,7 @@
     const textGeo = new TextGeometry('青山', {
       font,
       size: 40,
-      height: 5,
+      depth: 5,
       curveSegments: 16,
     });
     textGeo.center();
@@ -89,7 +89,7 @@
 
         void main() {
           vec3 newPos = mix(position, targetPosition, progress);
-          float size = mix(10.0, 1.0, progress);
+          float size = mix(15.0, 1.5, progress);
           vAlpha = smoothstep(0.0, 1.0, progress);
           vSize = size;
           gl_Position = projectionMatrix * modelViewMatrix * vec4(newPos, 1.0);
@@ -157,16 +157,23 @@
       }
     }
     if (scene) {
-      scene.traverse((object: { geometry: { dispose: () => void; }; material: { forEach: (arg0: (mat: any) => any) => void; dispose: () => void; }; }) => {
-        if (object instanceof THREE.Mesh || object instanceof THREE.Points) {
-          if (object.geometry) {
-            object.geometry.dispose();
+      scene.traverse((object) => {
+        // Type guard: only dispose geometry/material if they exist
+        // and object is Mesh or Points
+        if (
+          (object instanceof THREE.Mesh || object instanceof THREE.Points) &&
+          'geometry' in object &&
+          'material' in object
+        ) {
+          const meshOrPoints = object as THREE.Mesh | THREE.Points;
+          if (meshOrPoints.geometry) {
+            meshOrPoints.geometry.dispose();
           }
-          if (object.material) {
-            if (Array.isArray(object.material)) {
-              object.material.forEach((mat) => mat.dispose());
+          if (meshOrPoints.material) {
+            if (Array.isArray(meshOrPoints.material)) {
+              meshOrPoints.material.forEach((mat) => mat.dispose());
             } else {
-              object.material.dispose();
+              meshOrPoints.material.dispose();
             }
           }
         }
