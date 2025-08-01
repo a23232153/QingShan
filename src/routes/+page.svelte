@@ -323,7 +323,7 @@ const count = images.length;
 
 
   <div class="flex items-center justify-center ">
-    <a href="/" class="inline-block px-6 py-3 bg-yellow-500 text-black font-semibold text-base text-center no-underline rounded-lg shadow-md hover:bg-yellow-600 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50 transition-all duration-300 m-4">前往青山</a>
+    <a href="/qingshan" class="inline-block px-6 py-3 bg-yellow-500 text-black font-semibold text-base text-center no-underline rounded-lg shadow-md hover:bg-yellow-600 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50 transition-all duration-300 m-4">前往青山</a>
   </div>
 </main>
 
