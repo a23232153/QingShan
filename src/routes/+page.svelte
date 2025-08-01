@@ -54,9 +54,66 @@ const count = images.length;
 
    onMount(() => {                       //grid,rotate animation
     // 測試 grid 元素是否存在
-    console.log('Testing grid elements...');
+    const el = document.querySelector('.blurset');
+    console.log('blurset:', el); // ✅ 看這裡是不是 null
+
+  if (!el) {
+    console.warn('❌ blurset not found in DOM at mount');
+    return;
+  }
+
     const gridEl = document.querySelector('.grid');
+
+
    
+  gsap.registerPlugin(ScrollTrigger);
+
+   setTimeout(() => { 
+    gsap.fromTo(
+      ".blurset",
+      {
+        filter: "blur(10px)",
+        opacity: 0
+      },
+      {
+        scrollTrigger: {
+          trigger: ".blurset",
+          start: "top 80%",
+          once: true
+        },
+        filter: "blur(0px)",
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        onStart: () => console.log("👀 blurset animation started"),
+        onUpdate: () => console.log("🔄 animating..."),
+        onComplete: () => console.log("✅ blurset animation complete")
+      }
+    );
+    }, 3800);
+
+
+  gsap.fromTo(
+      ".blurani",
+      {
+        filter: "blur(10px)",
+        opacity: 0
+      },
+      {
+        scrollTrigger: {
+          trigger: ".blurani",
+          start: "top 70%",
+          once: true
+        },
+        filter: "blur(0px)",
+        opacity: 1,
+        duration: 2,
+        ease: "power2.out",
+        onStart: () => console.log(" blurani started"),
+      }
+    );
+    
+
     if (gridEl) {
       const gridItems = gridEl.querySelectorAll('.grid__item-imgwrap');
       console.log('Grid items found:', gridItems.length);
@@ -151,7 +208,7 @@ const count = images.length;
 
   <!-- 1. intro section（qingshan hero） -->
   
-  <div class="intro opacity-0 blur-lg transition-all duration-1000 show">
+  <div class="intro blurset  transition-all duration-1000 ">
     <h1 class="intro__title font-alt text-white !text-5xl tracking-wider">qingshan</h1> 
     <nav class="tags hidden">
       <a href="https://tympanus.net/codrops/demos/?tag=scroll">#scroll</a>
@@ -163,8 +220,7 @@ const count = images.length;
 
 
   <!-- 2. 引導式前言 -->
-  <div 
-    class="relative z-10 bg-contain bg-no-repeat min-h-screen w-full overflow-hidden bg-[url('/images/NM.jpg')] bg-center">
+  <div class=" relative blurani z-10 bg-contain bg-no-repeat min-h-screen w-full overflow-hidden bg-[url('/images/NM.jpg')] bg-center">
     <!-- 半透明遮罩層 -->
     
     <div class="relative z-10"> 
@@ -211,10 +267,11 @@ const count = images.length;
 
 
   <SlideInSection direction="right" delay={0.7}>
-    <p class="text-3xl mt-[200px] md:text-4xl font-bold text-[#FFF287] leading-tight text-center">
+    <p class="text-3xl mt-[350px] md:text-4xl font-bold text-[#FFF287] leading-tight text-center">
       但你，真的了解這片土地的靈魂嗎？
     </p>
   </SlideInSection>
+
 
    <!-- grid動畫-->
    <section class=" place-items-center w-full relative">
@@ -232,7 +289,7 @@ const count = images.length;
   
 
  
-  <section class="min-h-screen flex items-center justify-center bg-black relative overflow-hidden">
+  <section class=" h-[70vh]  flex items-center justify-center bg-black relative overflow-hidden">
     <SlideInSection direction="right" delay={0.2}>
       <div class="container mx-auto px-4 md:px-8 text-center">
         <h2 class="text-4xl md:text-4xl  mb-6 text-white leading-tight tracking-tight">
@@ -243,51 +300,31 @@ const count = images.length;
     </SlideInSection>
   </section>
 
- <SlideInSection direction="left" delay={0.5}>
-  <div class="flex justify-center items-center">
+ <!--
+  <SlideInSection direction="left" delay={0.5}>
+  <div class=" flex justify-center items-center">
     <div class="border-2 border-white rounded-xl shadow-2xl p-2 bg-opacity-80 bg-white/10">
-      <div class="h-[50vh] w-[50vw] mx-auto px-4 md:px-8 text-center bg-[url('images/qsbg.jpg')] bg-cover bg-center bg-no-repeat rounded shadow-lg">
-        <!-- 內容可加在這裡 -->
+      <div class="h-[70vh] w-[70vw] mx-auto px-4 md:px-8 text-center bg-[url('images/qsbg.jpg')] bg-cover bg-center bg-no-repeat rounded shadow-lg">
+        
       </div>
     </div>
-  </div>
-</SlideInSection>
+  </div> 
+  </SlideInSection>
+-->
 
   <!-- 滾動式敘事區塊 -->
   <ScrollytellingSection 
-    scenes={[
-      {
-        image: '/images/panel1.jpg',
-        title: '龍山寺',
-        description: '這裡，是求姻緣拜過的地方'
-      },
-      {
-        image: '/images/t1.jpg', 
-        title: '西門紅樓',
-        description: '這裡，是台灣的第一座公有市場'
-      },
-      {
-        image: '/images/t2.jpg',
-        title: '華西街夜市',
-        description: '這裡，是台灣的第一座觀光夜市'
-      },
-      {
-        image: '/images/t3.jpg',
-        title: '青草巷',
-        description: '這裡，有著超過百年的青草'
-      },
-      {
-        image: '/images/slip1.jpg',
-        title: '萬華車站',
-        description: '這裡，承載著無數人的故事'
-      }
-    ]}
+   
     sectionTitle="萬華場景導覽"
     autoRotate={true}
     rotationInterval={4000}
     useParallax={false}
   />
 
+
+  <div class="flex items-center justify-center ">
+    <a href="/" class="inline-block px-6 py-3 bg-yellow-500 text-black font-semibold text-base text-center no-underline rounded-lg shadow-md hover:bg-yellow-600 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50 transition-all duration-300 m-4">前往青山</a>
+  </div>
 </main>
 
 
@@ -327,6 +364,11 @@ const count = images.length;
   opacity: 0;
   animation: fadeInUp 1s ease-out forwards;
 }
+
+
+ 
+
+
 
 @keyframes fadeInUp {
   from {
@@ -447,7 +489,7 @@ const count = images.length;
   gap: 1.5rem;
   background: linear-gradient(to bottom, var(--color-bg), rgba(0,0,0,0.4), var(--color-bg)), url(/images/bg.jpg) no-repeat 50% -10%;
   background-size: cover;
-  animation: fadeInSharp 2s ease-out forwards;
+  
   
 }
 
@@ -485,5 +527,10 @@ const count = images.length;
   left: 50%;
 }
 
-  
+.blurset {
+  filter: blur(10px);
+  opacity: 0;
+  will-change: filter, opacity;
+}
+
 </style>

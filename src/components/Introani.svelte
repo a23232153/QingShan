@@ -186,5 +186,5 @@
 <div bind:this={container} class="fixed inset-0 z-50 bg-black"></div>
 
 <style>
-  /* 確保這裡沒有設定 opacity 或 transition，讓 GSAP 全權控制 */
+  
 </style>
