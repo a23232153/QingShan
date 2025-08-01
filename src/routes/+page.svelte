@@ -4,7 +4,7 @@
   import { onMount, tick } from 'svelte';
   import { fade } from 'svelte/transition';
    // @ts-ignore
-  import imagesLoaded from 'imagesLoaded';
+  
   import SlideInSection from '../components/SlideInSection.svelte';
   import ScrollytellingSection from '../components/ScrollytellingSection.svelte';
   import Particle from '../components/Particle.svelte';
@@ -47,9 +47,8 @@
   ]
  
   
- 
 
-  
+
 const count = images.length;
 
    onMount(() => {                       //grid,rotate animation
@@ -121,20 +120,19 @@ const count = images.length;
 
     (async () => {
       await tick();
-      const gridEl = document.querySelector('.grid');
-      const rotateEl = document.querySelector('#rotate');
-
+    const gridEl = document.querySelector('.grid') as HTMLElement | null;
+    const rotateEl = document.querySelector('#rotate') as HTMLElement | null;
       if (gridEl) {
-        imagesLoaded(gridEl, { background: true }, () => {
-          window.addEventListener('scroll', handleScroll);
-          handleScroll();
-        });
-      }
-      if (rotateEl) {
-        imagesLoaded(rotateEl, { background: true }, () => {
-          // 如果有需要針對 rotate 區塊做額外處理可加
-        });
-      }
+      window.imagesLoaded(gridEl, { background: true }, () => {
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+      });
+    }
+    if (rotateEl) {
+      window.imagesLoaded(rotateEl, { background: true }, () => {
+        // 如果有需要針對 rotate 區塊做額外處理可加
+      });
+    }
     })();
 
     // 清理
