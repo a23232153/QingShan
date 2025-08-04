@@ -1,28 +1,26 @@
 <script lang="ts">
   import { onMount, createEventDispatcher, onDestroy } from 'svelte';
-    //@ts-ignore
   import * as THREE from 'three';
-    //@ts-ignore
-  import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
-    //@ts-ignore
-  import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
   import { gsap } from 'gsap';
 
   const dispatch = createEventDispatcher();
   let container: HTMLDivElement;
-
   let renderer: THREE.WebGLRenderer;
   let scene: THREE.Scene;
   let camera: THREE.PerspectiveCamera;
   let points: THREE.Points;
   let animationFrameId: number;
 
+  // 粒子分布參數
+  const gridX = 2500; // 橫向粒子數
+  const gridY = 1500;  // 縱向粒子數
+  const fontSize = 0.15; // 字體大小倍率，調整這個就像 font-size
+  const imgSrc = '/images/qingshan-text-2.png';
+  const threshold = 0.2; // alpha 閾值，決定哪些地方顯示粒子
+
   onMount(async () => {
     const width = container.clientWidth;
     const height = container.clientHeight;
-
-    // --- Three.js 場景設置和粒子動畫立即開始 ---
-    // 不再有容器的淡入動畫，它會直接顯示為黑色
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 2000);
     camera.position.z = 200;
@@ -31,74 +29,86 @@
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(width, height);
     container.appendChild(renderer.domElement);
+    renderer.setPixelRatio(window.devicePixelRatio);
 
-    const font = await new FontLoader().loadAsync('/fonts/Bakudai_Medium.json');
-    const textGeo = new TextGeometry('青山', {
-      font,
-      size: 40,
-      depth: 5,
-      curveSegments: 16,
+    // 載入貼圖
+    const img = new window.Image();
+    img.src = imgSrc;
+    await new Promise<void>((resolve) => {
+      img.onload = () => resolve();
     });
-    textGeo.center();
+    // 將貼圖畫到 canvas 取得像素資料
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = gridX;
+    tempCanvas.height = gridY;
+    const ctx = tempCanvas.getContext('2d');
+    if (!ctx) {
+      throw new Error('無法取得 2D 繪圖 context');
+    }
+    ctx.drawImage(img, 0, 0, gridX, gridY);
+    const imgData = ctx.getImageData(0, 0, gridX, gridY).data;
 
-    const rawPositions = textGeo.attributes.position.array;
-    const uniquePositionsSet = new Set<string>();
-    const finalUniquePositions: number[] = [];
-
-    for (let i = 0; i < rawPositions.length; i += 3) {
-      const x = rawPositions[i];
-      const y = rawPositions[i + 1];
-      const z = rawPositions[i + 2];
-      const key = `${x.toFixed(3)},${y.toFixed(3)},${z.toFixed(3)}`;
-
-      if (!uniquePositionsSet.has(key)) {
-        uniquePositionsSet.add(key);
-        finalUniquePositions.push(x, y, z);
+    // 產生粒子位置
+    const positions = [];
+    const startPositions = [];
+    const rotations = [];
+    const curveAngles = [];
+    const curveStrengths = [];
+    for (let y = 0; y < gridY; y++) {
+      for (let x = 0; x < gridX; x++) {
+        const idx = (y * gridX + x) * 4;
+        const r = imgData[idx];
+        const g = imgData[idx + 1];
+        const b = imgData[idx + 2];
+        const a = imgData[idx + 3] / 255;
+        // 只在有字的地方產生粒子（只渲染文字本身）
+        if (a > threshold) { // 只有有字的地方顯示粒子
+          // 讓粒子分布在中心
+          const px = (x - gridX / 2) * fontSize;
+          const py = (gridY / 2 - y) * fontSize;
+          positions.push(px, py, 0);
+          // 隨機起始位置
+          startPositions.push(
+            (Math.random() - 0.5) * 600,
+            (Math.random() - 0.5) * 600,
+            -300 - Math.random() * 300
+          );
+          // 曲線參數
+          curveAngles.push(Math.random() * Math.PI * 2); // 隨機方向
+          curveStrengths.push(Math.random() * 2.5 + 0.5); // 隨機幅度 0.5~3.0
+        }
       }
     }
-
-    const uniqueCount = finalUniquePositions.length / 3;
-
+    const count = positions.length / 3;
     const geometry = new THREE.BufferGeometry();
-    const start = new Float32Array(uniqueCount * 3);
-    const target = new Float32Array(uniqueCount * 3);
-
-    for (let i = 0; i < uniqueCount; i++) {
-      const x = finalUniquePositions[i * 3];
-      const y = finalUniquePositions[i * 3 + 1];
-      const z = finalUniquePositions[i * 3 + 2];
-
-      start.set([
-        (Math.random() - 0.5) * 600,
-        (Math.random() - 0.5) * 600,
-        -300 - Math.random() * 300
-      ], i * 3);
-      target.set([x, y, z], i * 3);
-    }
-
-    geometry.setAttribute('position', new THREE.BufferAttribute(start, 3));
-    geometry.setAttribute('targetPosition', new THREE.BufferAttribute(target, 3));
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(startPositions, 3));
+    geometry.setAttribute('targetPosition', new THREE.Float32BufferAttribute(positions, 3));
+    geometry.setAttribute('curveAngle', new THREE.Float32BufferAttribute(curveAngles, 1));
+    geometry.setAttribute('curveStrength', new THREE.Float32BufferAttribute(curveStrengths, 1));
 
     const material = new THREE.ShaderMaterial({
       uniforms: { progress: { value: 0 } },
       vertexShader: `
         uniform float progress;
         attribute vec3 targetPosition;
+        attribute float curveAngle;
+        attribute float curveStrength;
         varying float vAlpha;
-        varying float vSize;
-
         void main() {
+          // 基本線性插值
           vec3 newPos = mix(position, targetPosition, progress);
-          float size = mix(15.0, 1.5, progress);
+          // 曲線偏移
+          float t = 1.0 - progress;
+          float radius = curveStrength * t * 350.0;
+          newPos.x += cos(curveAngle) * radius * t;
+          newPos.y += sin(curveAngle) * radius * t;
           vAlpha = smoothstep(0.0, 1.0, progress);
-          vSize = size;
           gl_Position = projectionMatrix * modelViewMatrix * vec4(newPos, 1.0);
-          gl_PointSize = size;
+          gl_PointSize = 2.5;
         }
       `,
       fragmentShader: `
         varying float vAlpha;
-        varying float vSize;
         void main() {
           float d = length(gl_PointCoord - vec2(0.5));
           float alpha = 1.0 - smoothstep(0.4, 0.5, d);
@@ -112,20 +122,18 @@
     points = new THREE.Points(geometry, material);
     scene.add(points);
 
-    // --- GSAP 粒子動畫 ---
+    // 進場動畫
     gsap.to(material.uniforms.progress, {
-      value: 1,
-      duration: 2.6,
+      value: 1.0,
+      duration: 3.5,
       ease: 'expo.out',
       onComplete: () => {
-        // --- 粒子動畫完成後，讓整個 Three.js 容器淡出 ---
         gsap.to(container, {
           opacity: 0,
-          delay: 0.5, // 可以加一個小延遲，讓粒子形成文字後停留一下再開始淡出
-          duration: 1, // 整個 Three.js 容器淡出時間
+          delay: 0.5,
+          duration: 1.2,
           ease: 'power2.out',
           onComplete: () => {
-            // 所有動畫完成後發送 'done' 事件
             dispatch('done');
           }
         });
@@ -133,19 +141,16 @@
     });
 
     const animate = () => {
-      // 只要容器的 opacity 大於 0.01（幾乎透明），就繼續渲染
-      // 這樣當容器淡出時，渲染也會停止
       if (container.style.opacity === '' || parseFloat(container.style.opacity) > 0.01) {
-         animationFrameId = requestAnimationFrame(animate);
+        animationFrameId = requestAnimationFrame(animate);
       } else {
-         cancelAnimationFrame(animationFrameId);
+        cancelAnimationFrame(animationFrameId);
       }
       renderer.render(scene, camera);
     };
     animate();
   });
 
-  // --- onDestroy 進行資源清理 (保持不變) ---
   onDestroy(() => {
     if (animationFrameId) {
       cancelAnimationFrame(animationFrameId);
@@ -158,8 +163,6 @@
     }
     if (scene) {
       scene.traverse((object) => {
-        // Type guard: only dispose geometry/material if they exist
-        // and object is Mesh or Points
         if (
           (object instanceof THREE.Mesh || object instanceof THREE.Points) &&
           'geometry' in object &&
@@ -186,5 +189,4 @@
 <div bind:this={container} class="fixed inset-0 z-50 bg-black"></div>
 
 <style>
-  
 </style>

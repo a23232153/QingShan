@@ -264,7 +264,7 @@ const count = images.length;
  -->
 
 
-  <SlideInSection direction="right" delay={0.7}>
+  <SlideInSection direction="right" delay={0}>
     <p class="text-3xl mt-[350px] md:text-4xl font-bold text-[#FFF287] leading-tight text-center">
       但你，真的了解這片土地的靈魂嗎？
     </p>

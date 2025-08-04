@@ -88,7 +88,7 @@ import { onMount } from 'svelte';
 
 <!-- Hero Section -->
 <section class="min-h-screen bg-black text-white flex flex-col items-center justify-center text-center px-6">
-  <h1 class="text-5xl md:text-7xl font-bold mb-6">Hi, I'm Michael Aust.</h1>
+  <h1 class="text-5xl md:text-7xl font-bold mb-6">Hi, qs.</h1>
   <p class="text-lg md:text-xl mb-6 max-w-xl">Creative Developer & Designer</p>
   <a href="#projects" class="bg-white text-black px-6 py-3 rounded hover:bg-gray-200 transition">View Projects</a>
 </section>

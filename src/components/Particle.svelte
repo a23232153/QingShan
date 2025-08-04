@@ -295,7 +295,8 @@
     renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     renderer.setSize(width, height);
     renderer.setPixelRatio(window.devicePixelRatio);
-
+    
+    
     const baseGeometry = new THREE.PlaneGeometry(1, 1);
     particleMesh = new ParticleMesh(baseGeometry);
     scene.add(particleMesh);
