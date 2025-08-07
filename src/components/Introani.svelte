@@ -12,11 +12,11 @@
   let animationFrameId: number;
 
   // 粒子分布參數
-  const gridX = 2500; // 橫向粒子數
-  const gridY = 1500;  // 縱向粒子數
-  const fontSize = 0.15; // 字體大小倍率，調整這個就像 font-size
+  const gridX = 2000; // 橫向粒子數
+  const gridY = 1000;  // 縱向粒子數
+  const fontSize = 0.25; // 字體大小倍率，調整這個就像 font-size
   const imgSrc = '/images/qingshan-text-2.png';
-  const threshold = 0.2; // alpha 閾值，決定哪些地方顯示粒子
+  const threshold = 0.4; // alpha 閾值，決定哪些地方顯示粒子
 
   onMount(async () => {
     const width = container.clientWidth;
@@ -125,13 +125,13 @@
     // 進場動畫
     gsap.to(material.uniforms.progress, {
       value: 1.0,
-      duration: 3.5,
+      duration: 2.7,
       ease: 'expo.out',
       onComplete: () => {
         gsap.to(container, {
           opacity: 0,
-          delay: 0.5,
-          duration: 1.2,
+          delay: 0.9,
+          duration: 1.0,
           ease: 'power2.out',
           onComplete: () => {
             dispatch('done');

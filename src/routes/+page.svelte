@@ -89,7 +89,7 @@ const count = images.length;
         onComplete: () => console.log("✅ blurset animation complete")
       }
     );
-    }, 3800);
+    }, 4500);
 
 
   gsap.fromTo(
@@ -164,7 +164,7 @@ const count = images.length;
       const scale = Math.max(minScale, maxScale - distanceFromCenter / 600);
 
       if (el) {
-        el.style.opacity = '1'; // ✅ 讓圖片可見（先簡單測試用）
+        el.style.opacity = '1';
         el.style.transform = `
           scale(${scale})
           translateX(${x}px)
@@ -186,6 +186,7 @@ const count = images.length;
 
 
 <main class="relative bg-black font-bakudai">
+
   <!--遮罩-->
   <div       
   class="pointer-events-none absolute inset-0 z-[5000]"
@@ -194,37 +195,23 @@ const count = images.length;
 
     
 
-
-
-
 <!-- 粒子動畫 -->
   {#if loading}
     <Introani on:done={() => { loading = false;}} />
   {/if}
 
   
-
   <!-- 1. intro section（qingshan hero） -->
-  
-  <div class="intro blurset  transition-all duration-1000 ">
-    <h1 class="intro__title font-alt text-white !text-5xl tracking-wider">qingshan</h1> 
-    <nav class="tags hidden">
-      <a href="https://tympanus.net/codrops/demos/?tag=scroll">#scroll</a>
-      <a href="https://tympanus.net/codrops/demos/?tag=3d">#3d</a>
-      <a href="https://tympanus.net/codrops/demos/?tag=grid">#grid</a>
-    </nav>
-    <span class="intro__info font-light tracking-widest">Scroll gently &amp; enjoy</span> 
-  </div>
+<div class="relative blurset w-[100vw] h-[93vh] mt-[7vh]">
+  <ScrollytellingSection showIndicator={false} showSectionTitle={false}
+    heroHeight="h-[93vh]" heroWidth="w-full" carouselHeight="h-full"/>
+</div>
 
-
-  <!-- 2. 引導式前言 -->
-  <div class=" relative blurani z-10 bg-contain bg-no-repeat min-h-screen w-full overflow-hidden bg-[url('/images/NM.jpg')] bg-center">
-    <!-- 半透明遮罩層 -->
-    
-    <div class="relative z-10"> 
-      <div class="container mx-auto px-4 py-24 w-full">
+  <!-- 2. 引導式前言 --> 
+    <div class="relative z-10  blurani  bg-contain bg-no-repeat min-h-screen w-full overflow-hidden"> 
+      <div class="container mx-auto px-4  mt-16 w-full bg-[url('/images/NM.jpg')]">
         <SlideInSection direction="left" delay={0.1}>
-          <div class="text-center mb-16">
+          <div class="text-center mb-16 mt-[50vh] ">
             <h2 class="text-5xl md:text-6xl font-bold font-bakudai text-white mb-8 leading-tight">
               你夠熟悉你的生活周遭嗎？
             </h2>
@@ -244,7 +231,7 @@ const count = images.length;
         </div>
       </div>
     </div>
-  </div>
+  
 <!-- rotate區塊
 
   <section id="rotate" class="relative mt-5 ">
@@ -309,16 +296,6 @@ const count = images.length;
   </div> 
   </SlideInSection>
 -->
-
-  <!-- 滾動式敘事區塊 -->
-  <ScrollytellingSection 
-   
-    sectionTitle="萬華場景導覽"
-    autoRotate={true}
-    rotationInterval={4000}
-    useParallax={false}
-  />
-
 
   <div class="flex items-center justify-center ">
     <a href="/qingshan" class="inline-block px-6 py-3 bg-yellow-500 text-black font-semibold text-base text-center no-underline rounded-lg shadow-md hover:bg-yellow-600 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50 transition-all duration-300 m-4">前往青山</a>
