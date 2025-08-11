@@ -3,22 +3,38 @@
 
 
 @font-face {
-  font-family: 'Bakudai'; /* 這個名稱必須與 tailwind.config.js 中的 'Bakudai' 一致 */
+  font-family: 'Bakudai-md'; 
   src: url("/fonts/Bakudai-Medium.woff2") format("woff2"),
        url('/fonts/MyFont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+
+  
+}
+
+@font-face {
+  font-family: 'Bakudai-lg'; 
+  src: url("/fonts/Bakudai-Light.woff2") format("woff2"),
+       
+}
+
+@font-face {
+  font-family: 'Bakudai-exlg'; 
+  src: url("/fonts/Bakudai-ExtraLight.woff2") format("woff2"),
+       
 }
 
 
-
+@theme {
+   --text-title: 88px ;
+}
 
 
 @layer utilities {
  
-  .font-bakudai {
-    font-family: 'Bakudai', sans-serif;
+  .font-bakudai-md {
+    font-family: 'Bakudai-md', sans-serif;
     font-weight: normal;
   }
   
@@ -26,6 +42,31 @@
   font-family: "lores-12", sans-serif;
   font-weight: 400;
 }
+
+  .font-bakudai-lg {
+    font-family: 'Bakudai-lg', sans-serif;
+    font-weight: normal;
+  }
+  
+  .font-bakudai-exlg {
+    font-family: 'Bakudai-exlg', sans-serif;
+    font-weight: normal;
+  }
+  
+  .font-ba {
+    font-family: 'Bakudai-md', sans-serif;
+    font-weight: normal;
+  }
+  
+  .font-brisbane {
+    font-family: 'brisbane', sans-serif;
+    font-weight: normal;
+  }
+  
+  .font-brisbane-md {
+    font-family: 'brisbane-md', sans-serif;
+    font-weight: normal;
+  }
 
 
 

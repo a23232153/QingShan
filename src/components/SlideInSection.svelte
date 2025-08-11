@@ -51,7 +51,7 @@
   });
 </script>
 
-<div bind:this={element} class="slide-in-section">
+<div bind:this={element} class="slide-in-section text-center">
   <slot />
 </div>
 
@@ -66,6 +66,7 @@
     position: relative;
     z-index: 1;
     box-sizing: border-box;
+    
   }
   
   @media (max-width: 768px) {

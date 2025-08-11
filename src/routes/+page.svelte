@@ -2,7 +2,7 @@
 
   
   import { onMount, tick } from 'svelte';
-  import { fade } from 'svelte/transition';
+  
    // @ts-ignore
   
   import SlideInSection from '../components/SlideInSection.svelte';
@@ -12,6 +12,13 @@
   
   
   let items: (HTMLElement | null)[] = [];
+
+  const sceneitems: { text: string; direction: "left" | "right" }[] = [
+  { text: '「你穿梭在萬華——」', direction: 'left' },
+  { text: '「吃的是青草巷的百年青草茶、」', direction: 'right' },
+  { text: '「拜的是龍山寺的月老、」', direction: 'left' },
+  { text: '「逛的是西門町潮流小店……」', direction: 'right' }
+];
   
   let loading = true;
 
@@ -185,7 +192,7 @@ const count = images.length;
 
 
 
-<main class="relative bg-black font-bakudai">
+<main class="relative bg-black font-bakudai-md">
 
   <!--遮罩-->
   <div       
@@ -207,30 +214,31 @@ const count = images.length;
     heroHeight="h-[93vh]" heroWidth="w-full" carouselHeight="h-full"/>
 </div>
 
-  <!-- 2. 引導式前言 --> 
-    <div class="relative z-10  blurani  bg-contain bg-no-repeat min-h-screen w-full overflow-hidden"> 
-      <div class="container mx-auto px-4  mt-16 w-full bg-[url('/images/NM.jpg')]">
-        <SlideInSection direction="left" delay={0.1}>
-          <div class="text-center mb-16 mt-[50vh] ">
-            <h2 class="text-5xl md:text-6xl font-bold font-bakudai text-white mb-8 leading-tight">
-              你夠熟悉你的生活周遭嗎？
-            </h2>
+ 
+   <!-- 2. 引導式前言 -->
+<div class="relative z-10 blurani bg-contain bg-no-repeat min-h-screen w-full overflow-hidden mt-[50vh]">
+    <!-- <h2> 區塊與 NM.jpg 背景 -->
+    <div class="container mx-auto px-4 mt-16 w-full bg-[url('/images/NM.jpg')] bg-cover bg-center min-h-[60vh] flex items-center justify-center">
+      <SlideInSection direction="left" delay={0.25} rootMargin="0px 0px 200px 0px" threshold={0.5}>
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-bold  text-white mb-8 leading-tight">
+            你夠熟悉你的生活周遭嗎？
+          </h2>
+        </div>
+      </SlideInSection>
+    </div>
+
+    <!-- 每個 <p> 獨立區塊 -->
+    {#each  sceneitems as item, i}
+      <section class="py-12 flex  bg-black bg-opacity-80 ">
+        <SlideInSection direction={item.direction} delay={0.5} rootMargin={`-${50 * i}px 0px 100px 0px`} threshold={0.5}>
+          <div class="max-w-4xl mx-auto text-white text-2xl md:text-4xl leading-relaxed">
+            <p class="fade-in-text">{item.text}</p>
           </div>
         </SlideInSection>
-  
-        <div class="max-w-4xl mx-auto w-full">
-          <SlideInSection direction="left" delay={0.3}>
-            <div class="text-white text-xl md:text-2xl leading-relaxed space-y-4 mb-8">
-              <p class="fade-in-text" style="animation-delay: 1s;">「你穿梭在萬華——」</p>
-              <p class="fade-in-text" style="animation-delay: 1.8s;">「吃的是青草巷的百年青草茶、」</p>
-              <p class="fade-in-text" style="animation-delay: 2.6s;">「拜的是龍山寺的月老、」</p>
-              <p class="fade-in-text" style="animation-delay: 3.4s;">「逛的是西門町潮流小店……」</p>
-            </div>
-          </SlideInSection>
-          
-        </div>
-      </div>
-    </div>
+      </section>
+    {/each}
+</div>
   
 <!-- rotate區塊
 
@@ -279,27 +287,21 @@ const count = images.length;
       <div class="container mx-auto px-4 md:px-8 text-center">
         <h2 class="text-4xl md:text-4xl  mb-6 text-white leading-tight tracking-tight">
           <span class="block fade-in-text !font-black pb-1" style="animation-delay: 0.5s;">在萬華最深的記憶裡</span>
-          <span class="block fade-in-text " style="animation-delay: 1s;">還有一位默默守護百年的存在</span>
+          <span class="block fade-in-text " style="animation-delay: 0.5s;">還有一位默默守護百年的存在</span>
         </h2>
       </div>
     </SlideInSection>
   </section>
 
- <!--
-  <SlideInSection direction="left" delay={0.5}>
-  <div class=" flex justify-center items-center">
-    <div class="border-2 border-white rounded-xl shadow-2xl p-2 bg-opacity-80 bg-white/10">
-      <div class="h-[70vh] w-[70vw] mx-auto px-4 md:px-8 text-center bg-[url('images/qsbg.jpg')] bg-cover bg-center bg-no-repeat rounded shadow-lg">
-        
-      </div>
-    </div>
-  </div> 
-  </SlideInSection>
--->
+  <div class="items-center justify-center flex   bg-white shadow-2xl opacity-20 ">
+    <img src="/images/shadow-bg.png" alt="temple-shadow" class="w-[80vw] h-auto blurset " />
+  </div>
 
   <div class="flex items-center justify-center ">
-    <a href="/qingshan" class="inline-block px-6 py-3 bg-yellow-500 text-black font-semibold text-base text-center no-underline rounded-lg shadow-md hover:bg-yellow-600 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50 transition-all duration-300 m-4">前往青山</a>
+    <a href="/qingshan" class="inline-block px-6 py-3 bg-yellow-500 text-black font-semibold text-base text-center no-underline 
+    rounded-lg shadow-md hover:bg-yellow-600 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50 transition-all duration-300 m-4">前往青山</a>
   </div>
+
 </main>
 
 

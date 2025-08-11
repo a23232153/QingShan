@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="https://use.typekit.net/pxn8wdc.css">
   
   <!-- Header 結構 -->
-  <div class="bg-{headerColor} text-white w-full flex justify-between items-center p-4 h-[7vh] fixed top-0 z-6000 font-brisbane">
-    <li><a href="/"> 首頁 </a></li>
+  <div class="bg-{headerColor} text-white w-full flex justify-between items-center p-4 h-[7vh] fixed top-0 z-6000 font-bakudai-exlg">
+    <li class="list-none"><a href="/"> 首頁 </a></li>
   
     <ul class="flex items-center justify-end gap-4 text-white">
       
