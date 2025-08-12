@@ -8,11 +8,39 @@
   // @ts-ignore
   let heroSection ;
 
-  export function load() {
-  return {
-    headerColor: 'white' // 或 '#123456'、'white'、'transparent' 等
-  };
-}
+  const timelineEvents = [
+    {
+      year: '1854',
+      title: '青山宮創建',
+      description: '青山王首次抵達萬華，成為地方信仰中心，居民開始供奉青山靈安尊王。',
+      image: '/images/temple-1854.jpg',
+    },
+    {
+      year: '1920',
+      title: '宮廟重建',
+      description: '青山宮進行大規模重建，增添龍柱與精美雕刻，成為萬華地標。',
+      image: '/images/temple-1920.jpg',
+    },
+    {
+      year: '1960',
+      title: '首次青山王祭',
+      description: '正式舉辦青山王祭，吸引數千信眾參與，成為年度盛事。',
+      image: '/images/festival-1960.jpg',
+    },
+    {
+      year: '1995',
+      title: '文化遺產登錄',
+      description: '青山宮被列為台北市文化遺產，受到政府保護與推廣。',
+      image: '/images/heritage-1995.jpg',
+    },
+    {
+      year: '2020',
+      title: '數位化推廣',
+      description: '青山宮推出線上參拜與活動直播，吸引年輕族群與海外信眾。',
+      image: '/images/digital-2020.jpg',
+    },
+  ];
+  
 
   onMount(() => {
      // 只在瀏覽器端載入 gsap
@@ -22,6 +50,34 @@
         gsap.registerPlugin(stModule.ScrollTrigger);
         // 這裡可以加 GSAP 動畫初始化程式碼
       });
+    });
+
+  
+
+   gsap.from('.timeline-item', {
+      opacity: 0,
+      y: 50,
+      stagger: 0.2,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.timeline',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        scrub: 1,
+      },
+    });
+    gsap.from('.timeline-point', {
+      scale: 0,
+      stagger: 0.2,
+      duration: 0.5,
+      ease: 'elastic.out(1, 0.3)',
+      scrollTrigger: {
+        trigger: '.timeline',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        scrub: 1,
+      },
     });
 
     const onScroll = () => {
@@ -78,7 +134,25 @@
       </div>
   </div>
 
-  <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-16"></div>
+  <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-tw-blue to-transparent my-16"></div>
+
+
+
+   <!--時間軸-->
+
+  <section class="timeline container mx-auto py-16 mb-16 relative">
+    <div class="absolute left-1/2 w-1 bg-gray-300 h-full"></div>
+    <div class="timeline-item mb-8 ml-8">
+      <h3 class="text-2xl text-white">1882年 - 青山宮創建</h3>
+      <p class="text-gray-300">青山王首次抵達萬華，成為地方信仰中心。</p>
+    </div>
+    <div class="timeline-item mb-8 mr-8 text-right">
+      <h3 class="text-2xl text-white">1920年 - 重建</h3>
+      <p class="text-gray-300">宮廟進行大規模重建，增添龍柱與雕刻。</p>
+    </div>
+  </section>
+
+<div class="w-full h-[2px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-16"></div>
 
   <!-- 靈安尊王介紹-->
 
@@ -97,7 +171,7 @@
     </div>
   </div>
 
-  <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-16"></div>
+  <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-568F87 to-transparent my-16"></div>
 
 
   <!--青山季-->
@@ -205,6 +279,8 @@
       </div>
   </section>
 
+ 
+
   <!-- CTA / 聯絡區塊 -->
   <section id="contact" class="py-20 bg-yellow-50">
     <div class="container mx-auto px-4 text-center">
@@ -219,3 +295,21 @@
 <footer class="bg-black text-white py-10 text-center text-sm">
   
 </footer>
+
+
+<style>
+  .timeline-item {
+    position: relative;
+    width: 45%;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background: #ff4500;
+    border-radius: 50%;
+    left: calc(50% - 10px);
+  }
+</style>
