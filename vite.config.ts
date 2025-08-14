@@ -1,16 +1,8 @@
-import tailwindcss from "@tailwindcss/vite";
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-import dotenv from 'dotenv';
-
-// 加載 .env 文件
-dotenv.config();
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [sveltekit(),tailwindcss()],
-  define: {
-    'process.env.GITHUB_TOKEN': JSON.stringify(process.env.GITHUB_TOKEN)
-  }
+  plugins: [sveltekit(), tailwindcss()],
+  envPrefix: ['VITE_', ''], // 允許無前綴的環境變數（如 GITHUB_TOKEN）
 });
-
-

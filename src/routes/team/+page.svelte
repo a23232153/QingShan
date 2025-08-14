@@ -1,126 +1,160 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, afterUpdate, tick } from 'svelte';
+  import { browser } from '$app/environment';
   import SlideInSection from '../../components/SlideInSection.svelte';
 
-  const backgroundText = `
-    艋舺青山宮建於1856年，主祀青山靈安尊王，是臺北三大廟會之一的「艋舺青山祭」核心，象徵萬華的文化與信仰。每年的「艋舺大拜拜」如同「小過年」，凝聚社區情感，卻因現代化與年輕世代疏離，面臨傳承危機。我們的專案旨在結合數位科技與創新敘事，推廣青山宮的文化價值，吸引年輕人參與，讓這項民俗遺產在現代社會延續。
+  // 範例資料
+  const goalsText = `
+    透過數位內容與實體活動，打破宮廟文化的傳統標籤，
+    以沉浸式體驗拉近年輕世代的距離。
+    讓更多人了解並參與其中，深化對宮廟文化的認知與尊重，
+    發掘其深厚的文化底蘊與精神內涵，強化文化認同，
+    促進臺灣民俗文化的傳承與社會反思，打造文化交流的平台，
+    展現其獨特魅力。
   `;
 
-  const goalsText = `
-    透過數位內容與實體活動，打破宮廟文化的傳統標籤，以沉浸式體驗拉近年輕世代的距離。讓更多人了解青山宮的歷史與信仰內涵，強化文化認同，促進臺灣民俗文化的傳承與社會反思，打造文化交流的平台，展現其獨特魅力。
+  const backgroundText = `
+    本專題旨在探索宮廟文化的現代傳承方式，
+    結合數位科技與實體活動，讓更多年輕人了解
+    傳統信仰的深層意涵與文化價值。
   `;
 
   const teamMembers = [
     {
-      name: '林志明',
-      role: '專案經理',
-      bio: '負責專案統籌，熱衷推廣艋舺文化，擁有10年數位轉型經驗。',
-      avatar: '/images/team/lin-zhi-ming.jpg',
-    },
-    {
-      name: '陳雅婷',
-      role: '前端工程師',
-      bio: '專精 SvelteKit，打造流暢且具文化氛圍的網站體驗。',
-      avatar: '/images/team/chen-ya-ting.jpg',
-    },
-    {
-      name: '張偉倫',
-      role: '視覺設計師',
-      bio: '融合北歐風與宮廟文化，設計簡約精美的介面。',
-      avatar: '/images/team/zhang-wei-lun.jpg',
-    },
-    {
-      name: '李欣怡',
-      role: '內容策劃',
-      bio: '策劃數位內容，擅長以創新方式呈現傳統文化。',
-      avatar: '/images/team/li-xin-yi.jpg',
-    },
-    {
-      name: '王俊傑',
-      role: '活動統籌',
-      bio: '負責實體活動規劃，推動社區參與與文化傳承。',
-      avatar: '/images/team/wang-jun-jie.jpg',
-    },
+      name: '小明',
+      role: '設計師',
+      bio: '專注視覺設計與品牌包裝',
+      avatar: '/images/team1.jpg'
+    }
   ];
+
+  // @ts-ignore
+  let heroTitle;
+  // @ts-ignore
+  let heroSubtitle;
+  // @ts-ignore
+  let introSection;
 
   // @ts-ignore
   function handleImageError(event) {
     const failedSrc = event.target.getAttribute('src');
-    event.target.src = 'https://via.placeholder.com/150?text=Fallback';
-    console.log(`Image load failed: ${failedSrc} -> switched to placeholder`);
+    event.target.src = '/images/default-avatar.jpg';
+    console.error(`Image load failed: ${failedSrc} at ${new Date().toISOString()}`);
   }
 
   // @ts-ignore
   function handleHeroImageError(event) {
     const failedSrc = event.target.getAttribute('src');
-    event.target.src = 'https://via.placeholder.com/1920x600?text=Hero';
-    console.log(`Hero image load failed: ${failedSrc} -> switched to placeholder`);
+    event.target.src = '/images/default-avatar.jpg';
+    console.error(`Hero image load failed: ${failedSrc} at ${new Date().toISOString()}`);
   }
 
-  console.log('introData:', { backgroundText, goalsText, teamMembers });
+  function waitForGSAP() {
+    return new Promise((resolve, reject) => {
+      let tries = 0;
+      const timer = setInterval(() => {
+        // @ts-ignore
+        if (window.gsap && window.ScrollTrigger) {
+          clearInterval(timer);
+          // @ts-ignore
+          resolve();
+        }
+        tries++;
+        if (tries > 20) {
+          clearInterval(timer);
+          reject('GSAP or ScrollTrigger not loaded from CDN');
+        }
+      }, 100);
+    });
+  }
 
-  onMount(() => {
-    import('gsap').then((gsapModule) => {
-      const gsap = gsapModule.default;
-      import('gsap/ScrollTrigger').then((stModule) => {
-        gsap.registerPlugin(stModule.ScrollTrigger);
-        // Hero Section 動畫
-        gsap.from('.hero-title', {
-          y: -50,
-          opacity: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-        });
-        gsap.from('.hero-subtitle', {
-          opacity: 0,
-          duration: 0.8,
-          delay: 0.2,
-          ease: 'power2.out',
-        });
-        // 現有區塊動畫
-        gsap.from('.intro-section', {
-          opacity: 0,
-          x: -50,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: '.intro-section',
-            start: 'top 90%',
-            end: 'bottom 20%',
-            scrub: 1,
-          },
-        });
-        document.querySelectorAll('.team-card').forEach((card, index) => {
-          gsap.from(card, {
-            opacity: 0,
-            y: 50,
-            duration: 0.8,
-            delay: index * 0.2,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 90%',
-              end: 'bottom 20%',
-              scrub: 1,
-            },
-          });
-        });
-      }).catch((error) => {
-        console.error('Failed to load GSAP ScrollTrigger:', error);
-        document.querySelectorAll('.team-card').forEach((card) => {
-          card.classList.add('fallback-animation');
-        });
-      });
-    }).catch((error) => {
-      console.error('Failed to load GSAP:', error);
+  console.log('Running in /routes/team/+page.svelte', { goalsText, teamMembersCount: teamMembers.length });
+
+  onMount(async () => {
+    if (!browser) return; // 僅在客戶端執行
+
+
+    try {
+      await waitForGSAP();
+      // @ts-ignore
+      const { gsap, ScrollTrigger } = window;
+      gsap.registerPlugin(ScrollTrigger);
+      // @ts-ignore
+      
+
+      await tick();
+    
+    } catch (err) {
+      
+     
+    }
+  });
+
+  afterUpdate(() => {
+    if (!browser) return; // 僅在客戶端執行
+
+    console.log('afterUpdate: Checking DOM elements');
+    // @ts-ignore
+    console.log('Hero title element:', heroTitle, 'Height:', heroTitle?.offsetHeight, 'Visible:', heroTitle?.offsetParent !== null);
+    // @ts-ignore
+    console.log('Hero subtitle element:', heroSubtitle, 'Height:', heroSubtitle?.offsetHeight, 'Visible:', heroSubtitle?.offsetParent !== null);
+    // @ts-ignore
+    console.log('Intro section rendered:', { visible: introSection?.offsetParent !== null, height: introSection?.offsetHeight });
+
+    // @ts-ignore
+    if (!heroTitle || !heroSubtitle || !introSection) {
+      console.error('DOM elements missing at', new Date().toISOString());
       document.querySelectorAll('.hero-title, .hero-subtitle, .team-card').forEach((el) => {
         el.classList.add('fallback-animation');
       });
+      return;
+    }
+
+    const { gsap } = window;
+    gsap.from(heroTitle, { y: 50, opacity: 0, duration: 1 });
+    gsap.from(heroSubtitle, { y: 30, opacity: 0, duration: 1, delay: 0.3 });
+
+    const cards = document.querySelectorAll('.team-card');
+    console.log('Found team-card elements:', cards.length, Array.from(cards).map(card => ({
+      // @ts-ignore
+      offsetHeight: card.offsetHeight,
+      // @ts-ignore
+      isVisible: card.offsetParent !== null,
+      style: window.getComputedStyle(card).display,
+    })));
+
+    if (cards.length === 0) {
+      console.error('No team-card elements found at', new Date().toISOString());
+      document.querySelectorAll('.team-card').forEach((el) => {
+        el.classList.add('fallback-animation');
+      });
+      return;
+    }
+
+    cards.forEach((card, index) => {
+      // @ts-ignore
+      console.log(`Applying animation to team-card ${index}`, 'Height:', card.offsetHeight, 'Visible:', card.offsetParent !== null);
+
+      //動畫
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 90%',
+          
+        },
+        y: 100,
+        opacity: 0,
+        duration: 1.5,
+        
+      });
+
+
     });
   });
 </script>
 
 <main class="bg-black font-sans text-white font-bakudai-exlg">
+  <!-- Hero Section -->
   <section class="hero-section min-h-screen flex flex-col items-center justify-center relative bg-black">
     <img
       src="/images/hero-bg.jpg"
@@ -129,36 +163,42 @@
       loading="lazy"
       on:error={handleHeroImageError}
     />
+    
     <div class="relative z-10 text-center px-4">
-      <h1 class="hero-title text-5xl md:text-6xl font-bold text-[#113F67] mb-6 tracking-wide">
+      <h1 bind:this={heroTitle} class="hero-title text-5xl md:text-6xl font-bold text-[#113F67] mb-6 tracking-wide">
         艋舺青山宮：數位傳承文化之美
       </h1>
-      <p class="hero-subtitle text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">
+      <p bind:this={heroSubtitle} class="hero-subtitle text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">
         結合科技與傳統，延續萬華信仰
       </p>
       <div class="border-t-4 border-yellow-500 w-24 mx-auto"></div>
     </div>
   </section>
 
-  <section class="intro-section container mx-auto py-16">
+  <!-- Intro Section -->
+  <section bind:this={introSection} class="intro-section container mx-auto py-16">
     <SlideInSection direction="left" delay={0.2}>
-      <h1 class="text-4xl font-bold text-[#113F67] mb-8 text-center tracking-wide">
+      <h1 class="text-6xl font-bold text-[#113F67] mb-8 text-center tracking-wide">
         專題背景與動機
       </h1>
-      <div class="bg-gray-800 p-6 rounded-lg shadow-md border border-[#113F67] max-w-3xl mx-auto">
-        <p class="text-gray-300 leading-relaxed">{backgroundText}</p>
+
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md border border-[#113F67] max-w-5xl mx-auto">
+        <p class="text-gray-300  text-2xl leading-relaxed">{backgroundText}</p>
       </div>
     </SlideInSection>
+
+
     <SlideInSection direction="left" delay={0.4}>
-      <h1 class="text-4xl font-bold text-[#113F67] mb-8 mt-12 text-center tracking-wide">
+      <h1 class="text-6xl font-bold text-[#113F67] mb-8 mt-12 text-center tracking-wide">
         專題目標
-      </h1>
-      <div class="bg-gray-800 p-6 rounded-lg shadow-md border border-[#113F67] max-w-3xl mx-auto">
-        <p class="text-gray-300 leading-relaxed">{goalsText}</p>
+       </h1>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md border border-[#113F67] max-w-5xl mx-auto">
+        <p class="text-gray-300 text-2xl leading-relaxed">{goalsText}</p>
       </div>
     </SlideInSection>
   </section>
 
+  <!-- Team Section -->
   <section class="team-section container mx-auto py-16">
     <SlideInSection direction="left" delay={0.6}>
       <h1 class="text-4xl font-bold text-[#113F67] mb-12 text-center tracking-wide">
@@ -168,7 +208,6 @@
         {#each teamMembers as member}
           <div
             class="team-card bg-white text-black p-6 rounded-lg shadow-md border-2 border-[#113F67] hover:border-yellow-500 hover:scale-105 transition transform duration-300 min-h-[300px]"
-            style="opacity: 1; visibility: visible;"
           >
             <img
               src={member.avatar}
@@ -200,7 +239,7 @@
   }
 
   .team-card:hover {
-    box-shadow: 0 4px 20px rgba(17, 63, 103, 0.3); /* #113F67 陰影 */
+    box-shadow: 0 4px 20px rgba(17, 63, 103, 0.3);
   }
 
   .fallback-animation {
@@ -242,7 +281,7 @@
     }
 
     .team-card img {
-      width: 6rem; /* w-24 = 96px */
+      width: 6rem;
       height: 6rem;
     }
 

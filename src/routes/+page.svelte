@@ -9,6 +9,7 @@
   import ScrollytellingSection from '../components/ScrollytellingSection.svelte';
   import Particle from '../components/Particle.svelte';
   import Introani from '../components/Introani.svelte';
+  import AiChat from '../components/AIChat.svelte';
   
   
   let items: (HTMLElement | null)[] = [];
@@ -213,6 +214,8 @@ const count = images.length;
   <ScrollytellingSection showIndicator={false} showSectionTitle={false}
     heroHeight="h-[93vh]" heroWidth="w-full" carouselHeight="h-full"/>
 </div>
+
+
 
  
    <!-- 2. 引導式前言 -->

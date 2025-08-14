@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import SlideInSection from '../../components/SlideInSection.svelte';
+  import AiChat from '../../components/AIChat.svelte';
 
  
 
@@ -100,6 +101,7 @@
 
 <main class="bg-black font-bakudai-lg">
 
+  <AiChat />
 
   <section id= "hero" class="relative h-screen overflow-hidden text-white text-center bg-black" bind:this={heroSection}>
     <!-- 背景圖，視差滑動 -->
@@ -122,7 +124,7 @@
   <div class="w-full h-[100vh]     text-white flex flex-row gap-10 items-center justify-center px-4">
     <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
       <SlideInSection direction="left">
-        <img src="/images/t1.jpg" alt="青山宮" class="w-full max-h-[95vh]  rounded shadow-lg hover:scale-105 transition object-contain " />
+        <img src="/images/t1.jpg" alt="青山宮" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div>
 
@@ -166,7 +168,7 @@
     </div>
     <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
       <SlideInSection direction="right">
-        <img src="/images/t2.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded shadow-lg hover:scale-105 transition object-contain " />
+        <img src="/images/t2.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div>
   </div>
@@ -182,7 +184,7 @@
 
     <div class="md:w-1/2  flex items-center ">
         <SlideInSection direction="right">
-          <img src="/images/t2.jpg" alt="靈安尊王" class="w-full max-h-[60vh] rounded shadow-lg hover:scale-105 transition object-cover " />
+          <img src="/images/t2.jpg" alt="靈安尊王" class="w-full max-h-[60vh] rounded-full  shadow-lg hover:scale-105 transition object-cover " />
         </SlideInSection>
       </div>
 
