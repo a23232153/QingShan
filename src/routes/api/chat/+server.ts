@@ -24,7 +24,7 @@ export const POST: RequestHandler = async ({ request }) => {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        model: "xai/grok-3",
+        model: "openai/gpt-4.1-mini",
         messages: [
           { role: 'system', content: 'You are a helpful assistant for 艋舺青山宮, providing accurate information about its history and culture.' },
           ...(messages ?? [])
@@ -40,7 +40,7 @@ export const POST: RequestHandler = async ({ request }) => {
         statusText: res.statusText,
         body: err,
         requestMessages: messages ?? '未解析',
-        model: 'xai/grok-3'
+        model: "openai/gpt-4.1-mini"
       });
       
       // 處理 Rate Limit 錯誤

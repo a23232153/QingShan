@@ -130,10 +130,10 @@
 
     <div class="md:w-1/2">
         <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">青山宮</h2>
-        <p class="text-gray-300 text-lg leading-relaxed  border-l-4 border-yellow-300 px-1">
+        <p class="text-blue-100 py-4 text-lg leading-relaxed bg-gray-900 border-l-4 border-yellow-300 px-1">
           艋舺青山宮，位於臺灣臺北市萬華區，為肇建於1856年（咸豐6年）的民間信仰廟宇，主祀青山靈安尊王，現列中華民國直轄市定古蹟。該廟自清治時期以來就是艋舺地區泉州三邑惠安人的王爺信仰中心之一，每逢青山靈安尊王壽誕日前夕都有隆重祭典，正日為萬華區年中慣例迎神中最盛大者，俗稱「艋舺大拜拜」，為臺北市三大廟會之一。現今，艋舺青山宮與艋舺龍山寺、艋舺清水巖、西門町天后宮合稱「艋舺四大廟門」
         </p>
-      </div>
+    </div>
   </div>
 
   <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-tw-blue to-transparent my-16"></div>
@@ -142,16 +142,28 @@
 
    <!--時間軸-->
 
-  <section class="timeline container mx-auto py-16 mb-16 relative">
+  <section class="timeline container mx-auto py-16 mb-16 relative flex flex-col">
     <div class="absolute left-1/2 w-1 bg-gray-300 h-full"></div>
-    <div class="timeline-item mb-8 ml-8">
+    <div class="timeline-item mb-10 ml-8">
       <h3 class="text-2xl text-white">1882年 - 青山宮創建</h3>
       <p class="text-gray-300">青山王首次抵達萬華，成為地方信仰中心。</p>
     </div>
-    <div class="timeline-item mb-8 mr-8 text-right">
+
+    <div class="timeline-item mb-10 mr-8 text-right">
       <h3 class="text-2xl text-white">1920年 - 重建</h3>
       <p class="text-gray-300">宮廟進行大規模重建，增添龍柱與雕刻。</p>
     </div>
+
+    <div class="timeline-item mb-10 ml-8">
+      <h3 class="text-2xl text-white">1950年 - 修繕</h3>
+      <p class="text-gray-300">修復屋頂與神像，保持原有風貌。</p>
+    </div>
+
+    <div class="timeline-item mb-10 mr-8 text-right">
+      <h3 class="text-2xl text-white">1980年 - 文物展出</h3>
+      <p class="text-gray-300">宮廟首次舉辦歷史文物展。</p>
+    </div>
+
   </section>
 
 <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-16"></div>
@@ -161,14 +173,14 @@
   <div class="w-full h-[100vh]    text-white flex flex-row gap-10 items-center justify-center px-4">
     <div class="md:w-1/2 px-4 " >
       <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">靈安尊王</h2>
-      <p class=" text-lg leading-relaxed">
+      <p class="py-4 text-lg bg-gray-900 border-l-4 border-amber-300 leading-relaxed">
         靈安尊王是艋舺青山宮的主神，據說他是從福建惠安來到臺灣的神明，擁有強大的保護力量。每年青山宮都會舉辦盛大的慶典來慶祝他的誕辰，吸引了成千上萬的信徒和遊客前來參加。
       </p>
 
     </div>
     <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
       <SlideInSection direction="right">
-        <img src="/images/t2.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full shadow-lg hover:scale-105 transition object-contain " />
+        <img src="/images/t2.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div>
   </div>
@@ -184,7 +196,7 @@
 
     <div class="md:w-1/2  flex items-center ">
         <SlideInSection direction="right">
-          <img src="/images/t2.jpg" alt="靈安尊王" class="w-full max-h-[60vh] rounded-full  shadow-lg hover:scale-105 transition object-cover " />
+          <img src="/images/t2.jpg" alt="靈安尊王" class="w-full max-h-[60vh] rounded-3xl border-2 border-tw-blue shadow-lg hover:scale-105 transition object-cover " />
         </SlideInSection>
       </div>
 

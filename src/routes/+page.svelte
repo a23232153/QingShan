@@ -62,7 +62,7 @@ const count = images.length;
    onMount(() => {                       //grid,rotate animation
     // 測試 grid 元素是否存在
     const el = document.querySelector('.blurset');
-    console.log('blurset:', el); // ✅ 看這裡是不是 null
+    
 
   if (!el) {
     console.warn('❌ blurset not found in DOM at mount');
@@ -92,9 +92,7 @@ const count = images.length;
         opacity: 1,
         duration: 1,
         ease: "power2.out",
-        onStart: () => console.log("👀 blurset animation started"),
-        onUpdate: () => console.log("🔄 animating..."),
-        onComplete: () => console.log("✅ blurset animation complete")
+        
       }
     );
     }, 4500);
@@ -201,7 +199,7 @@ const count = images.length;
   style="background: linear-gradient(to right, #000, transparent, #000); background-repeat: no-repeat; background-size: 100%; content: '';">
   </div>
 
-    
+
 
 <!-- 粒子動畫 -->
   {#if loading}
