@@ -44,6 +44,7 @@
       AIreply = data.reply.content;
       userInput = '';
       errorMessage = '';
+      
     } catch (error) {
       console.error('聊天請求失敗:', error);
       errorMessage = '網路錯誤，請稍後重試';
