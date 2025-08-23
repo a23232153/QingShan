@@ -219,7 +219,7 @@ const count = images.length;
    <!-- 2. 引導式前言 -->
 <div class="relative z-10 blurani bg-contain bg-no-repeat min-h-screen w-full overflow-hidden mt-[50vh]">
     <!-- <h2> 區塊與 NM.jpg 背景 -->
-    <div class="container mx-auto px-4 mt-16 w-full bg-[url('/images/NM.jpg')] bg-cover bg-center min-h-[60vh] flex items-center justify-center">
+    <div class="container mx-auto px-4 mt-16 w-full bg-[url('/images/scene9.jpg')] bg-contain bg-no-repeat bg-center min-h-[60vh] flex items-center justify-center">
       <SlideInSection direction="left" delay={0.25} rootMargin="0px 0px 200px 0px" threshold={0.5}>
         <div class="text-center mb-16">
           <h2 class="text-5xl md:text-6xl font-bold  text-white mb-8 leading-tight">

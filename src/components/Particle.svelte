@@ -7,11 +7,11 @@
   export let texturePath = '/images/mainCopy.png';
   export let lang = 'ja';
   export let numChars = 7;
-  export let numCols = 13;
+  export let numCols = 18;
   export let numRows = 113;
   export let planeSize = 100;
   export let autoPlay = true;
-  export let animationDuration = 6;
+  export let animationDuration = 5;
   export let fadeOutDuration = 1;
 
   let container: HTMLDivElement;

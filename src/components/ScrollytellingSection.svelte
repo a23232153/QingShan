@@ -48,7 +48,7 @@
       description: '這裡，有著超過百年的青草'
     },
     {
-      image: '/images/slip1.jpg',
+      image: '/images/scene5.jpg',
       title: '萬華車站',
       description: '這裡，承載著無數人的故事'
     }
@@ -130,13 +130,15 @@
 
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
             </div>
-            <div class="absolute items-center inset-0 p-8 text-white flex flex-col  justify-end transition-all duration-600 delay-300 {currentSceneIndex === index ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}">
+            <div class="absolute items-center inset-0 p-8 text-white/50 flex flex-col  justify-end transition-all duration-600 delay-300 {currentSceneIndex === index ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}">
               <h4 class="text-3xl md:text-4xl font-black mb-2 drop-shadow-lg tracking-tight">{scene.title}</h4>
               <p class="text-lg md:text-xl leading-relaxed drop-shadow font-light">{scene.description}</p>
             </div>
           </div>
         {/each}
       </div>
+
+
       {#if showIndicator}
         <div class="flex justify-center gap-4 mt-8">
           {#each displayScenes as _, index}
