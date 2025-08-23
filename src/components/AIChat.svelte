@@ -3,7 +3,9 @@
   import { onMount } from 'svelte';
 
   let userInput = '';
+  let isLoading = false;
   let messages = [
+  
     {
       role: 'system',
       content: `
@@ -18,11 +20,13 @@
   let AIreply = '';
   let isOpen = false;
   let errorMessage = '';
-
+  
   async function sendMessage() {
     if (!userInput.trim()) return;
 
     messages = [...messages, { role: 'user', content: userInput }];
+    userInput = '';
+    isLoading = true;
 
     try {
       const res = await fetch('/api/chat', {
@@ -42,12 +46,16 @@
 
       messages = [...messages, data.reply];
       AIreply = data.reply.content;
-      userInput = '';
+      
       errorMessage = '';
       
     } catch (error) {
       console.error('聊天請求失敗:', error);
       errorMessage = '網路錯誤，請稍後重試';
+      userInput = '';
+
+    } finally {
+      isLoading = false;
     }
   }
 
@@ -66,10 +74,7 @@
     }
   }
 
-  onMount(() => {
-    // 提醒檢查 API 金鑰
-    console.warn('請確認 /api/chat 的 GITHUB_TOKEN 是否有效，若 API 金鑰變更，請更新 +server.ts 中的環境變數');
-  });
+  
 </script>
 
 <!-- 右下角觸發按鈕 -->
@@ -77,7 +82,7 @@
   on:click={toggleChat}
   class="fixed bottom-4 right-4 z-[1000] bg-yellow-500 text-black p-4 rounded-full shadow-lg hover:bg-yellow-600 transition transform hover:scale-105"
   title="開啟客服機器人"
->
+> 
   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
   </svg>
@@ -108,6 +113,15 @@
           </span>
         </div>
       {/each}
+
+      {#if isLoading}
+    <div class="text-left mb-2">
+      <span class="inline-block p-2 rounded-lg bg-gray-800 text-white opacity-70 italic">
+        思考中...
+      </span>
+    </div>
+      {/if}
+      
       {#if errorMessage}
         <div class="text-red-500 text-center p-2">{errorMessage}</div>
       {/if}

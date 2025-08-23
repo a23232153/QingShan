@@ -28,22 +28,22 @@
   // 預設場景（如果沒有傳入 scenes）
   const defaultScenes = [
     {
-      image: '/images/panel1.jpg',
+      image: '/images/scene7.jpg',
       title: '龍山寺',
       description: '這裡，是求姻緣拜過的地方'
     },
     {
-      image: '/images/t1.jpg', 
+      image: '/images/scene1.jpg', 
       title: '西門紅樓',
       description: '這裡，是台灣的第一座公有市場'
     },
     {
-      image: '/images/t2.jpg',
+      image: '/images/scene4.jpg',
       title: '華西街夜市',
       description: '這裡，是台灣的第一座觀光夜市'
     },
     {
-      image: '/images/t3.jpg',
+      image: '/images/scene3.jpg',
       title: '青草巷',
       description: '這裡，有著超過百年的青草'
     },
@@ -126,7 +126,8 @@
             style="animation-delay: {index * 0.2}s;"
           >
             <div class="relative w-full h-full overflow-hidden">
-              <img src={scene.image} alt={scene.title} class="w-full h-full object-cover" />
+              <img src={scene.image} alt={scene.title} class="w-full h-full object-cover object-center" />
+
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
             </div>
             <div class="absolute items-center inset-0 p-8 text-white flex flex-col  justify-end transition-all duration-600 delay-300 {currentSceneIndex === index ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}">

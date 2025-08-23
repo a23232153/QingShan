@@ -21,11 +21,37 @@
 
   const teamMembers = [
     {
-      name: '小明',
-      role: '設計師',
-      bio: '專注視覺設計與品牌包裝',
+      name: '任皓煒',
+      role: '專案經理',
+      bio: '負責專案規劃與執行',
+      avatar: '/images/team1.jpg'
+    },
+    {
+      name: '涂凱傑',
+      role: '前端工程師',
+      bio: '開發互動式網頁',
+      avatar: '/images/team1.jpg'
+    },
+    {
+      name: '姜兆揚',
+      role: '內容總監',
+      bio: '負責內容策劃與發想',
+      avatar: '/images/team1.jpg'
+    },
+    {
+      name: '徐偉峻',
+      role: '公關行銷',
+      bio: '負責媒體宣傳與活動推廣',
+      avatar: '/images/team1.jpg'
+    },
+    {
+      name: '黃盛隆',
+      role: '美術設計',
+      bio: '負責視覺設計與美編',
       avatar: '/images/team1.jpg'
     }
+
+
   ];
 
   // @ts-ignore
@@ -131,31 +157,14 @@
       return;
     }
 
-    cards.forEach((card, index) => {
-      // @ts-ignore
-      console.log(`Applying animation to team-card ${index}`, 'Height:', card.offsetHeight, 'Visible:', card.offsetParent !== null);
-
-      //動畫
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 90%',
-          
-        },
-        y: 100,
-        opacity: 0,
-        duration: 1.5,
-        
-      });
-
-
-    });
+   
   });
 </script>
 
-<main class="bg-black font-sans text-white font-bakudai-exlg">
+<main class="bg-white font-sans text-white font-bakudai-exlg">
   <!-- Hero Section -->
   <section class="hero-section min-h-screen flex flex-col items-center justify-center relative bg-black">
+
     <img
       src="/images/hero-bg.jpg"
       alt="艋舺青山宮背景"
@@ -164,7 +173,7 @@
       on:error={handleHeroImageError}
     />
     
-    <div class="relative z-10 text-center px-4">
+    <div class="relative z-10 text-center px-4 ">
       <h1 bind:this={heroTitle} class="hero-title text-5xl md:text-6xl font-bold text-[#113F67] mb-6 tracking-wide">
         艋舺青山宮：數位傳承文化之美
       </h1>
@@ -177,13 +186,13 @@
 
   <!-- Intro Section -->
   <section bind:this={introSection} class="intro-section container mx-auto py-16">
-    <SlideInSection direction="left" delay={0.2}>
+    <SlideInSection direction="left" delay={0.35}>
       <h1 class="text-6xl font-bold text-[#113F67] mb-8 text-center tracking-wide">
         專題背景與動機
       </h1>
 
-      <div class="bg-gray-800 p-6 rounded-lg shadow-md border border-[#113F67] max-w-5xl mx-auto">
-        <p class="text-gray-300  text-2xl leading-relaxed">{backgroundText}</p>
+      <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-yellow-500  shadow-md  max-w-5xl mx-auto">
+        <p class="text-white text-2xl leading-relaxed">{backgroundText}</p>
       </div>
     </SlideInSection>
 
@@ -192,7 +201,7 @@
       <h1 class="text-6xl font-bold text-[#113F67] mb-8 mt-12 text-center tracking-wide">
         專題目標
        </h1>
-      <div class="bg-gray-800 p-6 rounded-lg shadow-md border border-[#113F67] max-w-5xl mx-auto">
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-yellow-500 max-w-5xl mx-auto">
         <p class="text-gray-300 text-2xl leading-relaxed">{goalsText}</p>
       </div>
     </SlideInSection>
@@ -204,10 +213,9 @@
       <h1 class="text-4xl font-bold text-[#113F67] mb-12 text-center tracking-wide">
         我們的團隊
       </h1>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-testid="team-grid">
-        {#each teamMembers as member}
-          <div
-            class="team-card bg-white text-black p-6 rounded-lg shadow-md border-2 border-[#113F67] hover:border-yellow-500 hover:scale-105 transition transform duration-300 min-h-[300px]"
+      <div class="grid grid-cols-1 md:grid-cols-3  justify-items-center gap-6" data-testid="team-grid">
+        {#each teamMembers.slice(0, 5) as member}
+          <div class="team-card bg-white text-black p-6 rounded-lg shadow-md border-2 border-[#113F67] hover:border-yellow-500 hover:scale-105 transition transform duration-300 min-h-[300px] w-full md:basis-1/3 md:grow-0 md:shrink-0 max-w-md"
           >
             <img
               src={member.avatar}
@@ -221,7 +229,9 @@
             <p class="text-gray-600 text-center">{member.bio}</p>
           </div>
         {/each}
-      </div>
+
+        
+
     </SlideInSection>
   </section>
 </main>
