@@ -9,7 +9,8 @@
   import ScrollytellingSection from '../components/ScrollytellingSection.svelte';
   import Particle from '../components/Particle.svelte';
   import Introani from '../components/Introani.svelte';
-  import AiChat from '../components/AIChat.svelte';
+  
+  import Ani from '../components/Ani.svelte';
   
   
   let items: (HTMLElement | null)[] = [];
@@ -189,7 +190,7 @@ const count = images.length;
 
 
 
-
+<Ani/>
 
 <main class="relative bg-black font-bakudai-md">
 
@@ -201,10 +202,10 @@ const count = images.length;
 
 
 
-<!-- 粒子動畫 -->
+<!-- 粒子動畫 
   {#if loading}
     <Introani on:done={() => { loading = false;}} />
-  {/if}
+  {/if}  -->
 
   
   <!-- 1. intro section（qingshan hero） -->

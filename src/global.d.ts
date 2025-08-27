@@ -6,3 +6,6 @@ declare global {
     imagesLoaded: (element: HTMLElement | string, options?: { background: boolean }, callback?: () => void) => void;
   }
 }
+
+
+declare const gsap: typeof import("gsap");

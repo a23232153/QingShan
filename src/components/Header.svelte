@@ -19,7 +19,8 @@
       <li><a href="/divi">互動體驗</a></li>
       
       <li><a href="/videos">影音專區 </a></li>
-      <li><a href="/about"> 智能客服 </a></li>
+      <li><a href="/articles"> 感謝專區 </a></li>
+      
       <li><a href="/team"> 關於我們 </a></li>
       
     </ul>

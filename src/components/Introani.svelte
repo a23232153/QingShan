@@ -37,6 +37,7 @@
     await new Promise<void>((resolve) => {
       img.onload = () => resolve();
     });
+    
     // 將貼圖畫到 canvas 取得像素資料
     const tempCanvas = document.createElement('canvas');
     tempCanvas.width = gridX;
