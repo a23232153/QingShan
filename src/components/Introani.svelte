@@ -62,6 +62,7 @@
         const g = imgData[idx + 1];
         const b = imgData[idx + 2];
         const a = imgData[idx + 3] / 255;
+        
         // 只在有字的地方產生粒子（只渲染文字本身）
         if (a > threshold) { // 只有有字的地方顯示粒子
           // 讓粒子分布在中心
