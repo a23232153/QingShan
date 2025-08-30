@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import gsap from 'gsap';
   
 
   // Props 
@@ -7,6 +8,7 @@
     image: string;
     title: string;
     description: string;
+    duration?: number;
   }> = [];
   export let sectionTitle: string = '萬華場景導覽';
   export let showSectionTitle: boolean = true;
@@ -27,31 +29,47 @@
 
   // 預設場景（如果沒有傳入 scenes）
   const defaultScenes = [
-    {
-      image: '/images/scene7.jpg',
-      title: '龍山寺',
-      description: '這裡，是求姻緣拜過的地方'
-    },
+
     {
       image: '/images/scene1.jpg', 
-      title: '西門紅樓',
-      description: '這裡，是台灣的第一座公有市場'
-    },
-    {
-      image: '/images/scene4.jpg',
-      title: '華西街夜市',
-      description: '這裡，是台灣的第一座觀光夜市'
-    },
-    {
-      image: '/images/scene3.jpg',
-      title: '青草巷',
-      description: '這裡，有著超過百年的青草'
+      title: '你夠熟悉你的生活周遭嗎?',
+      description: '',
+      duration: 4000
     },
     {
       image: '/images/scene5.jpg',
-      title: '萬華車站',
-      description: '這裡，承載著無數人的故事'
-    }
+      title: '你穿梭在萬華',
+      description: '',
+      duration: 3000
+    },
+    {
+      image: '/images/scene4.jpg',
+      title: '逛著華西街夜市',
+      description: '',
+      duration: 2000
+    },
+    {
+      image: '/images/scene7.jpg',
+      title: '拜著龍山寺月老',
+      description: '',
+      duration: 1500
+    },
+    
+    
+    {
+      image: '/images/scene3.jpg',
+      title: '喝著百年青草茶',
+      description: '',
+      duration: 1000
+    },
+    {
+      image: '/images/牌樓.jpg',
+      title: '但你真的了解這片土地嗎？',
+      description: '讓我們帶你認識萬華的靈魂',
+      duration: 10000
+    },
+   
+    
   ];
 
   // 使用傳入的 scenes 或預設場景
@@ -86,12 +104,18 @@
   });
 
   function startSceneRotation() {
+     stopSceneRotation();
     if (rotationTimer || !autoRotate) return;
     
-    rotationTimer = window.setInterval(() => {
+    const currentScene = displayScenes[currentSceneIndex];
+    const duration = currentScene.duration ?? 4000; 
+
+     rotationTimer = window.setTimeout(() => {
       currentSceneIndex = (currentSceneIndex + 1) % displayScenes.length;
-    }, rotationInterval);
+      startSceneRotation(); // 👈 遞迴呼叫，依序播放
+    }, duration);
   }
+
 
   function stopSceneRotation() {
     if (rotationTimer) {
@@ -107,6 +131,9 @@
       startSceneRotation();
     }
   }
+
+
+  
 </script>
 
 <section bind:this={sectionRef} class="{heroHeight} {heroWidth} bg-black overflow-hidden">

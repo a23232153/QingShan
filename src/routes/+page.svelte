@@ -11,6 +11,8 @@
   import Introani from '../components/Introani.svelte';
   
   import Ani from '../components/Ani.svelte';
+  import ImgZoom from '../components/ImgZoom.svelte';
+  import ImgCursor from '../components/ImgCursor.svelte';
   
   
   let items: (HTMLElement | null)[] = [];
@@ -190,7 +192,11 @@ const count = images.length;
 
 
 
-<Ani/>
+  {#if loading}
+    <Introani on:done={onDone} />
+  {/if}
+
+
 
 <main class="relative bg-black font-bakudai-md">
 
@@ -281,7 +287,11 @@ const count = images.length;
     </div>
   </section>
 
-  
+
+
+<ImgCursor/>
+
+
 
  
   <section class=" h-[70vh]  flex items-center justify-center bg-black relative overflow-hidden">
