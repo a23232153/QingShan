@@ -13,6 +13,7 @@
   import Ani from '../components/Ani.svelte';
   import ImgZoom from '../components/ImgZoom.svelte';
   import ImgCursor from '../components/ImgCursor.svelte';
+  import LastScene from '../components/LastScene.svelte';
   
   
   let items: (HTMLElement | null)[] = [];
@@ -295,7 +296,7 @@ const count = images.length;
 
 
 
- 
+ <!-- 
   <section class=" h-[70vh]  flex items-center justify-center bg-black relative overflow-hidden">
     <SlideInSection direction="right" delay={0.2}>
       <div class="container mx-auto px-4 md:px-8 text-center">
@@ -306,10 +307,10 @@ const count = images.length;
       </div>
     </SlideInSection>
   </section>
+  part3.-->
 
-  <div class="items-center justify-center flex   bg-white shadow-2xl opacity-20 ">
-    <img src="/images/shadow-bg.png" alt="temple-shadow" class="w-[80vw] h-auto blurset " />
-  </div>
+  
+  <LastScene/>
 
   <div class="flex items-center justify-center ">
     <a href="/qingshan" class="inline-block px-6 py-3 bg-yellow-500 text-black font-semibold text-base text-center no-underline 
