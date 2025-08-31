@@ -7,10 +7,13 @@
   let isTouchDevice = false;
 
   const projects = [
-    { id: 1, title: "The Space Between Notes", image: "https://assets.codepen.io/7558/bw-blurry-001.webp" },
+    { id: 1, title: "青草巷", image: "https://assets.codepen.io/7558/bw-blurry-001.webp" },
     { id: 2, title: "Love as the Fourth Dimension", image: "https://assets.codepen.io/7558/bw-blurry-004.webp" },
     { id: 3, title: "The Art of Letting Go", image: "https://assets.codepen.io/7558/bw-blurry-007.webp" },
     { id: 4, title: "Creativity as Prayer", image: "https://assets.codepen.io/7558/bw-blurry-010.webp" },
+    { id: 5, title: "Creativity as Prayer", image: "https://assets.codepen.io/7558/bw-blurry-010.webp" },
+    { id: 6, title: "Love as the Fourth Dimension", image: "https://assets.codepen.io/7558/bw-blurry-004.webp" },
+    { id: 7, title: "The Art of Letting Go", image: "https://assets.codepen.io/7558/bw-blurry-007.webp" },
   ];
 
   const defaultBg = "https://assets.codepen.io/7558/bw-blurry-005.webp";
@@ -35,7 +38,13 @@
   const handleEnter = (item, e) => {
     if (!bgImage || !cursorImg) return;
 
+    console.log("bgImage", bgImage, "cursorImg", cursorImg);
+    
+
     const imgSrc = item.dataset.image;
+
+    console.log("切換到圖片：", imgSrc);
+
     currentItem = item;
     const rotation = getRandomRotation();
 
@@ -74,12 +83,13 @@
   });
 </script>
 
-<main class="portfolio" on:mouseleave={() => {
+<main class="portfolio font-bakudai-lg " on:mouseleave={() => {
     currentItem = null;
     showCursor = false;
     setDefaultBg();
   }}>
-  <div class="bg-container">
+
+  <div class="bg-container ">
     <img class="bg-image" bind:this={bgImage} alt="" />
   </div>
 
@@ -122,7 +132,7 @@
 .portfolio {
   height: 100%;
   width: 100%;
-  font-family: "Inter", sans-serif;
+  
   font-weight: 700;
   font-size: 16px;
   text-transform: uppercase;
@@ -218,9 +228,9 @@
 }
 
 .bg-container {
-  position: relative;
+  position: absolute;
   inset: 0;
-  z-index: 10;
+  z-index: 0;
   overflow: hidden;
 }
 
