@@ -19,10 +19,10 @@
   let items: (HTMLElement | null)[] = [];
 
   const sceneitems: { text: string; direction: "left" | "right" }[] = [
-  { text: '「你穿梭在萬華——」', direction: 'left' },
-  { text: '「吃的是青草巷的百年青草茶、」', direction: 'right' },
-  { text: '「拜的是龍山寺的月老、」', direction: 'left' },
-  { text: '「逛的是西門町潮流小店……」', direction: 'right' }
+  { text: '「萬華，不只是台北最古老的街區」', direction: 'left' },
+  { text: '「它是一座還在呼吸的文化舞台」', direction: 'right' },
+  { text: '「而在這片舞台的中心」', direction: 'left' },
+  { text: '「有一座承載著在地信仰與世代情感的宮廟」', direction: 'right' }
 ];
   
   let loading = true;
@@ -224,15 +224,13 @@ const count = images.length;
 
 
  
-   <!-- 2. 引導式前言 
+   
 <div class="relative z-10 blurani bg-contain bg-no-repeat min-h-screen w-full overflow-hidden mt-[50vh]">
     
     <div class="container mx-auto px-4 mt-16 w-full bg-[url('/images/scene9.jpg')] bg-contain bg-no-repeat bg-center min-h-[60vh] flex items-center justify-center">
       <SlideInSection direction="left" delay={0.25} rootMargin="0px 0px 200px 0px" threshold={0.5}>
         <div class="text-center mb-16">
-          <h2 class="text-5xl md:text-6xl font-bold  text-white mb-8 leading-tight">
-            你夠熟悉你的生活周遭嗎？
-          </h2>
+          
         </div>
       </SlideInSection>
     </div>
@@ -249,7 +247,7 @@ const count = images.length;
     {/each}
 </div>
 
-    -->
+    
   
 <!-- rotate區塊
 
@@ -272,7 +270,7 @@ const count = images.length;
 
   <SlideInSection direction="right" delay={0}>
     <p class="text-3xl mt-[350px] md:text-4xl font-bold text-[#FFF287] leading-tight text-center">
-      但你，真的了解這片土地的靈魂嗎？
+      艋舺青山宮
     </p>
   </SlideInSection>
 
