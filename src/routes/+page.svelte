@@ -34,16 +34,16 @@
  
 
   const Gimages=[
-    '/images/scene8.jpg',
-    '/images/西門彩虹步道.jpg',
-    '/images/龍山寺-2.jpg',
-    '/images/拜殿燈籠.jpg',
-    '/images/西門紅樓-2.jpg',
-    '/images/西門彩虹步道.jpg',
-    '/images/華西街.jpg',
-    '/images/st2.jpg',
-    '/images/st1.jpg',
-    '/images/st3.jpg',
+    '/images/grid1.jpg',
+    '/images/grid2.jpg',
+    '/images/grid3.jpg',
+    '/images/grid4.jpg',
+    '/images/grid5.jpg',
+    '/images/grid6.jpg',
+    '/images/grid7.jpg',
+    '/images/grid8.jpg',
+    '/images/grid9.jpg',
+    '/images/grid10.jpg',
   ]
 
   const images=[
@@ -210,16 +210,17 @@ const count = images.length;
 
 
 
-<!-- 粒子動畫 
-  {#if loading}
-    <Introani on:done={() => { loading = false;}} />
-  {/if}  -->
+
 
   
   <!-- 1. intro section（qingshan hero） -->
 <div class="relative blurset w-[100vw] h-[93vh] mt-[7vh]">
   <ScrollytellingSection showIndicator={false} showSectionTitle={false}
     heroHeight="h-[93vh]" heroWidth="w-full" carouselHeight="h-full"/>
+</div>
+
+<div class="mb-24 mt-30">
+<ImgCursor/>
 </div>
 
 
@@ -290,11 +291,6 @@ const count = images.length;
   </section>
 
 
-<div class="mb-24">
-
-  <!-- 自訂滑鼠圖片 -->
-<ImgCursor/>
-</div>
 
 
 
@@ -323,7 +319,7 @@ const count = images.length;
 
     <!-- 按鈕 -->
     <a href="/qingshan"
-      target="_blank"
+      
       class="relative z-10 flex items-center justify-center w-32 h-32 rounded-full bg-white text-black font-semibold
               transition-transform duration-500 ease-in-out group-hover:scale-125">
       前往青山
