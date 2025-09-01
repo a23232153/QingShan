@@ -193,4 +193,5 @@
 
 <div class="wrapper" bind:this={container}>
   <canvas bind:this={canvas} />
+  
 </div>

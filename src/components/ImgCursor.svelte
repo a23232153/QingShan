@@ -7,16 +7,16 @@
   let isTouchDevice = false;
 
   const projects = [
-    { id: 1, title: "青草巷", image: "https://assets.codepen.io/7558/bw-blurry-001.webp" },
-    { id: 2, title: "Love as the Fourth Dimension", image: "https://assets.codepen.io/7558/bw-blurry-004.webp" },
-    { id: 3, title: "The Art of Letting Go", image: "https://assets.codepen.io/7558/bw-blurry-007.webp" },
-    { id: 4, title: "Creativity as Prayer", image: "https://assets.codepen.io/7558/bw-blurry-010.webp" },
-    { id: 5, title: "Creativity as Prayer", image: "https://assets.codepen.io/7558/bw-blurry-010.webp" },
-    { id: 6, title: "Love as the Fourth Dimension", image: "https://assets.codepen.io/7558/bw-blurry-004.webp" },
-    { id: 7, title: "The Art of Letting Go", image: "https://assets.codepen.io/7558/bw-blurry-007.webp" },
+    { id: 1, title: "青草巷", image: "/images/青草巷.jpg" },
+    { id: 2, title: "西門町", image: "images/西門町.jpg" },
+    { id: 3, title: "廣州街夜市", image: "/images/廣州街.jpg" },
+    { id: 4, title: "華西街", image: "/images/華西街.jpg" },
+    { id: 5, title: "西門紅樓", image: "/images/西門紅樓-2.jpg" },
+    { id: 6, title: "牌樓", image: "images/牌樓.jpg" },
+    
   ];
 
-  const defaultBg = "https://assets.codepen.io/7558/bw-blurry-005.webp";
+  const defaultBg = "/images/NM.jpg";
 
   const getEventPos = (e) =>
     e.touches?.[0]

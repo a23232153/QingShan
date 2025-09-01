@@ -7,11 +7,12 @@
   
   import SlideInSection from '../components/SlideInSection.svelte';
   import ScrollytellingSection from '../components/ScrollytellingSection.svelte';
-  import Particle from '../components/Particle.svelte';
+  
   import Introani from '../components/Introani.svelte';
   
-  import Ani from '../components/Ani.svelte';
-  import ImgZoom from '../components/ImgZoom.svelte';
+  //import Ani from '../components/Ani.svelte';
+  //import ImgZoom from '../components/ImgZoom.svelte';
+
   import ImgCursor from '../components/ImgCursor.svelte';
   import LastScene from '../components/LastScene.svelte';
   
@@ -33,13 +34,13 @@
  
 
   const Gimages=[
-    '/images/st2.jpg',
-    '/images/st2.jpg',
-    '/images/st1.jpg',
-    '/images/st3.jpg',
-    '/images/st1.jpg',
-    '/images/st2.jpg',
-    '/images/st3.jpg',
+    '/images/scene8.jpg',
+    '/images/西門彩虹步道.jpg',
+    '/images/龍山寺-2.jpg',
+    '/images/拜殿燈籠.jpg',
+    '/images/西門紅樓-2.jpg',
+    '/images/西門彩虹步道.jpg',
+    '/images/華西街.jpg',
     '/images/st2.jpg',
     '/images/st1.jpg',
     '/images/st3.jpg',
@@ -269,7 +270,7 @@ const count = images.length;
 
 
   <SlideInSection direction="right" delay={0}>
-    <p class="text-3xl mt-[350px] md:text-4xl font-bold text-[#FFF287] leading-tight text-center">
+    <p class="text-3xl mt-[200px] md:text-4xl font-bold text-[#FFF287] leading-tight text-center">
       艋舺青山宮
     </p>
   </SlideInSection>
@@ -311,12 +312,29 @@ const count = images.length;
   part3.-->
 
   
-  <LastScene/>
+<div class="relative">
 
-  <div class="flex items-center justify-center ">
-    <a href="/qingshan" class="inline-block px-6 py-3 bg-yellow-500 text-black font-semibold text-base text-center no-underline 
-    rounded-lg shadow-md hover:bg-yellow-600 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-50 transition-all duration-300 m-4">前往青山</a>
+  <LastScene/>
+  <div class="absolute flex items-center justify-center group z-10000 top-1/5 left-1/2 -translate-x-1/2 -translate-y-1/4 ">
+    <!-- 外層灰色圓環 -->
+    <div class="absolute  flex items-center justify-center">
+      <div class="w-40 h-40 rounded-full border border-white"></div>
+    </div>
+
+    <!-- 按鈕 -->
+    <a href="/qingshan"
+      target="_blank"
+      class="relative z-10 flex items-center justify-center w-32 h-32 rounded-full bg-white text-black font-semibold
+              transition-transform duration-500 ease-in-out group-hover:scale-125">
+      前往青山
+    </a>
   </div>
+</div>
+
+
+
+
+
 
 </main>
 
