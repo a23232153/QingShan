@@ -647,9 +647,9 @@
 </svelte:head>
 
 <main class="relative w-screen h-screen bg-black text-white overflow-hidden select-none">
-  <!-- 噪點效果 -->
+  <!-- 噪點效果 
   <div class="fixed inset-0 -top-[50%] -left-[50%] w-[200%] h-[200%] bg-[url('http://assets.iceable.com/img/noise-transparent.png')] bg-repeat bg-[length:300px_300px] animate-noise opacity-90 pointer-events-none z-[100]"></div>
-
+-->
   <!-- 主內容 -->
   <div class="container relative w-full h-full" bind:this={canvasElement} style="pointer-events: auto;">
     <div class="canvas absolute" id="canvas">
@@ -701,7 +701,7 @@
     <div class="page-vignette absolute inset-0" style="box-shadow: inset 0 0 {$settings.vignetteSizePage * 1.5}px rgba(0,0,0,{$settings.vignetteStrength * 0.7});"></div>
     <div class="page-vignette-strong absolute inset-0" style="box-shadow: inset 0 0 {$settings.vignetteSizePage * 0.75}px rgba(0,0,0,{$settings.vignetteStrength * 0.85});"></div>
     <div class="page-vignette-extreme absolute inset-0" style="box-shadow: inset 0 0 {$settings.vignetteSizePage * 0.4}px rgba(0,0,0,{$settings.vignetteStrength});"></div>
-  </div>
+  </div> 
 </main>
 
 <style>
