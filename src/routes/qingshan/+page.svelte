@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import SlideInSection from '../../components/SlideInSection.svelte';
   import AiChat from '../../components/AIChat.svelte';
+  import Gallery from '../../components/Gallery.svelte';
 
  
 
@@ -124,7 +125,7 @@
   <div class="w-full h-[100vh]     text-white flex flex-row gap-10 items-center justify-center px-4">
     <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
       <SlideInSection direction="left">
-        <img src="/images/t1.jpg" alt="青山宮" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
+        <img src="/images/後殿-1.jpg" alt="青山宮" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div>
 
@@ -180,15 +181,17 @@
     </div>
     <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
       <SlideInSection direction="right">
-        <img src="/images/t2.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
+        <img src="/images/靈安尊王-1.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div>
   </div>
 
   <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-568F87 to-transparent my-16"></div>
 
+  <Gallery />
 
-  <!--青山季-->
+
+  <!--青山季
   <section >
     <div class="w-full h-[100vh]     text-white flex flex-col gap-10 items-center justify-center px-4 ">
       
@@ -205,6 +208,9 @@
       </p>  
     </div>
   </section>
+
+  -->
+  
   <!-- （圖片格） -->
   <section class="mt-20 py-20 bg-gray-100">
     <div class="container mx-auto px-4">
@@ -295,15 +301,7 @@
 
  
 
-  <!-- CTA / 聯絡區塊 -->
-  <section id="contact" class="py-20 bg-yellow-50">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6">nothing</h2>
-      <p class="text-gray-700 mb-6">We welcome your questions, inquiries, or collaboration ideas.</p>
-      <a href="/booking" class="inline-block px-6 py-3 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition">聯絡我們</a>
-    </div>
-  </section>
-
+  
 </main>
 <!-- Footer -->
 <footer class="bg-black text-white py-10 text-center text-sm">
