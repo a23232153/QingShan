@@ -3,7 +3,7 @@
 
   export let image: string = "/images/qsbg.jpg"; // 背景圖片路徑
   export let title: string = "歡迎參拜艋舺青山宮";
-  export let subtitle: string = "走進信仰與歷史交織的聖地";
+  export let subtitle: string = "";
   export let height: string = "h-screen"; // 高度，預設全螢幕
 
   let scrollY = -200; // 初始偏移
@@ -18,7 +18,7 @@
 
         if (rect.top < viewHeight && rect.bottom > 0) {
           const ratio = (viewHeight - rect.top) / (viewHeight + rect.height);
-          scrollY = baseY + Math.min(ratio * 400, 800); // 最多移動 400px
+          scrollY = baseY + Math.min(ratio * 420, 1200); // 最多移動 400px
         }
       }
     };
@@ -65,11 +65,13 @@
 
   <!-- Hero 內容 -->
   <div class="relative z-10 flex flex-col items-center justify-center h-full px-6">
-    <!--<h1
+    <!-- <h1
       class="md:text-6xl font-bold leading-tight drop-shadow-xl backdrop-blur-sm border-yellow-500  pb-2 mb-2 py-2 px-2"
     >
       {title}
-    </h1>  -->
-    <p class="mt-8 text-lg md:text-2xl backdrop-blur-sm">{subtitle}</p>
-  </div>
+    </h1>  
+  -->
+    <p class="mt-8 text-lg md:text-2xl ">{subtitle}</p>
+  </div> 
 </section>
+

@@ -285,7 +285,7 @@ const count = images.length;
     </p>
   </SlideInSection>
 
-  <div class="w-full h-[400px] overflow-hidden rounded-xl shadow-lg">
+  <div class="w-full h-[400px] overflow-hidden rounded-xl shadow-lg mb-40">
   <img 
     src="/images/google-map.png" 
     alt="艋舺青山宮地圖" 
@@ -294,7 +294,7 @@ const count = images.length;
   </div>
 
 
-   <!-- grid動畫-->
+   <!-- grid動畫-
    <section class=" place-items-center w-full relative">
     <div class="grid ">
       {#each Gimages as image}
@@ -305,20 +305,28 @@ const count = images.length;
         </figure>
       {/each}
     </div>
-  </section>
+  </section>  -->
 
   <ParallaxSection 
     
     subtitle="歡迎參拜艋舺青山宮"
-    title="" 
     height="h-screen" 
     image="/images/正殿.jpg"
      />
 
      <ParallaxSection 
-    title="" 
+    
     height="h-screen" 
+    image="/images/grid6.jpg"
      />
+
+     <ParallaxSection 
+    
+    height="h-screen" 
+    image="/images/grid8.jpg"
+     />
+
+    
 
 
 
@@ -338,7 +346,7 @@ const count = images.length;
   </section>
   part3.-->
 
-<!--
+
  <div class="relative mt-10">
 
     <LastScene/>
@@ -354,11 +362,14 @@ const count = images.length;
         
         class="relative z-10 flex items-center justify-center w-32 h-32 rounded-full bg-white text-black font-semibold
                 transition-transform duration-500 ease-in-out group-hover:scale-125">
-        前往青山
+        踏進青山
       </a>
     </div>
+
+    <p class="absolute bottom-10 w-full text-center text-black text-sm md:text-base">
+      世新111級 資傳畢展
   </div> 
--->
+
 
 
 
