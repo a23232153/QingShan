@@ -12,7 +12,7 @@
 
   const timelineEvents = [
     {
-      year: '1854',
+      year: '1856',
       title: '青山宮創建',
       description: '青山王首次抵達萬華，成為地方信仰中心，居民開始供奉青山靈安尊王。',
       image: '/images/temple-1854.jpg',
@@ -110,6 +110,7 @@
       class="absolute top-0 left-0 w-full h-[120%] bg-cover bg-center z-0"
       style={`transform: translateY(${scrollY}px); transition: transform 0.1s ease-out; background-image: url('/images/qsbg.jpg');`}
     ></div>
+    
     <!-- Hero  -->  
     <div class="relative z-10 flex flex-col items-center justify-center h-full px-6">
       <h1 class="md:text-6xl font-bold leading-tight drop-shadow-xl backdrop-blur border-yellow-500 border-b-4 pb-2 mb-2 py-2 px-2">
@@ -146,7 +147,7 @@
   <section class="timeline container mx-auto py-16 mb-16 relative flex flex-col">
     <div class="absolute left-1/2 w-1 bg-gray-300 h-full"></div>
     <div class="timeline-item mb-10 ml-8">
-      <h3 class="text-2xl text-white">1882年 - 青山宮創建</h3>
+      <h3 class="text-2xl text-white">1856年 - 青山宮創建</h3>
       <p class="text-gray-300">青山王首次抵達萬華，成為地方信仰中心。</p>
     </div>
 
@@ -173,7 +174,7 @@
 
   <div class="w-full h-[100vh]    text-white flex flex-row gap-10 items-center justify-center px-4">
     <div class="md:w-1/2 px-4 " >
-      <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">靈安尊王</h2>
+      <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">主神：靈安尊王</h2>
       <p class="py-4 text-lg bg-gray-900 border-l-4 border-amber-300 leading-relaxed">
         靈安尊王是艋舺青山宮的主神，據說他是從福建惠安來到臺灣的神明，擁有強大的保護力量。每年青山宮都會舉辦盛大的慶典來慶祝他的誕辰，吸引了成千上萬的信徒和遊客前來參加。
       </p>

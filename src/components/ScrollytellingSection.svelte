@@ -9,7 +9,9 @@
     title: string;
     description: string;
     duration?: number;
+    textClass?: string;
   }> = [];
+
   export let sectionTitle: string = '萬華場景導覽';
   export let showSectionTitle: boolean = true;
   export let autoRotate: boolean = true;
@@ -30,43 +32,45 @@
   // 預設場景（如果沒有傳入 scenes）
   const defaultScenes = [
 
-    {
-      image: '/images/scene1.jpg', 
-      title: '你夠熟悉你的生活周遭嗎?',
-      description: '',
-      duration: 4000
-    },
+    
     {
       image: '/images/scene5.jpg',
-      title: '你穿梭在萬華',
-      description: '',
-      duration: 3000
+      title: '',
+      description: '萬華區曾被稱為艋舺\n為台北最早的開發地區\n人來人往間\n萬般華美的在地信仰\n悄然浮現',
+      duration: 8000,
+      textClass: 'top-30 right-30 items-end text-left' // 右下角
     },
     {
       image: '/images/scene4.jpg',
-      title: '逛著華西街夜市',
-      description: '',
-      duration: 2000
+      title: '',
+      description: '從萬華車站走下\n穿梭在華西街夜市\n看著人潮湧動',
+      duration: 4000,
+      textClass: 'absolute bottom-5 left-1/2 -translate-x-1/2 text-center' // 底部中央
+
+
     },
     {
       image: '/images/scene7.jpg',
-      title: '拜著龍山寺月老',
-      description: '',
-      duration: 1500
+      title: '',
+      description: '走著走著\n抬頭一望\n龍山寺\n這是艋舺人的在地信仰',
+      duration: 2500,
+      textClass: 'bottom-15 right-10 items-end text-left' // 左上
     },
     
     
     {
       image: '/images/scene3.jpg',
-      title: '喝著百年青草茶',
-      description: '',
-      duration: 1000
+      title: '',
+      description: '往旁邊小巷一走\n喝著百年青草茶\n再繼續前行',
+      duration: 1500,
+      textClass: 'absolute bottom-5 left-1/2 -translate-x-1/2 text-center' 
     },
     {
       image: '/images/牌樓.jpg',
-      title: '但你真的了解這片土地嗎？',
-      description: '讓我們帶你認識萬華的靈魂',
-      duration: 10000
+      title: '',
+      description: '看到台北第一街\n艋舺青山宮乍現\n但你真的了解這片土地的在地信仰嗎？',
+      duration: 10000,
+      textClass: 'absolute bottom-5 left-1/2 -translate-x-1/2 text-center' 
     },
    
     
@@ -157,10 +161,22 @@
 
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
             </div>
-            <div class="absolute items-center inset-0 p-8 text-white/50 flex flex-col  justify-end transition-all duration-600 delay-300 {currentSceneIndex === index ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'}">
-              <h4 class="text-3xl md:text-4xl font-black mb-2 drop-shadow-lg tracking-tight">{scene.title}</h4>
-              <p class="text-lg md:text-xl leading-relaxed drop-shadow font-light">{scene.description}</p>
-            </div>
+            <div  
+            class={`absolute  p-8 text-white/80 flex flex-col transition-all duration-600 ${scene.textClass ?? ''}`}
+> <!--文字區域-->
+            <h4 
+              class="whitespace-pre-line text-3xl md:text-3xl font-black mb-2 drop-shadow-lg tracking-tight
+              {index === displayScenes.length - 1 
+                ? (currentSceneIndex === index ? 'translate-y-0 opacity-100 transition-all duration-700' : 'translate-y-5 opacity-0') 
+                : ''}"
+            >
+              {scene.title}
+            </h4>
+            <p class="whitespace-pre-line text-xl md:text-2xl leading-relaxed drop-shadow font-light">
+              {scene.description}
+            </p>
+          </div>
+
           </div>
         {/each}
       </div>

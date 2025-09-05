@@ -15,15 +15,16 @@
 
   import ImgCursor from '../components/ImgCursor.svelte';
   import LastScene from '../components/LastScene.svelte';
+  import ParallaxSection from '../components/ParallaxSection.svelte';
   
   
   let items: (HTMLElement | null)[] = [];
 
   const sceneitems: { text: string; direction: "left" | "right" }[] = [
-  { text: '「萬華，不只是台北最古老的街區」', direction: 'left' },
-  { text: '「它是一座還在呼吸的文化舞台」', direction: 'right' },
-  { text: '「而在這片舞台的中心」', direction: 'left' },
-  { text: '「有一座承載著在地信仰與世代情感的宮廟」', direction: 'right' }
+  { text: '「它是一座還在呼吸的文化舞台」', direction: 'left' },
+  { text: '「 而在這片舞台的中心」', direction: 'right' },
+  { text: '「有一座承載著在地信仰與世代情感的宮廟」', direction: 'left' },
+  { text: '', direction: 'right' }
 ];
   
   let loading = true;
@@ -213,15 +214,23 @@ const count = images.length;
 
 
   
-  <!-- 1. intro section（qingshan hero） -->
+  <!-- 1. 輪播 -->
 <div class="relative blurset w-[100vw] h-[93vh] mt-[7vh]">
   <ScrollytellingSection showIndicator={false} showSectionTitle={false}
     heroHeight="h-[93vh]" heroWidth="w-full" carouselHeight="h-full"/>
 </div>
 
+
+<SlideInSection direction="right" delay={0}>
+    <p class="text-3xl mt-50 md:text-4xl mb-50 font-bold text-yellow-500 leading-tight text-center">
+      讓我們帶你認識萬華的靈魂
+    </p>
+</SlideInSection>
+
 <div class="mb-24 mt-30">
 <ImgCursor/>
 </div>
+
 
 
 
@@ -276,6 +285,14 @@ const count = images.length;
     </p>
   </SlideInSection>
 
+  <div class="w-full h-[400px] overflow-hidden rounded-xl shadow-lg">
+  <img 
+    src="/images/google-map.png" 
+    alt="艋舺青山宮地圖" 
+    class="w-full h-full object-cover rounded-4xl shadow-lg"
+  />
+  </div>
+
 
    <!-- grid動畫-->
    <section class=" place-items-center w-full relative">
@@ -289,6 +306,20 @@ const count = images.length;
       {/each}
     </div>
   </section>
+
+  <ParallaxSection 
+    
+    subtitle="歡迎參拜艋舺青山宮"
+    title="" 
+    height="h-screen" 
+    image="/images/正殿.jpg"
+     />
+
+     <ParallaxSection 
+    title="" 
+    height="h-screen" 
+     />
+
 
 
 
@@ -307,25 +338,29 @@ const count = images.length;
   </section>
   part3.-->
 
-  
-<div class="relative">
+<!--
+ <div class="relative mt-10">
 
-  <LastScene/>
-  <div class="absolute flex items-center justify-center group z-10000 top-1/5 left-1/2 -translate-x-1/2 -translate-y-1/4 ">
-    <!-- 外層灰色圓環 -->
-    <div class="absolute  flex items-center justify-center">
-      <div class="w-40 h-40 rounded-full border border-white"></div>
-    </div>
+    <LastScene/>
 
-    <!-- 按鈕 -->
-    <a href="/qingshan"
+    <div  class="absolute flex items-center justify-center group z-10000 top-1/5 left-1/2 -translate-x-1/2 -translate-y-1/4 ">
       
-      class="relative z-10 flex items-center justify-center w-32 h-32 rounded-full bg-white text-black font-semibold
-              transition-transform duration-500 ease-in-out group-hover:scale-125">
-      前往青山
-    </a>
-  </div>
-</div>
+      <div class="absolute  flex items-center justify-center">
+        <div class="w-40 h-40 rounded-full border border-white"></div>
+      </div>
+
+     
+      <a href="/qingshan"
+        
+        class="relative z-10 flex items-center justify-center w-32 h-32 rounded-full bg-white text-black font-semibold
+                transition-transform duration-500 ease-in-out group-hover:scale-125">
+        前往青山
+      </a>
+    </div>
+  </div> 
+-->
+
+
 
 
 

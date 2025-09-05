@@ -15,11 +15,11 @@
   
     <ul class="flex items-center justify-end gap-4 text-gray-300">
       
-      <li><a href="/qingshan">關於主題</a></li>
+      <li><a href="/qingshan">探索青山</a></li>
       <li><a href="/divi">互動體驗</a></li>
       
       <li><a href="/videos">影音專區 </a></li>
-      <li><a href="/articles"> 感謝專區 </a></li>
+      <li><a href="/articles"> 感謝香油 </a></li>
       
       <li><a href="/team"> 關於我們 </a></li>
       
