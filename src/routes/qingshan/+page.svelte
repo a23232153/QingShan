@@ -3,6 +3,7 @@
   import SlideInSection from '../../components/SlideInSection.svelte';
   import AiChat from '../../components/AIChat.svelte';
   import Gallery from '../../components/Gallery.svelte';
+  import TimeLine from '../../components/TimeLine.svelte';
 
  
 
@@ -190,6 +191,8 @@
   <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-568F87 to-transparent my-16"></div>
 
   <Gallery />
+
+  <TimeLine />
 
 
   <!--青山季

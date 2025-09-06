@@ -1,0 +1,280 @@
+<script>
+    //@ts-nocheck
+    import { onMount } from "svelte";
+
+    let items = [
+        {
+            year: "1914",
+            month: "6月28日",
+            text: "斐迪南大公與其妻子在薩拉耶佛遇刺，引爆第一次世界大戰。",
+            img: "https://www.historyonthenet.com/wp-content/uploads/2016/12/135151-004-0D4D550E.jpg"
+        },
+        {
+            month: "7月5日",
+            text: "奧匈帝國尋求德國支持，德國承諾全力支援。",
+            img: "http://factsforkids.net/wp-content/uploads/2013/09/13.jpg"
+        },
+        {
+            year: "1915",
+            month: "1月2日",
+            text: "俄軍發動喀爾巴阡山攻勢，戰役持續至4月12日。",
+            img: "https://cdn-images-1.medium.com/max/2000/1*tjpdoOeFp6PfczMjqh6JEA.jpeg"
+        },
+        {
+            month: "1月18–19日",
+            text: "雅辛戰役爆發。",
+            img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
+        }
+    ];
+
+    let currentIndex = 0;
+    let track;
+    let itemWidth = 0;
+    let slidesToShow = 2; // 預設顯示 2 個項目
+    let isDragging = false;
+    let startX = 0;
+    let startTime = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+
+    function updateCarousel(animate = true) {
+        const offset = -(itemWidth * currentIndex);
+        track.style.transition = animate
+            ? "transform 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53)"
+            : "none";
+        track.style.transform = `translate3d(${offset}px, 0, 0)`;
+    }
+
+    function next() {
+        if (currentIndex < items.length - slidesToShow) {
+            currentIndex++;
+            updateCarousel();
+        }
+    }
+
+    function prev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    }
+
+    function getPositionX(e) {
+        return e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+    }
+
+    function startDrag(e) {
+        isDragging = true;
+        startX = getPositionX(e);
+        startTime = Date.now();
+        prevTranslate = -(currentIndex * itemWidth);
+        track.style.transition = "none";
+        e.preventDefault();
+    }
+
+    function drag(e) {
+        if (!isDragging) return;
+        const currentX = getPositionX(e);
+        const diff = currentX - startX;
+        currentTranslate = prevTranslate + diff;
+
+        // 限制拖曳範圍
+        const maxTranslate = 0;
+        const minTranslate = -(itemWidth * (items.length - slidesToShow));
+        currentTranslate = Math.min(maxTranslate, Math.max(minTranslate, currentTranslate));
+
+        track.style.transform = `translate3d(${currentTranslate}px, 0, 0)`;
+        e.preventDefault();
+    }
+
+    function endDrag() {
+        if (!isDragging) return;
+        isDragging = false;
+
+        const movedBy = currentTranslate - prevTranslate;
+        const elapsed = Date.now() - startTime;
+        const velocity = movedBy / (elapsed || 1);
+
+        if (movedBy < -itemWidth / 4 || velocity < -0.2) {
+            if (currentIndex < items.length - slidesToShow) currentIndex++;
+        } else if (movedBy > itemWidth / 4 || velocity > 0.2) {
+            if (currentIndex > 0) currentIndex--;
+        }
+
+        updateCarousel(true);
+    }
+
+    function updateSlidesToShow() {
+        const width = window.innerWidth;
+        slidesToShow = width <= 800 ? 1 : 2;
+        currentIndex = Math.min(currentIndex, items.length - slidesToShow);
+        updateCarousel(false);
+    }
+
+    onMount(() => {
+        const updateLayout = () => {
+            itemWidth = track.querySelector(".timeline-item").getBoundingClientRect().width;
+            updateSlidesToShow();
+        };
+        updateLayout();
+        window.addEventListener("resize", updateLayout);
+        return () => window.removeEventListener("resize", updateLayout);
+    });
+</script>
+
+<div class="timeline-carousel">
+    <h1>歷史時間軸</h1>
+
+    <button class="nav prev" on:click={prev} aria-label="前一個時間軸項目">‹</button>
+    <div
+        class="carousel-track"
+        bind:this={track}
+        on:mousedown={startDrag}
+        on:mousemove={drag}
+        on:mouseup={endDrag}
+        on:mouseleave={() => isDragging && endDrag()}
+        on:touchstart={startDrag}
+        on:touchmove={drag}
+        on:touchend={endDrag}
+    >
+        {#each items as item}
+            <div class="timeline-item">
+                <div class="image" style="background-image: url({item.img});"></div>
+                {#if item.year}
+                    <span class="year">{item.year}</span>
+                {:else}
+                    <span class="year placeholder">未知年份</span>
+                {/if}
+                <span class="month">{item.month}</span>
+                <p>{item.text}</p>
+                <a href="#" class="read-more">閱讀更多</a>
+            </div>
+        {/each}
+    </div>
+    <button class="nav next" on:click={next} aria-label="下一個時間軸項目">›</button>
+</div>
+
+<style>
+    .timeline-carousel {
+        position: relative;
+        overflow: hidden;
+        padding: 60px 40px;
+        background-color: #1d1d1e;
+        font-family: "Roboto", sans-serif;
+    }
+
+    h1 {
+        font-size: 46px;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #ffffff;
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        will-change: transform;
+        cursor: grab;
+    }
+
+    .carousel-track:active {
+        cursor: grabbing;
+    }
+
+    .timeline-item {
+        flex: 0 0 calc(100% / var(--slides-to-show, 2)); /* 使用 CSS 變數作為後備 */
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .timeline-item .image {
+        height: 200px;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.85;
+        margin-bottom: 15px;
+        transition: opacity 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    }
+
+    .timeline-item:hover .image {
+        opacity: 1;
+    }
+
+    .year {
+        font-size: 36px;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #ffffff;
+    }
+
+    .year.placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .month {
+        font-size: 12px;
+        color: #b38c52;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+    .read-more {
+        font-size: 12px;
+        color: #b38c52;
+        font-weight: bold;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .read-more::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #b38c52;
+        transition: width 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    }
+
+    .read-more:hover::after {
+        width: 100%;
+    }
+
+    .nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 30px;
+        background: rgba(0, 0, 0, 0.4);
+        border: none;
+        color: #ffffff;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 50%;
+        z-index: 5;
+        transition: background 0.3s;
+    }
+
+    .nav:hover {
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .nav.prev {
+        left: 10px;
+    }
+
+    .nav.next {
+        right: 10px;
+    }
+</style>
