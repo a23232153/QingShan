@@ -175,10 +175,10 @@
       item.dataset.row = `${row}`;
 
       const imgContainer = document.createElement("div");
-      imgContainer.className = "item-image-container";
+      imgContainer.className = "item-image-container hover:scale-110 transition-transform duration-300 ease-in-out";
       
       const img = document.createElement("img");
-      img.className = "item-image w-full h-full object-cover pointer-events-none transition-transform duration-300";
+      img.className = "item-image w-full h-full object-cover pointer-events-none transition-transform duration-300 ";
       img.style.transform = `scale(1)`; // 初始縮放為 1
       img.src = imageUrl;
       img.alt = `Image ${items.indexOf(title) + 1}`;
@@ -220,7 +220,7 @@
       gsap.to(item, {
         x: dx,
         y: dy,
-        scale: (window.innerWidth * settings.expandedScale) / rect.width,
+        scale: (window.innerWidth * settings.expandedScale) / rect.width*0.5,
         zIndex: 10000,
         duration: 0.6,
         ease: "power3.inOut"
@@ -384,6 +384,7 @@
     
   </div>
 
+<!--
   <div class="footer absolute bottom-0 left-0 w-full p-[1.5rem] z-[10000] grid grid-cols-12 gap-[var(--spacing-base)]">
     <div class="coordinates-section col-span-3">
       <p>34.0522° N, 118.2437° W</p>
@@ -395,6 +396,7 @@
       <p>Est. 2025 • Summer Days</p>
     </div>
   </div>
+-->
 
   <div class="container relative w-full h-full" bind:this={canvasElement} style="pointer-events: auto;">
     <div class="overlay fixed inset-0 bg-black pointer-events-none opacity-0 z-[9999]" bind:this={overlayElement}></div>
@@ -409,6 +411,8 @@
     <div class="page-vignette-extreme absolute inset-0"></div>
   </div>
 </main>
+
+
 
 <style>
   :root {
@@ -551,22 +555,31 @@
     transform: translate(0.5rem, -50%);
   }
 
-  .item {
+.item {
     position: absolute;
     cursor: pointer;
     overflow: hidden;
     background-color: #000000;
-    border-radius: var(--border-radius, 0px);
+    border-radius: var(--border-radius, 8px);
+  }.item {
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #000000;
+    border-radius: var(--border-radius, 8px);
   }
 
-  .item-image-container {
+  .item .item-image-container {
     width: 100%;
     height: 100%;
     overflow: hidden;
     position: relative;
+    transform: scale(1); /* 明確初始縮放 */
+    transition: transform 0.3s ease-in-out; /* 平滑放大動畫 */
+    will-change: transform; /* 優化性能 */
   }
 
-  .item-image-container::after {
+  .item .item-image-container::after {
     content: "";
     position: absolute;
     top: 0;
@@ -574,23 +587,35 @@
     right: 0;
     bottom: 0;
     pointer-events: none;
-    box-shadow: inset 0 0 var(--vignette-size, 0px) rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 var(--vignette-size, 20px) rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
     z-index: 1;
   }
 
-  .item img {
+  .item:hover .item-image-container {
+    transform: scale(var(--hover-scale, 1.05)); /* 容器放大 */
+    outline: 2px solid red; /* 調試用：確認 hover 觸發 */
+  }
+
+  .item:hover .item-image-container::after {
+    box-shadow: inset 0 0 calc(var(--vignette-size, 20px) * 1.1) rgba(0, 0, 0, 0.5); /* 陰影適應放大 */
+  }
+
+  .item img.item-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     pointer-events: none;
-    transition: transform 0.3s ease;
+    transform: scale(1); /* 明確初始縮放 */
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
   }
 
-  .item:hover img {
-    transform: scale(var(--hover-scale, 1.05));
+  .item:hover img.item-image {
+    transform: scale(var(--hover-scale, 1.05)); /* 圖片同步放大 */
   }
 
-  .item-caption {
+  .item .item-caption {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -599,7 +624,7 @@
     z-index: 2;
   }
 
-  .item-name {
+  .item .item-name {
     font-family: "PP Neue Montreal", sans-serif;
     color: #ffffff;
     font-size: 12px;
@@ -612,7 +637,85 @@
     height: 16px;
   }
 
-  .item-number {
+  .item .item-number {
+    font-family: "TheGoodMonolith", monospace;
+    color: #888888;
+    font-size: 10px;
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
+    height: 14px;
+  }
+
+  .item .item-image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    transform: scale(1); /* 明確初始縮放 */
+    transition: transform 0.3s ease-in-out; /* 平滑放大動畫 */
+    will-change: transform; /* 優化性能 */
+  }
+
+  .item .item-image-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 var(--vignette-size, 20px) rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+    z-index: 1;
+  }
+
+  .item:hover .item-image-container {
+    transform: scale(var(--hover-scale, 1.05)); /* 容器放大 */
+    outline: 2px solid red; /* 調試用：確認 hover 觸發 */
+  }
+
+  .item:hover .item-image-container::after {
+    box-shadow: inset 0 0 calc(var(--vignette-size, 20px) * 1.1) rgba(0, 0, 0, 0.5); /* 陰影適應放大 */
+  }
+
+  .item img.item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    transform: scale(1); /* 明確初始縮放 */
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+  }
+
+  .item:hover img.item-image {
+    transform: scale(var(--hover-scale, 1.05)); /* 圖片同步放大 */
+  }
+
+  .item .item-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 2;
+  }
+
+  .item .item-name {
+    font-family: "PP Neue Montreal", sans-serif;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    margin-bottom: 2px;
+    position: relative;
+    overflow: hidden;
+    height: 16px;
+  }
+
+  .item .item-number {
     font-family: "TheGoodMonolith", monospace;
     color: #888888;
     font-size: 10px;

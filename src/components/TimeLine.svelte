@@ -4,25 +4,26 @@
 
     let items = [
         {
-            year: "1914",
-            month: "6月28日",
-            text: "斐迪南大公與其妻子在薩拉耶佛遇刺，引爆第一次世界大戰。",
+            year: "1854 緣起",
+            month: "",
+            text: "艋舺在1854年（咸豐4年）發生瘟疫，祖籍泉州府惠安縣漁民，於是特地將惠安青山宮的鄉土守護神——青山靈安尊王神像分靈至艋舺，在舊街（今西園路）鬧區處暫立小祠奉祀，想藉此弭平疫情。隨後由於祂靈驗的神蹟廣為流傳，使得善信日增。",
             img: "https://www.historyonthenet.com/wp-content/uploads/2016/12/135151-004-0D4D550E.jpg"
         },
         {
-            month: "7月5日",
-            text: "奧匈帝國尋求德國支持，德國承諾全力支援。",
+            year: "1856 重建",
+            month: "",
+            text: "由於祂靈驗的神蹟廣為流傳，使得善信日增。1856年建築新廟",
             img: "http://factsforkids.net/wp-content/uploads/2013/09/13.jpg"
         },
         {
-            year: "1915",
-            month: "1月2日",
-            text: "俄軍發動喀爾巴阡山攻勢，戰役持續至4月12日。",
+            year: "2013 祝融之災",
+            month: "11月19日",
+            text: "晚間因電線走火，致使三川殿和左右過水廊的天花、鑿花、雕作等木構件受表層損傷，靈安尊王二祖軟身神像衣袍和鄰近十餘尊神將遭波及",
             img: "https://cdn-images-1.medium.com/max/2000/1*tjpdoOeFp6PfczMjqh6JEA.jpeg"
         },
         {
             month: "1月18–19日",
-            text: "雅辛戰役爆發。",
+            text: "內容",
             img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
         }
     ];
@@ -122,7 +123,7 @@
     });
 </script>
 
-<div class="timeline-carousel">
+<div class="timeline-carousel font-bakudai-lg">
     <h1>歷史時間軸</h1>
 
     <button class="nav prev" on:click={prev} aria-label="前一個時間軸項目">‹</button>
@@ -160,7 +161,7 @@
         overflow: hidden;
         padding: 60px 40px;
         background-color: #1d1d1e;
-        font-family: "Roboto", sans-serif;
+        
     }
 
     h1 {

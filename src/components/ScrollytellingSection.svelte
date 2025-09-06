@@ -38,7 +38,7 @@
       title: '',
       description: '萬華區曾被稱為艋舺\n為台北最早的開發地區\n人來人往間\n萬般華美的在地信仰\n悄然浮現',
       duration: 8000,
-      textClass: 'top-30 right-30 items-end text-left' // 右下角
+      textClass: 'top-30 right-40 items-end text-left' // 右下角
     },
     {
       image: '/images/scene4.jpg',
@@ -53,7 +53,7 @@
       image: '/images/scene7.jpg',
       title: '',
       description: '走著走著\n抬頭一望\n龍山寺\n這是艋舺人的在地信仰',
-      duration: 2500,
+      duration: 3000,
       textClass: 'bottom-15 right-10 items-end text-left' // 左上
     },
     
