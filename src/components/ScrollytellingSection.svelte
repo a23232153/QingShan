@@ -68,7 +68,7 @@
     {
       image: '/images/牌樓.jpg',
       title: '',
-      description: '看到台北第一街\n艋舺青山宮乍現\n但你真的了解這片土地的在地信仰嗎？',
+      description: '看到台北第一街\n艋舺青山宮乍現\n但你真的了解這片土地的在地信仰嗎？',      
       duration: 10000,
       textClass: 'absolute bottom-5 left-1/2 -translate-x-1/2 text-center' 
     },
@@ -143,7 +143,7 @@
 <section bind:this={sectionRef} class="{heroHeight} {heroWidth} bg-black overflow-hidden">
   
     <div class="mx-auto h-full w-full">
-      {#if showSectionTitle}  //標題
+      {#if showSectionTitle}  
         
           <h3 class="text-4xl md:text-5xl font-black text-white text-center  tracking-tight">
             {sectionTitle}
@@ -172,7 +172,7 @@
             >
               {scene.title}
             </h4>
-            <p class="whitespace-pre-line text-xl md:text-2xl leading-relaxed drop-shadow font-light">
+            <p class="whitespace-pre-line text-xl md:text-2xl leading-relaxed drop-shadow font-light z-100000">
               {scene.description}
             </p>
           </div>

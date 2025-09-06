@@ -203,11 +203,12 @@ const count = images.length;
 
 <main class="relative bg-black font-bakudai-md">
 
-  <!--遮罩-->
+  <!--遮罩-
   <div       
-  class="pointer-events-none absolute inset-0 z-[5000]"
+  class="pointer-events-none absolute inset-0 z-5000"
   style="background: linear-gradient(to right, #000, transparent, #000); background-repeat: no-repeat; background-size: 100%; content: '';">
   </div>
+  -->
 
 
 
@@ -226,6 +227,8 @@ const count = images.length;
       讓我們帶你認識萬華的靈魂
     </p>
 </SlideInSection>
+
+
 
 <div class="mb-24 mt-30">
 
