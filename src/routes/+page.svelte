@@ -280,7 +280,7 @@ const count = images.length;
 
 
   <SlideInSection direction="right" delay={0}>
-    <p class="text-3xl mt-[200px] md:text-4xl font-bold text-[#FFF287] leading-tight text-center">
+    <p class="text-3xl mt-50 mb-50 md:text-5xl font-bold text-[#FFF287] leading-tight text-center">
       艋舺青山宮
     </p>
   </SlideInSection>

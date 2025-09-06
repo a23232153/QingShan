@@ -143,31 +143,7 @@
 
 
 
-   <!--時間軸-->
 
-  <section class="timeline container mx-auto py-16 mb-16 relative flex flex-col">
-    <div class="absolute left-1/2 w-1 bg-gray-300 h-full"></div>
-    <div class="timeline-item mb-10 ml-8">
-      <h3 class="text-2xl text-white">1856年 - 青山宮創建</h3>
-      <p class="text-gray-300">青山王首次抵達萬華，成為地方信仰中心。</p>
-    </div>
-
-    <div class="timeline-item mb-10 mr-8 text-right">
-      <h3 class="text-2xl text-white">1920年 - 重建</h3>
-      <p class="text-gray-300">宮廟進行大規模重建，增添龍柱與雕刻。</p>
-    </div>
-
-    <div class="timeline-item mb-10 ml-8">
-      <h3 class="text-2xl text-white">1950年 - 修繕</h3>
-      <p class="text-gray-300">修復屋頂與神像，保持原有風貌。</p>
-    </div>
-
-    <div class="timeline-item mb-10 mr-8 text-right">
-      <h3 class="text-2xl text-white">1980年 - 文物展出</h3>
-      <p class="text-gray-300">宮廟首次舉辦歷史文物展。</p>
-    </div>
-
-  </section>
 
 <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-16"></div>
 
@@ -183,9 +159,26 @@
     </div>
     <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
       <SlideInSection direction="right">
+        <img src="/images/靈安尊王-2.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
+      </SlideInSection>
+    </div>
+  </div>
+
+  <div class="w-full h-[100vh]    text-white flex flex-row gap-10 items-center justify-center px-4">
+
+    <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
+      <SlideInSection direction="right">
         <img src="/images/靈安尊王-1.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div>
+    <div class="md:w-1/2 px-4 " >
+      <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">尊王夫人</h2>
+      <p class="py-4 text-lg bg-gray-900 border-l-4 border-amber-300 leading-relaxed">
+        為尊王之配偶神祇。尊王夫人慈顏端莊，象徵輔佐與護佑之德，常被視為安定家宅、庇佑婚姻與保佑婦女的守護神。
+      </p>
+
+    </div>
+    
   </div>
 
   <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-568F87 to-transparent my-16"></div>
@@ -314,18 +307,5 @@
 
 
 <style>
-  .timeline-item {
-    position: relative;
-    width: 45%;
-  }
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    width: 20px;
-    height: 20px;
-    background: #ff4500;
-    border-radius: 50%;
-    left: calc(50% - 10px);
-  }
+ 
 </style>
