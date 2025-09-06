@@ -139,7 +139,7 @@
     </div>
   </div>
 
-  <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-tw-blue to-transparent my-16"></div>
+  
 
 
 
