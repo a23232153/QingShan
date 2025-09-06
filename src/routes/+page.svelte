@@ -228,7 +228,7 @@ const count = images.length;
 </SlideInSection>
 
 <div class="mb-24 mt-30">
-<ImgCursor/>
+
 </div>
 
 
