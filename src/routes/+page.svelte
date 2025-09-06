@@ -362,7 +362,7 @@ const count = images.length;
         
         class="relative z-10 flex items-center justify-center w-32 h-32 rounded-full bg-white text-black font-semibold
                 transition-transform duration-500 ease-in-out group-hover:scale-125">
-        踏進青山
+        參拜青山
       </a>
     </div>
 
