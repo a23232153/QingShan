@@ -292,7 +292,7 @@ const count = images.length;
   <img 
     src="/images/google-map.png" 
     alt="艋舺青山宮地圖" 
-    class="w-full h-full object-cover rounded-4xl shadow-lg"
+    class="w-full h-full object-contain rounded-4xl shadow-lg "
   />
   </div>
 
@@ -352,9 +352,9 @@ const count = images.length;
 
  <div class="relative mt-10">
 
-    <LastScene/>
+         <LastScene/>  
 
-    <div  class="absolute flex items-center justify-center group z-10000 top-1/5 left-1/2 -translate-x-1/2 -translate-y-1/4 ">
+     <div  class="absolute flex items-center justify-center group z-10000 top-1/5 left-1/2 -translate-x-1/2 -translate-y-1/4 ">
       
       <div class="absolute  flex items-center justify-center">
         <div class="w-40 h-40 rounded-full border border-white"></div>
@@ -364,7 +364,7 @@ const count = images.length;
       <a href="/qingshan"
         
         class="relative z-10 flex items-center justify-center w-32 h-32 rounded-full bg-white text-black font-semibold
-                transition-transform duration-500 ease-in-out group-hover:scale-125">
+                transition-transform duration-500 ease-in-out group-hover:scale-125  hover:text-black">
         參拜青山
       </a>
     </div>
