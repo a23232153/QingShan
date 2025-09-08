@@ -311,8 +311,8 @@ const count = images.length;
   </section>  -->
 
   <ParallaxSection 
-    
-    subtitle="歡迎參拜艋舺青山宮"
+    title="歡迎參拜艋舺青山宮"
+    subtitle=""
     height="h-screen" 
     image="/images/正殿.jpg"
      />
