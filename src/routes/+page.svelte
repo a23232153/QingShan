@@ -201,7 +201,7 @@ const count = images.length;
 
 
 
-<main class="relative bg-black font-bakudai-md">
+<main class="relative bg-black font-bakudai-md min-h-screen overflow-x-hidden">
 
   <!--遮罩-
   <div       
@@ -231,7 +231,7 @@ const count = images.length;
 
 
 <div class="mb-24 mt-30">
-
+  <ImgCursor/>
 </div>
 
 
@@ -349,10 +349,10 @@ const count = images.length;
   </section>
   part3.-->
 
-
+<!--lastScene-->
  <div class="relative mt-10">
 
-         <LastScene/>  
+  <LastScene />
 
      <div  class="absolute flex items-center justify-center group z-10000 top-1/5 left-1/2 -translate-x-1/2 -translate-y-1/4 ">
       
@@ -371,15 +371,8 @@ const count = images.length;
 
     <p class="absolute bottom-10 w-full text-center text-black text-sm md:text-base">
       世新111級 資傳畢展
+    </p>
   </div> 
-
-
-
-
-
-
-
-
 
 </main>
 
@@ -387,23 +380,30 @@ const count = images.length;
 
 
 <style>
+
+  body::-webkit-scrollbar {
+    display: none;
+}
  /* 防止水平滾動 */
  :global(html), :global(body) {
    overflow-x: hidden;
    max-width: 100vw;
+   
+   
  }
 
  :global(main) {
    overflow-x: hidden;
    max-width: 100vw;
  }
+ 
   main {
     
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: white; 這會覆蓋 Introani 的黑色背景，如果 Introani 不完全覆蓋或需要透明則可能出問題 */
+    
     color: black;
     
     

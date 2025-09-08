@@ -188,7 +188,7 @@
 
 <style>
   .wrapper { position: relative; width: 100%; height: 100%; }
-  canvas { display: block; width: 100%; height: 100%; outline: none; }
+  canvas { display: block; width: 100%; height: 120%; outline: none; }
 </style>
 
 <div class="wrapper" bind:this={container}>
