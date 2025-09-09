@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
 
   export let image: string = "/images/qsbg.jpg"; // 背景圖片路徑
-  export let title: string = "歡迎參拜艋舺青山宮";
+  export let title: string = "";
   export let subtitle: string = "";
   export let height: string = "h-screen"; // 高度，預設全螢幕
 

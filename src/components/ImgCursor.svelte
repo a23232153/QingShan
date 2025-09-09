@@ -98,7 +98,7 @@
   <div class="container">
     <div class="projects-container items-center text-center">
       {#each projects as project}
-        <div class="project-item" data-image={project.image}>
+        <div class="project-item items-center text-center" data-image={project.image}>
           <p class="project-title text-white" > {project.title}</p>
           
         </div>
@@ -174,7 +174,9 @@
   .project-item {
     position: relative;
     display: flex;
-    justify-content: flex-start;
+    align-items: center;   /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    
     padding: 0.7rem 0;
     border-bottom: 1px solid rgba(248, 245, 242, 0.1);
     cursor: pointer;
