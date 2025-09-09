@@ -17,15 +17,19 @@
         },
         {
             year:"1904",
-            text:"鼠疫過後，地方為祈求平安，延續祭典並發展出「迎請青山王遶境」，逐漸形成萬華的重要廟會習俗"
+            text:"鼠疫過後，地方為祈求平安，延續祭典並發展出「迎請青山王遶境」，逐漸形成萬華的重要廟會習俗",
+            img: "http://factsforkids.net/wp-content/uploads/2013/09/13.jpg"
+            
         },
         {
             year:"2007",
-            text:"首次選出外籍爐主（法國籍），顯示青山宮信仰的國際化與多元性。"
+            text:"首次選出外籍爐主（法國籍），顯示青山宮信仰的國際化與多元性。",
+            img: "http://factsforkids.net/wp-content/uploads/2013/09/13.jpg"
         },
         {
             year:"2007",
-            text:"首次選出外籍爐主（法國籍），顯示青山宮信仰的國際化與多元性。"
+            text:"首次選出外籍爐主（法國籍），顯示青山宮信仰的國際化與多元性。",
+            img: "http://factsforkids.net/wp-content/uploads/2013/09/13.jpg"
         },
         {
             year: "2013 祝融之災",
