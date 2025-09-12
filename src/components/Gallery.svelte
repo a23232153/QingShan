@@ -20,25 +20,21 @@
   };
 
   // === 資料 ===
-  const items = [
-    "尊王爐","前殿天井","前殿橫梁","正殿虎邊朝中對聯","Void Gaze",
-    "Gravity Sync","Heat Core","Fractal Mirage","天井燈籠","Sonic Horizon",
-    "Dream Circuit","Lunar Mesh","Radiant Dusk","Pixel Drift","Vortex Bloom"
-    
-  ];
-  const imageUrls = [
-    "images/尊王爐.jpg",
-    "images/前殿天井.jpg",
-    "images/前殿橫梁.jpg",
-    "images/正殿虎邊朝中對聯.jpg",
-    "images/正殿匾額.jpg", 
-    "images/龍門.jpg",
-    "images/拜殿牆堵.jpg",
-    "images/天井燈籠.jpg",
-  ];
+  const galleryItems = [
+  { title: "尊王爐", image: "/images/尊王爐.jpg" },
+  { title: "前殿天井", image: "/images/前殿天井.jpg" },
+  { title: "前殿橫梁", image: "/images/前殿橫梁.jpg" },
+  { title: "正殿虎邊朝中對聯", image: "/images/正殿虎邊朝中對聯.jpg" },
+  { title: "正殿匾額", image: "/images/正殿匾額.jpg" },
+  { title: "龍門", image: "/images/龍門.jpg" },
+  { title: "拜殿牆堵", image: "/images/拜殿牆堵.jpg" },
+  { title: "天井燈籠", image: "/images/天井燈籠.jpg" },
+];
+
 
   // === 狀態 ===
   let canvasElement: HTMLDivElement;
+  
   let overlayElement: HTMLDivElement;
   let projectTitleElement: HTMLParagraphElement;
   let vignetteElement: HTMLDivElement;
@@ -54,7 +50,8 @@
 
   let renderedItems: Record<string, HTMLElement> = {};
   let visibleItems = new Set<string>();
-  const itemCount = items.length;
+  const itemCount = galleryItems.length;
+
 
   // === 工具函數 ===
   const itemSizes = [
@@ -124,90 +121,93 @@
     initializeStyles();
 
     // === 虛擬滾動 ===
-    const updateVisibleItems = throttle(() => {
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
-      const buffer = 1;
+    
+  const updateVisibleItems = throttle(() => {
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+  const buffer = 1;
 
-      const startCol = Math.floor((-currentX - viewportWidth / 2) / cellWidth) - buffer;
-      const endCol = Math.ceil((-currentX + viewportWidth * 1.5) / cellWidth) + buffer;
-      const startRow = Math.floor((-currentY - viewportHeight / 2) / cellHeight) - buffer;
-      const endRow = Math.ceil((-currentY + viewportHeight * 1.5) / cellHeight) + buffer;
+  const startCol = Math.floor((-currentX - viewportWidth / 2) / cellWidth) - buffer;
+  const endCol = Math.ceil((-currentX + viewportWidth * 1.5) / cellWidth) + buffer;
+  const startRow = Math.floor((-currentY - viewportHeight / 2) / cellHeight) - buffer;
+  const endRow = Math.ceil((-currentY + viewportHeight * 1.5) / cellHeight) + buffer;
 
-      const newRenderedItems: Record<string, boolean> = {};
+  const newRenderedItems: Record<string, boolean> = {};
 
-      for (let col = startCol; col <= endCol; col++) {
-        for (let row = startRow; row <= endRow; row++) {
-          const key = getItemId(col, row);
-          newRenderedItems[key] = true;
-          if (!renderedItems[key]) {
-            const index = Math.abs((row * 4 + col) % itemCount); // 使用固定 4 欄模式
-            const itemEl = createItemElement(items[index], imageUrls[index % imageUrls.length], col, row);
-            const pos = getItemPosition(col, row);
-            itemEl.style.left = `${pos.x}px`;
-            itemEl.style.top = `${pos.y}px`;
-            canvasElement.appendChild(itemEl);
-            renderedItems[key] = itemEl;
-            visibleItems.add(key);
-          }
-        }
+  const columns = 4; // 固定四欄
+  for (let col = startCol; col <= endCol; col++) {
+    for (let row = startRow; row <= endRow; row++) {
+      const key = getItemId(col, row);
+      newRenderedItems[key] = true;
+      if (!renderedItems[key]) {
+        const index = ((row * columns + col) % galleryItems.length + galleryItems.length) % galleryItems.length;
+
+        const itemEl = createItemElement(galleryItems[index].title, galleryItems[index].image, col, row);
+        const pos = getItemPosition(col, row);
+        itemEl.style.left = `${pos.x}px`;
+        itemEl.style.top = `${pos.y}px`;
+        canvasElement.appendChild(itemEl);
+        renderedItems[key] = itemEl;
+        visibleItems.add(key);
       }
+    }
+  }
 
-      // 移除不在 viewport 的 item
-      for (const key in renderedItems) {
-        if (!newRenderedItems[key]) {
-          const el = renderedItems[key];
-          if (el && el.parentNode) canvasElement.removeChild(el);
-          delete renderedItems[key];
-          visibleItems.delete(key);
-        }
-      }
-    }, 100);
+  // 移除不在 viewport 的 item
+  for (const key in renderedItems) {
+    if (!newRenderedItems[key]) {
+      const el = renderedItems[key];
+      if (el && el.parentNode) canvasElement.removeChild(el);
+      delete renderedItems[key];
+      visibleItems.delete(key);
+    }
+  }
+}, 100);
 
-    // === 建立 item ===
-    const createItemElement = (title: string, imageUrl: string, col: number, row: number) => {
-      const item = document.createElement("div");
-      item.className = "item absolute bg-black cursor-pointer overflow-hidden";
-      const itemSize = getItemSize(row, col);
-      item.style.width = `${itemSize.width}px`;
-      item.style.height = `${itemSize.height}px`;
-      item.style.borderRadius = `${settings.borderRadius}px`;
-      item.dataset.col = `${col}`;
-      item.dataset.row = `${row}`;
+// === 建立 item ===
+const createItemElement = (title: string, imageUrl: string, col: number, row: number) => {
+  const item = document.createElement("div");
+  item.className = "item absolute bg-black cursor-pointer overflow-hidden";
+  const itemSize = getItemSize(row, col);
+  item.style.width = `${itemSize.width}px`;
+  item.style.height = `${itemSize.height}px`;
+  item.style.borderRadius = `${settings.borderRadius}px`;
+  item.dataset.col = `${col}`;
+  item.dataset.row = `${row}`;
 
-      const imgContainer = document.createElement("div");
-      imgContainer.className = "item-image-container hover:scale-110 transition-transform duration-300 ease-in-out";
-      
-      const img = document.createElement("img");
-      img.className = "item-image w-full h-full object-cover pointer-events-none transition-transform duration-300 ";
-      img.style.transform = `scale(1)`; // 初始縮放為 1
-      img.src = imageUrl;
-      img.alt = `Image ${items.indexOf(title) + 1}`;
-      img.onload = () => gsap.to(img, { opacity: 1, duration: 0.3 });
+  const imgContainer = document.createElement("div");
+  imgContainer.className = "item-image-container hover:scale-110 transition-transform duration-300 ease-in-out";
+  
+  const img = document.createElement("img");
+  img.className = "item-image w-full h-full object-cover pointer-events-none transition-transform duration-300 ";
+  img.style.transform = `scale(1)`;
+  img.src = imageUrl; // ✅ 改成 galleryItems[index].image
+  img.alt = title;    // ✅ title
+  img.onload = () => gsap.to(img, { opacity: 1, duration: 0.3 });
 
-      const caption = document.createElement("div");
-      caption.className = "item-caption absolute bottom-0 left-0 w-full p-2 z-2";
-      const nameElement = document.createElement("div");
-      nameElement.className = "item-name";
-      nameElement.textContent = title;
-      const numberElement = document.createElement("div");
-      numberElement.className = "item-number";
-      numberElement.textContent = `#${(items.indexOf(title) + 1).toString().padStart(5, "0")}`;
-      caption.appendChild(nameElement);
-      caption.appendChild(numberElement);
+  const caption = document.createElement("div");
+  caption.className = "item-caption absolute bottom-0 left-0 w-full p-2 z-2";
+  const nameElement = document.createElement("div");
+  nameElement.className = "item-name";
+  nameElement.textContent = title; // ✅ 改成 galleryItems[index].title
+  const numberElement = document.createElement("div");
+  numberElement.className = "item-number";
+  numberElement.textContent = `#${(galleryItems.findIndex(i => i.title === title) + 1).toString().padStart(5, "0")}`;
+  caption.appendChild(nameElement);
+  caption.appendChild(numberElement);
 
-      imgContainer.appendChild(img);
-      item.appendChild(imgContainer);
-      item.appendChild(caption);
+  imgContainer.appendChild(img);
+  item.appendChild(imgContainer);
+  item.appendChild(caption);
 
-      item.addEventListener("click", (e) => {
-        e.stopPropagation();
-        if (expandedItem === item) collapseItem();
-        else expandItem(item, title);
-      });
+  item.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (expandedItem === item) collapseItem();
+    else expandItem(item, title);
+  });
 
-      return item;
-    };
+  return item;
+};
 
     // === 展開與收回 ===
     const expandItem = (item: HTMLElement, title: string) => {
