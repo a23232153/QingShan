@@ -176,10 +176,10 @@ const createItemElement = (title: string, imageUrl: string, col: number, row: nu
   item.dataset.row = `${row}`;
 
   const imgContainer = document.createElement("div");
-  imgContainer.className = "item-image-container hover:scale-110 transition-transform duration-300 ease-in-out";
+  imgContainer.className = "item-image-container hover:scale-130 transition-transform duration-300 ease-in-out md:min-h-[300px] bg-contain";
   
   const img = document.createElement("img");
-  img.className = "item-image w-full h-full object-cover pointer-events-none transition-transform duration-300 ";
+  img.className = "item-image !min-h-[300px] w-full h-full object-cover pointer-events-none transition-transform duration-300 ";
   img.style.transform = `scale(1)`;
   img.src = imageUrl; // ✅ 改成 galleryItems[index].image
   img.alt = title;    // ✅ title
@@ -572,13 +572,20 @@ const createItemElement = (title: string, imageUrl: string, col: number, row: nu
 
   .item .item-image-container {
     width: 100%;
-    height: 100%;
+    
     overflow: hidden;
     position: relative;
     transform: scale(1); /* 明確初始縮放 */
     transition: transform 0.3s ease-in-out; /* 平滑放大動畫 */
     will-change: transform; /* 優化性能 */
   }
+
+  .item-image-container img.item-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
   .item .item-image-container::after {
     content: "";
@@ -680,7 +687,7 @@ const createItemElement = (title: string, imageUrl: string, col: number, row: nu
     box-shadow: inset 0 0 calc(var(--vignette-size, 20px) * 1.1) rgba(0, 0, 0, 0.5); /* 陰影適應放大 */
   }
 
-  .item img.item-image {
+  .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -752,4 +759,6 @@ const createItemElement = (title: string, imageUrl: string, col: number, row: nu
     height: 100%;
     box-shadow: inset 0 0 var(--page-vignette-extreme-size, 0px) var(--page-vignette-extreme-color, rgba(0, 0, 0, 1));
   }
+
+  
 </style>

@@ -26,11 +26,7 @@
             text:"首次選出外籍爐主（法國籍），顯示青山宮信仰的國際化與多元性。",
             img: "http://factsforkids.net/wp-content/uploads/2013/09/13.jpg"
         },
-        {
-            year:"2007",
-            text:"首次選出外籍爐主（法國籍），顯示青山宮信仰的國際化與多元性。",
-            img: "http://factsforkids.net/wp-content/uploads/2013/09/13.jpg"
-        },
+        
         {
             year: "2013 祝融之災",
             month: "11月19日",
@@ -55,12 +51,7 @@
             text: "內容",
             img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
         },
-         {
-            year:"2023" ,
-            month:"1月18–19日",
-            text: "受邀前往日本表演，展現青山宮祭典文化的國際交流",
-            img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
-        },
+         
          {
             year:"2024" ,
             month:"1月18–19日",
@@ -189,7 +180,7 @@
                 {/if}
                 <span class="month">{item.month}</span>
                 <p>{item.text}</p>
-                <a href="#" class="read-more">閱讀更多</a>
+                <a href="#" class="read-more">回顧過往</a>
             </div>
         {/each}
     </div>
@@ -233,7 +224,7 @@
     .timeline-item .image {
         height: 200px;
         border-radius: 10px;
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         opacity: 0.85;
         margin-bottom: 15px;

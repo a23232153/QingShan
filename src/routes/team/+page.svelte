@@ -161,7 +161,7 @@
   });
 </script>
 
-<main class="bg-white font-sans text-white font-bakudai-exlg">
+<main class="bg-white font-sans text-white font-bakudai-md ">
   <!-- Hero Section -->
   <section class="hero-section min-h-screen flex flex-col items-center justify-center relative bg-black">
 
