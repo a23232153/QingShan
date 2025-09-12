@@ -38,10 +38,35 @@
             img: "https://cdn-images-1.medium.com/max/2000/1*tjpdoOeFp6PfczMjqh6JEA.jpeg"
         },
         {
-            month: "1月18–19日",
+            year:"2020" ,
+            month:"1月18–19日",
+            text: "因新冠疫情多數宗教活動停辦，但於青山王祭典前疫情好轉解封，因此決定擴大舉辦，象徵祈安與振興。",
+            img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
+        },
+        {
+            year:"2021" ,
+            month:"1月18–19日",
+            text: "臺北燈節將艋舺青山宮納入展區，展現「無圍牆博物館」特色，吸引國內外參觀者",
+            img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
+        },
+         {
+            year:"2023" ,
+            month:"1月18–19日",
             text: "內容",
             img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
-        }
+        },
+         {
+            year:"2023" ,
+            month:"1月18–19日",
+            text: "受邀前往日本表演，展現青山宮祭典文化的國際交流",
+            img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
+        },
+         {
+            year:"2024" ,
+            month:"1月18–19日",
+            text: "重現百年傳統「詩意閣」，於萬華再度登場，讓青山祭典的文化美學重新展現於世人眼前",
+            img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
+        },
     ];
 
     let currentIndex = 0;

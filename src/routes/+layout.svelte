@@ -1,6 +1,9 @@
 <svelte:head>
-  <!-- 贊助廣告腳本（保留原本） -->
-  <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
+
+
+<link rel="preload" href="/fonts/Bakudai-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+
 
   <!-- ✅ 改為 CDN：GSAP 核心 -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>

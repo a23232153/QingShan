@@ -70,19 +70,7 @@
         scrub: 1,
       },
     });
-    gsap.from('.timeline-point', {
-      scale: 0,
-      stagger: 0.2,
-      duration: 0.5,
-      ease: 'elastic.out(1, 0.3)',
-      scrollTrigger: {
-        trigger: '.timeline',
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: 1,
-      },
-    });
-
+    
     const onScroll = () => {
       // @ts-ignore
       const rect = heroSection.getBoundingClientRect();
@@ -101,7 +89,7 @@
   });
 </script>
 
-<main class="bg-black font-bakudai-lg">
+<main class="bg-black font-bakudai-md">
 
   <AiChat />
 

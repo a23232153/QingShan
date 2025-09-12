@@ -21,19 +21,20 @@
 
   // === 資料 ===
   const items = [
-    "Chromatic Loopscape","Solar Bloom","Neon Handscape","Echo Discs","Void Gaze",
-    "Gravity Sync","Heat Core","Fractal Mirage","Nova Pulse","Sonic Horizon",
-    "Dream Circuit","Lunar Mesh","Radiant Dusk","Pixel Drift","Vortex Bloom",
-    "Shadow Static","Crimson Phase","Retro Cascade","Photon Fold","Zenith Flow"
+    "尊王爐","前殿天井","前殿橫梁","正殿虎邊朝中對聯","Void Gaze",
+    "Gravity Sync","Heat Core","Fractal Mirage","天井燈籠","Sonic Horizon",
+    "Dream Circuit","Lunar Mesh","Radiant Dusk","Pixel Drift","Vortex Bloom"
+    
   ];
   const imageUrls = [
-    "images/slip1.jpg",
-    "https://picsum.photos/300/400?random=2",
-    "https://picsum.photos/300/400?random=3",
-    "https://picsum.photos/300/400?random=4",
-    "https://picsum.photos/300/400?random=5",
-    "https://picsum.photos/300/400?random=6",
-    "https://picsum.photos/300/400?random=7"
+    "images/尊王爐.jpg",
+    "images/前殿天井.jpg",
+    "images/前殿橫梁.jpg",
+    "images/正殿虎邊朝中對聯.jpg",
+    "images/正殿匾額.jpg", 
+    "images/龍門.jpg",
+    "images/拜殿牆堵.jpg",
+    "images/天井燈籠.jpg",
   ];
 
   // === 狀態 ===

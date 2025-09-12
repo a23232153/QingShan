@@ -288,11 +288,11 @@ const count = images.length;
     </p>
   </SlideInSection>
 
-  <div class="w-full h-[400px] overflow-hidden rounded-xl shadow-lg mb-40">
+  <div class="w-full h-[65vh] flex justify-center overflow-hidden rounded-xl shadow-lg mb-40">
   <img 
-    src="/images/google-map.png" 
+    src="/images/google-map.jpg" 
     alt="艋舺青山宮地圖" 
-    class="w-full h-full object-contain rounded-4xl shadow-lg "
+    class="h-[60vh] w-[65vh] object-contain  rounded-full  shadow-lg  "
   />
   </div>
 

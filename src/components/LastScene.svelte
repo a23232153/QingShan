@@ -35,12 +35,14 @@
 
     // Sizing helpers
     function setSize() {
+      if (!container) return;
       const { clientWidth: w, clientHeight: h } = container;
       camera.aspect = w / Math.max(1, h);
       camera.updateProjectionMatrix();
       renderer.setPixelRatio(dpr);
       renderer.setSize(w, h, false);
     }
+
 
     // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
