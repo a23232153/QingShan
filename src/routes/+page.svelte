@@ -104,25 +104,23 @@ const count = images.length;
     }, 4500);
 
 
+  gsap.utils.toArray('.blurani').forEach(el => {
   gsap.fromTo(
-      ".blurani",
-      {
-        filter: "blur(10px)",
-        opacity: 0
+    el as HTMLElement, // 這裡加上型別轉換
+    { filter: "blur(10px)", opacity: 0 },
+    {
+      scrollTrigger: {
+        trigger: el as HTMLElement,
+        start: "top 90%",
+        once: true
       },
-      {
-        scrollTrigger: {
-          trigger: ".blurani",
-          start: "top 70%",
-          once: true
-        },
-        filter: "blur(0px)",
-        opacity: 1,
-        duration: 2,
-        ease: "power2.out",
-        onStart: () => console.log(" blurani started"),
-      }
-    );
+      filter: "blur(0px)",
+      opacity: 1,
+      duration: 2,
+      ease: "power2.out"
+    }
+  );
+});
     
 
     if (gridEl) {
@@ -288,13 +286,23 @@ const count = images.length;
     </p>
   </SlideInSection>
 
-  <div class="w-full h-[65vh] flex justify-center overflow-hidden rounded-xl shadow-lg mb-40">
-  <img 
-    src="/images/google-map.jpg" 
-    alt="艋舺青山宮地圖" 
-    class="h-[60vh] w-[65vh] object-contain  rounded-full  shadow-lg  "
-  />
-  </div>
+
+<div class="blurani mt-16 mb-32 w-full bg-[url('/images/門口.jpg')] bg-cover bg-no-repeat bg-center min-h-[60vh] flex items-center justify-center ">
+      <SlideInSection direction="left" delay={0.25} rootMargin="0px 0px 200px 0px" threshold={0.5}>
+        <div class="text-center ">
+          
+          <div class="w-full absolute  h-[35vh] flex items-end justify-start overflow-hidden rounded-xl shadow-lg ">
+            <img 
+              src="/images/google-map.jpg" 
+              alt="艋舺青山宮地圖" 
+              class="h-full w-[35vh] object-contain rounded-full shadow-lg  "
+            />
+            </div>
+        </div>
+      </SlideInSection>
+</div>
+
+  
 
 
    <!-- grid動畫-
@@ -352,7 +360,7 @@ const count = images.length;
 <!--lastScene-->
  <div class="relative mt-10">
 
-  <LastScene />
+  <LastScene/>
 
      <div  class="absolute flex items-center justify-center group z-10000 top-1/5 left-1/2 -translate-x-1/2 -translate-y-1/4 ">
       

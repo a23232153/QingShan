@@ -176,10 +176,12 @@ const createItemElement = (title: string, imageUrl: string, col: number, row: nu
   item.dataset.row = `${row}`;
 
   const imgContainer = document.createElement("div");
-  imgContainer.className = "item-image-container hover:scale-130 transition-transform duration-300 ease-in-out md:min-h-[300px] bg-contain";
+  imgContainer.className = "item-image-container w-full h-full hover:scale-130 transition-transform duration-300 ease-in-out";
+
   
   const img = document.createElement("img");
-  img.className = "item-image !min-h-[300px] w-full h-full object-cover pointer-events-none transition-transform duration-300 ";
+  img.className = "item-image w-full h-full object-cover pointer-events-none transition-transform duration-300";
+
   img.style.transform = `scale(1)`;
   img.src = imageUrl; // ✅ 改成 galleryItems[index].image
   img.alt = title;    // ✅ title
@@ -572,6 +574,7 @@ const createItemElement = (title: string, imageUrl: string, col: number, row: nu
 
   .item .item-image-container {
     width: 100%;
+    height: 100%;
     
     overflow: hidden;
     position: relative;

@@ -9,6 +9,7 @@
 
   let container; // wrapper div
   let canvas; // WebGL canvas
+  let observer
 
   let cleanup;
 
@@ -22,6 +23,15 @@
     const { mergeGeometries } = await import('three/examples/jsm/utils/BufferGeometryUtils.js');
 
     const gu = { time: { value: 0 } };
+
+    observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      rafId = requestAnimationFrame(renderLoop);
+    } else {
+      cancelAnimationFrame(rafId);
+    }
+  });
+  observer.observe(container);
 
     // Scene basics
     const scene = new THREE.Scene();

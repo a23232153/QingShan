@@ -44,7 +44,7 @@
       image: '/images/scene4.jpg',
       title: '',
       description: '從萬華車站走下\n穿梭在華西街夜市\n看著人潮湧動',
-      duration: 4000,
+      duration: 6000,
       textClass: 'absolute bottom-5 left-1/2 -translate-x-1/2 text-center' // 底部中央
 
 
@@ -53,7 +53,7 @@
       image: '/images/scene7.jpg',
       title: '',
       description: '走著走著\n抬頭一望\n龍山寺\n這是艋舺人的在地信仰',
-      duration: 3000,
+      duration: 4500,
       textClass: 'bottom-15 right-10 items-end text-left' // 左上
     },
     
@@ -62,14 +62,14 @@
       image: '/images/scene3.jpg',
       title: '',
       description: '往旁邊小巷一走\n喝著百年青草茶\n再繼續前行',
-      duration: 1500,
+      duration: 4000,
       textClass: 'absolute bottom-5 left-1/2 -translate-x-1/2 text-center' 
     },
     {
       image: '/images/牌樓.jpg',
       title: '',
       description: '看到台北第一街\n艋舺青山宮乍現\n但你真的了解這片土地的在地信仰嗎？',      
-      duration: 10000,
+      duration: 8000,
       textClass: 'absolute bottom-5 left-1/2 -translate-x-1/2 text-center' 
     },
    
