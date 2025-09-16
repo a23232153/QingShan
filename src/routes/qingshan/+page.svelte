@@ -4,6 +4,7 @@
   import AiChat from '../../components/AIChat.svelte';
   import Gallery from '../../components/Gallery.svelte';
   import TimeLine from '../../components/TimeLine.svelte';
+  import FoldImages from '../../components/FoldImages.svelte';  
 
  
 
@@ -11,38 +12,30 @@
   // @ts-ignore
   let heroSection ;
 
-  const timelineEvents = [
+   const galleryItems = [
     {
-      year: '1856',
-      title: '青山宮創建',
-      description: '青山王首次抵達萬華，成為地方信仰中心，居民開始供奉青山靈安尊王。',
-      image: '/images/temple-1854.jpg',
+      image: "/images/青山會神將.jpg",
+      title: "青山會神將",
+      description: "Taktsang Monastery clings to a cliff 3120 meters above sea level."
     },
     {
-      year: '1920',
-      title: '宮廟重建',
-      description: '青山宮進行大規模重建，增添龍柱與精美雕刻，成為萬華地標。',
-      image: '/images/temple-1920.jpg',
+      image: "/images/義安社.jpg",
+      title: "義安社神將",
+      description: "Taktsang Monastery clings to a cliff 3120 meters above sea level."
     },
     {
-      year: '1960',
-      title: '首次青山王祭',
-      description: '正式舉辦青山王祭，吸引數千信眾參與，成為年度盛事。',
-      image: '/images/festival-1960.jpg',
+      image: "/images/義英社.jpg",
+      title: "義音社神將",
+      description: "Taktsang Monastery clings to a cliff 3120 meters above sea level."
     },
     {
-      year: '1995',
-      title: '文化遺產登錄',
-      description: '青山宮被列為台北市文化遺產，受到政府保護與推廣。',
-      image: '/images/heritage-1995.jpg',
-    },
-    {
-      year: '2020',
-      title: '數位化推廣',
-      description: '青山宮推出線上參拜與活動直播，吸引年輕族群與海外信眾。',
-      image: '/images/digital-2020.jpg',
+      image: "/images/鳳音社.jpg",
+      title: "鳳音社神將",
+      description: "Taktsang Monastery clings to a cliff 3120 meters above sea level."
     },
   ];
+
+ 
   
 
   onMount(() => {
@@ -115,7 +108,7 @@
   <div class="w-full h-[100vh]     text-white flex flex-row gap-10 items-center justify-center px-4">
     <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
       <SlideInSection direction="left">
-        <img src="/images/後殿-1.jpg" alt="青山宮" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
+        <img src="/images/QStemple.jpg" alt="青山宮" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div>
 
@@ -158,7 +151,7 @@
       <SlideInSection direction="right">
         <img src="/images/靈安尊王-1.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
-    </div>
+    </div> 
     <div class="md:w-1/2 px-4 " >
       <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">尊王夫人</h2>
       <p class="py-4 text-lg bg-gray-900 border-l-4 border-amber-300 leading-relaxed">
@@ -166,8 +159,15 @@
       </p>
 
     </div>
-    
   </div>
+
+  <!--  神將介紹
+  <section class="w-[100vw] h-[80vh] flex ">
+    {#each galleryItems as item}
+      <FoldImages image={item.image} title={item.title} description={item.description} />
+    {/each}
+  </section>
+-->
 
   <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-568F87 to-transparent my-16"></div>
 
@@ -176,27 +176,27 @@
   <TimeLine />
 
 
-  <!--青山季
-  <section >
-    <div class="w-full h-[100vh]     text-white flex flex-col gap-10 items-center justify-center px-4 ">
+  
+  <section class="mb-20 w-full h-full" >
+    <div class=" text-white flex flex-col gap-10 items-center justify-center px-4 ">
       
-    <h2 class="text-title font-bakudai-md font-bold ">青山季</h2>
+    <h2 class="text-title font-bakudai-md font-bold pt-10 ">青山祭</h2>
 
-    <div class="md:w-1/2  flex items-center ">
+    <div class="md:w-[50vw]   flex items-center ">
         <SlideInSection direction="right">
-          <img src="/images/t2.jpg" alt="靈安尊王" class="w-full max-h-[60vh] rounded-3xl border-2 border-tw-blue shadow-lg hover:scale-105 transition object-cover " />
+          <img src="/images/青山祭.jpg" alt="青山祭" class="w-full max-h-[50vh] rounded-2xl border-2 border-tw-blue shadow-lg hover:scale-105 transition object-cover " />
         </SlideInSection>
       </div>
 
-      <p class="text-white text-lg leading-relaxed px-30">
-          靈安尊王是艋舺青山宮的主神，據說他是從福建惠安來到臺灣的神明，擁有強大的保護力量。每年青山宮都會舉辦盛大的慶典來慶祝他的誕辰，吸引了成千上萬的信徒和遊客前來參加。
+      <p class="text-white text-lg leading-relaxed pt-5">
+          艋舺青山祭作為每年的重要文化盛事，承載著豐富的歷史意義與當代價值。歷年來，該活動不僅提供了一個展現創意與才華的平臺，更促進了社群的凝聚與文化傳承
       </p>  
     </div>
   </section>
 
-  -->
   
-  <!-- （圖片格） -->
+  
+  <!-- （圖片格） 
   <section class="mt-20 py-20 bg-gray-100">
     <div class="container mx-auto px-4">
       <h2 class="text-6xl font-bold text-center mb-12  font-bakudai-md">青山季</h2>
@@ -216,72 +216,16 @@
       </div>
     </div>
   </section>
+-->
 
 
-  <!-- slip-->
 
-  <section class="w-[100vw] h-[500px] flex ">
-    <div
-        class="group relative flex-1 overflow-hidden transition-all duration-500 hover:flex-[3] flex items-center justify-center">
-        <img src="/images/slip5.jpg"
-            class="w-full  h-full object-cover object-center mx-auto  transition duration-500"
-            alt="Taktsang"
-        />
-        <div class="absolute  items-center justify-center text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div class="text-center px-4">
-            <h2 class="text-xl font-bold mb-2">Taktsang</h2>
-            <p class="text-sm">Taktsang Monastery clings to a cliff 3120 meters above sea level.</p>
-          </div>
-        </div>
-      </div>
 
-      <div
-        class="group relative flex-1 overflow-hidden transition-all duration-500 ease-in-out hover:flex-[3]"
-      >
-        <img  src="/images/slip2.jpg"
-          class="h-full w-full object-cover object-center transition duration-500"
-          alt="Taktsang"
-        />
-          s
-        <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div class="text-center px-4">
-            <h2 class="text-xl font-bold mb-2">Taktsang</h2>
-            <p class="text-sm">Taktsang Monastery clings to a cliff 3120 meters above sea level.</p>
-          </div>
-        </div>
-      </div>
+  <section class="w-[100vw] h-[80vh] flex ">
+    {#each galleryItems as item}
+      <FoldImages image={item.image} title={item.title} description={item.description} />
+    {/each}
 
-      <div
-        class="group relative flex-1 overflow-hidden transition-all duration-500 ease-in-out hover:flex-[3]"
-      >
-        <img
-          src="/images/slip3.jpg"
-          class="h-full w-full object-cover object-center transition duration-500"
-          alt="Taktsang"
-        />
-        <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div class="text-center px-4">
-            <h2 class="text-xl font-bold mb-2">Taktsang</h2>
-            <p class="text-sm">Taktsang Monastery clings to a cliff 3120 meters above sea level.</p>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="group relative flex-1 overflow-hidden transition-all duration-500 ease-in-out hover:flex-[3]"
-      >
-        <img
-          src="/images/slip4.jpg"
-          class="h-full w-full object-cover object-center transition duration-500"
-          alt="Taktsang"
-        />
-        <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div class="text-center px-4">
-            <h2 class="text-xl font-bold mb-2">Taktsang</h2>
-            <p class="text-sm">Taktsang Monastery clings to a cliff 3120 meters above sea level.</p>
-          </div>
-        </div>
-      </div>
   </section>
 
  

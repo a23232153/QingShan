@@ -163,21 +163,17 @@
 
 <main class="bg-white font-sans text-white font-bakudai-md ">
   <!-- Hero Section -->
-  <section class="hero-section min-h-screen flex flex-col items-center justify-center relative bg-black">
+   <div class="absolute inset-0 z-50 bg-black/70"></div>
+  
+  <section class="min-h-screen flex  flex-col items-center justify-center relative bg-[url('/images/牌樓-.jpg')] bg-cover bg- bg-contian p-8 text-center bg-no-repeat">
 
-    <img
-      src="/images/hero-bg.jpg"
-      alt="艋舺青山宮背景"
-      class="absolute inset-0 w-full h-full object-cover opacity-50"
-      loading="lazy"
-      on:error={handleHeroImageError}
-    />
+   
     
-    <div class="relative z-10 text-center px-4 ">
-      <h1 bind:this={heroTitle} class="hero-title text-5xl md:text-6xl font-bold text-[#113F67] mb-6 tracking-wide">
+    <div class="relative z-51 text-center px-4 ">
+      <h1 bind:this={heroTitle} class="hero-title text-5xl md:text-6xl font-bold text-yellow-500      tracking-wide">
         艋舺青山宮：數位傳承文化之美
       </h1>
-      <p bind:this={heroSubtitle} class="hero-subtitle text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">
+      <p bind:this={heroSubtitle} class="hero-subtitle text-xl md:text-2xl text-white mb-8 mt-8 max-w-2xl mx-auto">
         結合科技與傳統，延續萬華信仰
       </p>
       <div class="border-t-4 border-yellow-500 w-24 mx-auto"></div>
@@ -237,10 +233,7 @@
 </main>
 
 <style>
-  .hero-section {
-    background-size: cover;
-    background-position: center;
-  }
+
 
   .intro-section,
   .team-section {

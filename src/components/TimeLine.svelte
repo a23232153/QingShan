@@ -29,32 +29,32 @@
         
         {
             year: "2013 祝融之災",
-            month: "11月19日",
+            month: "",
             text: "晚間因電線走火，致使三川殿和左右過水廊的天花、鑿花、雕作等木構件受表層損傷，靈安尊王二祖軟身神像衣袍和鄰近十餘尊神將遭波及",
             img: "https://cdn-images-1.medium.com/max/2000/1*tjpdoOeFp6PfczMjqh6JEA.jpeg"
         },
         {
             year:"2020" ,
-            month:"1月18–19日",
+            month:"",
             text: "因新冠疫情多數宗教活動停辦，但於青山王祭典前疫情好轉解封，因此決定擴大舉辦，象徵祈安與振興。",
             img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
         },
         {
             year:"2021" ,
-            month:"1月18–19日",
+            month:"",
             text: "臺北燈節將艋舺青山宮納入展區，展現「無圍牆博物館」特色，吸引國內外參觀者",
             img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
         },
          {
             year:"2023" ,
-            month:"1月18–19日",
-            text: "內容",
+            month:"",
+            text: "受邀前往日本表演，展現青山宮祭典文化的國際交流",
             img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
         },
-         
+
          {
             year:"2024" ,
-            month:"1月18–19日",
+            month:"",
             text: "重現百年傳統「詩意閣」，於萬華再度登場，讓青山祭典的文化美學重新展現於世人眼前",
             img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
         },
@@ -178,9 +178,9 @@
                 {:else}
                     <span class="year placeholder">未知年份</span>
                 {/if}
-                <span class="month">{item.month}</span>
-                <p>{item.text}</p>
-                <a href="#" class="read-more">回顧過往</a>
+                <span class="month text-3xl">{item.month}</span>
+                <p class="text-6xl">{item.text}</p>
+                <p class="read-more">回顧過往</p>
             </div>
         {/each}
     </div>
@@ -257,7 +257,7 @@
     }
 
     p {
-        font-size: 14px;
+        font-size: 20px;
         line-height: 1.4;
         margin-bottom: 10px;
         color: #ffffff;

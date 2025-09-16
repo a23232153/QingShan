@@ -1,6 +1,7 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
   import Animation from "../../components/Animation.svelte";
+  import onDestroy from 'svelte';
 
   let firstdraw = false; // 是否第一次擲茭
   let drawstreak = 0; // 擲茭連續次數
