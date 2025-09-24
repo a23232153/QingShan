@@ -149,7 +149,7 @@
 
     <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
       <SlideInSection direction="right">
-        <img src="/images/靈安尊王-1.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
+        <img src="/images/尊王夫人.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div> 
     <div class="md:w-1/2 px-4 " >

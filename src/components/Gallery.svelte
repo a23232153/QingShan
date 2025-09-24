@@ -29,6 +29,8 @@
   { title: "龍門", image: "/images/龍門.jpg" },
   { title: "拜殿牆堵", image: "/images/拜殿牆堵.jpg" },
   { title: "天井燈籠", image: "/images/天井燈籠.jpg" },
+  { title: "門神", image: "/images/門神-1.jpg" },
+  { title: "拜殿龍邊燈籠", image: "/images/拜殿龍邊燈籠.jpg" },
 ];
 
 
