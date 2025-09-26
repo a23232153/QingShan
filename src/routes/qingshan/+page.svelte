@@ -108,14 +108,17 @@
   <div class="w-full h-[100vh]     text-white flex flex-row gap-10 items-center justify-center px-4">
     <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
       <SlideInSection direction="left">
-        <img src="/images/QStemple.jpg" alt="青山宮" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
+        <img src="/images/grid7.jpg" alt="艋舺青山宮" loading="lazy"  class="w-full max-h-[95vh]   rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div>
 
     <div class="md:w-1/2">
         <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">青山宮</h2>
         <p class="text-blue-100 py-4 text-lg leading-relaxed bg-gray-900 border-l-4 border-yellow-300 px-1">
-          艋舺青山宮，位於臺灣臺北市萬華區，為肇建於1856年（咸豐6年）的民間信仰廟宇，主祀青山靈安尊王，現列中華民國直轄市定古蹟。該廟自清治時期以來就是艋舺地區泉州三邑惠安人的王爺信仰中心之一，每逢青山靈安尊王壽誕日前夕都有隆重祭典，正日為萬華區年中慣例迎神中最盛大者，俗稱「艋舺大拜拜」，為臺北市三大廟會之一。現今，艋舺青山宮與艋舺龍山寺、艋舺清水巖、西門町天后宮合稱「艋舺四大廟門」
+             艋舺青山宮位於臺北市萬華區，創建於1856年（清咸豐六年），主祀青山靈安尊王，現為中華民國直轄市定古蹟。自清領時期以來，該廟便是艋舺地區泉州三邑惠安人的王爺信仰中心之一。
+        每年青山靈安尊王聖誕前後，便皆舉行盛大祭典，正日更為萬華年度迎神活動中最為隆重的儀式，民間俗稱「艋舺大拜拜」。時至今日，艋舺青山宮與艋舺龍山寺、艋舺清水巖、臺北天后宮合稱「艋舺四大廟門」。<br><br>
+        相傳惠安漁民自大陸迎請靈安尊王來臺時，當神像途經舊街（今西園路）時，神轎突然無法移動。信徒遂擲筊請示，方得知靈安尊王有意留駐於此。於是，眾人遂於舊街建廟奉祀。<br><br>
+        恰逢當時瘟疫流行，凡誠心向靈安尊王祈求者皆能平安健康，信眾因此日益增多。隨著香火鼎盛，信徒合力籌資興建更為宏偉的廟宇，即為今日的「艋舺青山宮」。」
         </p>
     </div>
   </div>
@@ -134,7 +137,11 @@
     <div class="md:w-1/2 px-4 " >
       <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">主神：靈安尊王</h2>
       <p class="py-4 text-lg bg-gray-900 border-l-4 border-amber-300 leading-relaxed">
-        靈安尊王是艋舺青山宮的主神，據說他是從福建惠安來到臺灣的神明，擁有強大的保護力量。每年青山宮都會舉辦盛大的慶典來慶祝他的誕辰，吸引了成千上萬的信徒和遊客前來參加。
+        艋舺青山宮主祀「青山靈安尊王」，又名「青山王」、「靈安尊王」，原為福建省泉州三邑惠安縣的地方守護神。<br><br>
+
+        相傳清朝咸豐年間(1854年)，艋舺地區爆發嚴重瘟疫，而當時人們相信瘟疫元兇是因為古井裡頭藏了一隻蟾蜍精，其吐出的毒霧使人染疫。<br><br>
+
+        於是為了平息瘟疫，當地漁民特地返至青山宮祖廟(惠安青山宮)迎請一尊「靈安尊王」前至艋舺協助除疫。後來所經之處的瘟疫的確逐漸平息，人們便相信靈安尊王有著「去除邪祟」、「驅除瘟疫」的本領。
       </p>
 
     </div>
@@ -155,7 +162,8 @@
     <div class="md:w-1/2 px-4 " >
       <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">尊王夫人</h2>
       <p class="py-4 text-lg bg-gray-900 border-l-4 border-amber-300 leading-relaxed">
-        為尊王之配偶神祇。尊王夫人慈顏端莊，象徵輔佐與護佑之德，常被視為安定家宅、庇佑婚姻與保佑婦女的守護神。
+         青山宮後殿主祀顯慶王妃。顯慶王妃為靈安尊王的配偶，不僅陪伴主神，也展現柔和與庇佑的一面。<br><br>
+         民間普遍視妃神為守護家庭、福澤子嗣的神祇，因此後殿常成為信眾祈求婚姻和合、子嗣平安的重要所在。
       </p>
 
     </div>

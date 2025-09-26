@@ -24,14 +24,14 @@
         {
             year:"2007",
             text:"首次選出外籍爐主（法國籍），顯示青山宮信仰的國際化與多元性。",
-            img: "http://factsforkids.net/wp-content/uploads/2013/09/13.jpg"
+            img: "/images/news.jpg"
         },
         
         {
             year: "2013 祝融之災",
             month: "",
             text: "晚間因電線走火，致使三川殿和左右過水廊的天花、鑿花、雕作等木構件受表層損傷，靈安尊王二祖軟身神像衣袍和鄰近十餘尊神將遭波及",
-            img: "https://cdn-images-1.medium.com/max/2000/1*tjpdoOeFp6PfczMjqh6JEA.jpeg"
+            img: "/images/火災.jpg"
         },
         {
             year:"2020" ,
@@ -172,7 +172,7 @@
     >
         {#each items as item}
             <div class="timeline-item">
-                <div class="image" style="background-image: url({item.img});"></div>
+                <div class="image bg-no-repeat" style="background-image: url({item.img});"></div>
                 {#if item.year}
                     <span class="year">{item.year}</span>
                 {:else}
