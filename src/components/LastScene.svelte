@@ -199,11 +199,11 @@
 </script>
 
 <style>
-  .wrapper { position: relative; width: 100%; height: 100%; }
-  canvas { display: block; width: 100%; height: 120%; outline: none; }
+  .wrapper { width: 100%; height: 120%; }
+  canvas { display: block; width: 100%; height: 100%; outline: none; }
 </style>
 
-<div class="wrapper" bind:this={container}>
+<div class="wrapper z-2 relative" bind:this={container}>
   <canvas bind:this={canvas} />
   
 </div>

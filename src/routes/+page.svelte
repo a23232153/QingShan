@@ -357,7 +357,7 @@ const count = images.length;
     image="/images/grid8.jpg"
      />
 
-    
+
 
 
 
@@ -377,12 +377,18 @@ const count = images.length;
   </section>
   part3.-->
 
-<!--lastScene-->
- <div class="relative mt-10">
 
+ <div class="relative">
+
+  <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" class="relative z-10">
+    <path fill="white" d="M0,160L60,176C120,192,240,224,360,213.3C480,203,600,149,720,138.7C840,128,960,160,1080,181.3C1200,203,1320,213,1380,218.7L1440,224L1440,320L0,320Z"></path>
+  </svg>
+
+ 
   <LastScene/>
 
-     <div  class="absolute flex items-center justify-center group z-10000 top-1/5 left-1/2 -translate-x-1/2 -translate-y-1/4 ">
+
+     <div  class="absolute flex items-center justify-center group z-10000 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 ">
       
       <div class="absolute  flex items-center justify-center">
         <div class="w-40 h-40 rounded-full border border-white"></div>
@@ -433,12 +439,6 @@ const count = images.length;
     height: 100%;
     
     color: black;
-    
-    
-    
-    
-    
-    z-index: 10; /* 比 Introani 的 z-50 低 */
   }
 
  
