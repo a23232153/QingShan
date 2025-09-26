@@ -16,22 +16,22 @@
     {
       image: "/images/青山會神將.jpg",
       title: "青山會神將",
-      description: "Taktsang Monastery clings to a cliff 3120 meters above sea level."
+      description: "青山會創立推廣艋舺文化，傳承技藝並促進地方繁榮。"
     },
     {
       image: "/images/義安社.jpg",
       title: "義安社神將",
-      description: "Taktsang Monastery clings to a cliff 3120 meters above sea level."
+      description: "義安社於民國10年創立，塑謝范將軍新像，鬢角上梳成特色，成為台北信仰經典。"
     },
     {
       image: "/images/義英社.jpg",
       title: "義音社神將",
-      description: "Taktsang Monastery clings to a cliff 3120 meters above sea level."
+      description: "艋舺義英社，最早由西門市場的魚販組成，青山宮軒社，承載地方文化，日治曾赴日展傳統技藝。."
     },
     {
       image: "/images/鳳音社.jpg",
       title: "鳳音社神將",
-      description: "Taktsang Monastery clings to a cliff 3120 meters above sea level."
+      description: "鳳音社原隸新興宮，抗戰後轉附青山宮，延續原勢力範圍。."
     },
   ];
 
@@ -108,7 +108,7 @@
   <div class="w-full h-[100vh]     text-white flex flex-row gap-10 items-center justify-center px-4">
     <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
       <SlideInSection direction="left">
-        <img src="/images/grid7.jpg" alt="艋舺青山宮" loading="lazy"  class="w-full max-h-[95vh]   rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
+        <img src="/images/門口燈籠.jpg" alt="艋舺青山宮" loading="lazy"  class="w-full max-h-[95vh]   rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div>
 

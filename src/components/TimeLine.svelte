@@ -7,18 +7,18 @@
             year: "1854 緣起",
             month: "",
             text: "艋舺在1854年（咸豐4年）發生瘟疫，惠安縣漁民，於是特地將惠安青山宮的鄉土守護神——青山靈安尊王神像分靈至艋舺，在舊街（今西園路）鬧區處暫立小祠奉祀，想藉此弭平疫情。隨後由於祂靈驗的神蹟廣為流傳，使得善信日增。",
-            img: "https://www.historyonthenet.com/wp-content/uploads/2016/12/135151-004-0D4D550E.jpg"
+            img: "/images/緣起.jpg"
         },
         {
             year: "1856 重建",
             month: "",
             text: "由於祂靈驗的神蹟廣為流傳，使得善信日增。1856年建築新廟",
-            img: "http://factsforkids.net/wp-content/uploads/2013/09/13.jpg"
+            img: "/images/黑白照2.jpg"
         },
         {
             year:"1904",
             text:"鼠疫過後，地方為祈求平安，延續祭典並發展出「迎請青山王遶境」，逐漸形成萬華的重要廟會習俗",
-            img: "http://factsforkids.net/wp-content/uploads/2013/09/13.jpg"
+            img: "/images/黑白青山王祭.jpg"
             
         },
         {
@@ -37,26 +37,26 @@
             year:"2020" ,
             month:"",
             text: "因新冠疫情多數宗教活動停辦，但於青山王祭典前疫情好轉解封，因此決定擴大舉辦，象徵祈安與振興。",
-            img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
+            img: "/images/青山王祭.jpg"
         },
         {
             year:"2021" ,
             month:"",
             text: "臺北燈節將艋舺青山宮納入展區，展現「無圍牆博物館」特色，吸引國內外參觀者",
-            img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
+            img: "/images/燈節.png"
         },
          {
             year:"2023" ,
             month:"",
             text: "受邀前往日本表演，展現青山宮祭典文化的國際交流",
-            img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
+            img: "/images/日本.png"
         },
 
          {
             year:"2024" ,
             month:"",
             text: "重現百年傳統「詩意閣」，於萬華再度登場，讓青山祭典的文化美學重新展現於世人眼前",
-            img: "https://ichef-1.bbci.co.uk/news/660/media/images/72349000/jpg/_72349652_generals-on-horseback.jpg"
+            img: "/images/藝閣.png"
         },
     ];
 
@@ -223,6 +223,7 @@
 
     .timeline-item .image {
         height: 200px;
+        
         border-radius: 10px;
         background-size: contain;
         background-position: center;
