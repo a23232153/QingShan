@@ -30,6 +30,9 @@
   import Header from '../components/Header.svelte';
   export let data;
   import AiChat from '../components/AIChat.svelte';
+  import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+
+  injectSpeedInsights();
 
   
 </script>

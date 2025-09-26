@@ -32,6 +32,7 @@
 		"@azure/core-auth": "latest",
 		"@azure/core-sse": "latest",
 		"@lottiefiles/dotlottie-web": "^0.46.0",
+		"@vercel/speed-insights": "^1.2.0",
 		"dotenv": "^16.5.0",
 		"gsap": "^3.13.0",
 		"imagesloaded": "^5.0.0",
