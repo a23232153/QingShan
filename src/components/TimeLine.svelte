@@ -51,13 +51,13 @@
             text: "受邀前往日本表演，展現青山宮祭典文化的國際交流",
             img: "/images/日本.png"
         },
-
-         {
+        {
             year:"2024" ,
             month:"",
             text: "重現百年傳統「詩意閣」，於萬華再度登場，讓青山祭典的文化美學重新展現於世人眼前",
             img: "/images/藝閣.png"
         },
+         
     ];
 
     let currentIndex = 0;
@@ -195,6 +195,9 @@
         background-color: #1d1d1e;
         
     }
+    .timeline-item .image {
+    opacity: 1 !important;
+}
 
     h1 {
         font-size: 46px;
@@ -219,6 +222,7 @@
         flex: 0 0 calc(100% / var(--slides-to-show, 2)); /* 使用 CSS 變數作為後備 */
         padding: 0 10px;
         box-sizing: border-box;
+        opacity: 1 !important; 
     }
 
     .timeline-item .image {
@@ -232,9 +236,7 @@
         transition: opacity 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
     }
 
-    .timeline-item:hover .image {
-        opacity: 1;
-    }
+    
 
     .year {
         font-size: 36px;

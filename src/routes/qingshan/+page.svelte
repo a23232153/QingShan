@@ -159,6 +159,7 @@
         <img src="/images/尊王夫人.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div> 
+    
     <div class="md:w-1/2 px-4 " >
       <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">尊王夫人</h2>
       <p class="py-4 text-lg bg-gray-900 border-l-4 border-amber-300 leading-relaxed">
