@@ -11,10 +11,11 @@
     { id: 6, title: "牌樓", image: "/images/牌樓.jpg" }
   ];
 
+
   export let defaultBg = "/images/NM.jpg";
 
   let backgroundImage: HTMLImageElement;
-
+ 
   // 初始動畫
   const initialAnimation = () => {
     const items = document.querySelectorAll(".project-item");
@@ -100,7 +101,7 @@
       {#each projects as project}
         <div class="project-item items-center text-center" data-image={project.image}>
           <p class="project-title text-white" > {project.title}</p>
-          
+          <img src={project.image} alt="{project.title} - 艋舺青山宮" class="sr-only" />
         </div>
       {/each}
     </div>
@@ -217,4 +218,17 @@
       gap: 0.5rem;
     }
   }
+
+  .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 </style>
