@@ -1,3 +1,28 @@
+<svelte:head>
+  <!-- SEO 基本 -->
+  <title>艋舺青山宮｜探索青山</title>
+  <meta name="description" content="深入探索艋舺青山宮的歷史與文化，一起了解青山宮的現在與過去。" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="艋舺青山宮｜參拜青山" />
+  <meta property="og:description" content="深入探索艋舺青山宮的歷史與文化，一起了解青山宮的現在與過去。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://qing-shan.vercel.app" />
+  <meta property="og:image" content="https://qing-shan.vercel.app/images/qsbg.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="艋舺青山宮｜沉浸式文化體驗與歷史探索" />
+  <meta name="twitter:description" content="探索艋舺青山宮的歷史與文化，透過沉浸式互動體驗感受古老廟宇的魅力與故事。" />
+  <meta name="twitter:image" content="https://qing-shan.vercel.app/images/qsbg.jpg" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+    {JSON.stringify(schema)}
+  </script>
+</svelte:head>
+
 <script>
   import { onMount } from 'svelte';
   import SlideInSection from '../../components/SlideInSection.svelte';
@@ -5,6 +30,16 @@
   import Gallery from '../../components/Gallery.svelte';
   import TimeLine from '../../components/TimeLine.svelte';
   import FoldImages from '../../components/FoldImages.svelte';  
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "艋舺青山宮介紹",
+    "url": "https://qing-shan.vercel.app/",
+    "description": "深入探索艋舺青山宮的歷史與文化，一起了解青山宮的現在與過去。"
+  };
+
+  
 
  
 
