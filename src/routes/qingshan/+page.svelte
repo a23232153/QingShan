@@ -1,5 +1,5 @@
 <svelte:head>
-  <!-- SEO 基本 -->
+  <!-- SEO  -->
   <title>艋舺青山宮｜探索青山</title>
   <meta name="description" content="深入探索艋舺青山宮的歷史與文化，一起了解青山宮的現在與過去。" />
   <meta name="robots" content="index, follow" />
@@ -35,7 +35,7 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "艋舺青山宮介紹",
-    "url": "https://qing-shan.vercel.app/",
+    "url": "https://qing-shan.vercel.app/qingshan",
     "description": "深入探索艋舺青山宮的歷史與文化，一起了解青山宮的現在與過去。"
   };
 
@@ -51,22 +51,22 @@
     {
       image: "/images/青山會神將.jpg",
       title: "青山會神將",
-      description: "青山會創立推廣艋舺文化，傳承技藝並促進地方繁榮。"
+      description: "艋舺青山宮-青山會創立推廣艋舺文化，傳承技藝並促進地方繁榮。"
     },
     {
       image: "/images/義安社.jpg",
       title: "義安社神將",
-      description: "義安社於民國10年創立，塑謝范將軍新像，鬢角上梳成特色，成為台北信仰經典。"
+      description: "艋舺青山宮-義安社於民國10年創立，塑謝范將軍新像，鬢角上梳成特色，成為台北信仰經典。"
     },
     {
       image: "/images/義英社.jpg",
       title: "義音社神將",
-      description: "艋舺義英社，最早由西門市場的魚販組成，青山宮軒社，承載地方文化，日治曾赴日展傳統技藝。."
+      description: "艋舺青山宮-義英社，最早由西門市場的魚販組成，青山宮軒社，承載地方文化，日治曾赴日展傳統技藝。."
     },
     {
       image: "/images/鳳音社.jpg",
       title: "鳳音社神將",
-      description: "鳳音社原隸新興宮，抗戰後轉附青山宮，延續原勢力範圍。."
+      description: "艋舺青山宮-鳳音社原隸新興宮，抗戰後轉附青山宮，延續原勢力範圍。."
     },
   ];
 
@@ -143,12 +143,12 @@
   <div class="w-full h-[100vh]     text-white flex flex-row gap-10 items-center justify-center px-4">
     <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
       <SlideInSection direction="left">
-        <img src="/images/門口燈籠.jpg" alt="艋舺青山宮" loading="lazy"  class="w-full max-h-[95vh]   rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
+        <img src="/images/門口燈籠.jpg" alt="艋舺青山宮照片" loading="lazy"  class="w-full max-h-[95vh]   rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div>
 
     <div class="md:w-1/2">
-        <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">青山宮</h2>
+        <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">艋舺青山宮</h2>
         <p class="text-blue-100 py-4 text-lg leading-relaxed bg-gray-900 border-l-4 border-yellow-300 px-1">
              艋舺青山宮位於臺北市萬華區，創建於1856年（清咸豐六年），主祀青山靈安尊王，現為中華民國直轄市定古蹟。自清領時期以來，該廟便是艋舺地區泉州三邑惠安人的王爺信仰中心之一。
         每年青山靈安尊王聖誕前後，便皆舉行盛大祭典，正日更為萬華年度迎神活動中最為隆重的儀式，民間俗稱「艋舺大拜拜」。時至今日，艋舺青山宮與艋舺龍山寺、艋舺清水巖、臺北天后宮合稱「艋舺四大廟門」。<br><br>
@@ -176,7 +176,7 @@
 
         相傳清朝咸豐年間(1854年)，艋舺地區爆發嚴重瘟疫，而當時人們相信瘟疫元兇是因為古井裡頭藏了一隻蟾蜍精，其吐出的毒霧使人染疫。<br><br>
 
-        於是為了平息瘟疫，當地漁民特地返至青山宮祖廟(惠安青山宮)迎請一尊「靈安尊王」前至艋舺協助除疫。後來所經之處的瘟疫的確逐漸平息，人們便相信靈安尊王有著「去除邪祟」、「驅除瘟疫」的本領。
+        於是為了平息瘟疫，當地漁民特地返至青山宮祖廟惠安青山宮迎請一尊「靈安尊王」前至艋舺協助除疫。後來所經之處的瘟疫的確逐漸平息，人們便相信靈安尊王有著「去除邪祟」、「驅除瘟疫」的本領。
       </p>
 
     </div>
@@ -198,7 +198,7 @@
     <div class="md:w-1/2 px-4 " >
       <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">尊王夫人</h2>
       <p class="py-4 text-lg bg-gray-900 border-l-4 border-amber-300 leading-relaxed">
-         青山宮後殿主祀顯慶王妃。顯慶王妃為靈安尊王的配偶，不僅陪伴主神，也展現柔和與庇佑的一面。<br><br>
+         艋舺青山宮後殿主祀顯慶王妃。顯慶王妃為靈安尊王的配偶，不僅陪伴主神，也展現柔和與庇佑的一面。<br><br>
          民間普遍視妃神為守護家庭、福澤子嗣的神祇，因此後殿常成為信眾祈求婚姻和合、子嗣平安的重要所在。
       </p>
 
@@ -232,8 +232,8 @@
         </SlideInSection>
       </div>
 
-      <p class="text-white text-lg leading-relaxed pt-5">
-          艋舺青山祭作為每年的重要文化盛事，承載著豐富的歷史意義與當代價值。歷年來，該活動不僅提供了一個展現創意與才華的平臺，更促進了社群的凝聚與文化傳承
+      <p class="text-white text-lg mx-48 leading-relaxed pt-5">
+          艋舺青山祭作為艋舺青山宮每年的重要文化盛事，承載著豐富的歷史意義與當代價值。歷年來，該活動不僅提供了一個展現創意與才華的平臺，更促進了社群的凝聚與文化傳承
       </p>  
     </div>
   </section>

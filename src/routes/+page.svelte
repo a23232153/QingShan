@@ -63,7 +63,7 @@
   let items: (HTMLElement | null)[] = [];
 
   const sceneitems: { text: string; direction: "left" | "right" }[] = [
-  { text: '「它是一座還在呼吸的文化舞台」', direction: 'left' },
+  { text: '「是一座還在呼吸的文化舞台」', direction: 'left' },
   { text: '「 而在這片舞台的中心」', direction: 'right' },
   { text: '「有一座承載著在地信仰與世代情感的宮廟」', direction: 'left' },
   { text: '', direction: 'right' }
@@ -263,9 +263,9 @@ const count = images.length;
 
 
 <SlideInSection direction="right" delay={0}>
-    <p class="text-3xl mt-50 md:text-4xl mb-50 font-bold text-yellow-500 leading-tight text-center">
+    <h1 class="text-3xl mt-50 md:text-4xl mb-50 font-bold text-yellow-500 leading-tight text-center">
       讓我們帶你認識萬華的靈魂
-    </p>
+    </h1>
 </SlideInSection>
 
 
@@ -281,12 +281,10 @@ const count = images.length;
    
 <div class="relative z-10 blurani bg-contain bg-no-repeat min-h-screen w-full overflow-hidden mt-[50vh]">
     
-    <div class="container mx-auto px-4 mt-16 w-full bg-[url('/images/scene9.jpg')] bg-contain bg-no-repeat bg-center min-h-[60vh] flex items-center justify-center">
-      <SlideInSection direction="left" delay={0.25} rootMargin="0px 0px 200px 0px" threshold={0.5}>
-        <div class="text-center mb-16">
-          
-        </div>
-      </SlideInSection>
+    <div class="container mx-auto px-4 mt-16 w-full bg-contain bg-no-repeat bg-center min-h-[60vh] flex items-center justify-center">
+      <img src="/images/scene9.jpg" alt="艋舺青山宮" class="w-[40vw] h-[50vh] container object-contain" />
+
+      
     </div>
 
     
