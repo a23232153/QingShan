@@ -268,7 +268,7 @@ const count = images.length;
     </h1>
 </SlideInSection>
 
-<h1 class="absolute translate-999"> 艋舺青山宮、靈安尊王、暗訪
+<h1 class="sr-only"> 艋舺青山宮、靈安尊王、暗訪
 
 </h1>
 

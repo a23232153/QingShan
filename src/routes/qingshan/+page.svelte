@@ -126,7 +126,16 @@
     <div
       class="absolute top-0 left-0 w-full h-[120%] bg-cover bg-center z-0"
       style={`transform: translateY(${scrollY}px); transition: transform 0.1s ease-out; background-image: url('/images/qsbg.jpg');`}
-    ></div>
+    >
+      <img
+        src="/images/qsbg.jpg"
+        alt="艋舺青山宮正門"
+        title="艋舺青山宮正門燈籠門牌"
+        class="sr-only"
+        loading="lazy"
+      />
+    </div>
+
     
     <!-- Hero  -->  
     <div class="relative z-10 flex flex-col items-center justify-center h-full px-6">

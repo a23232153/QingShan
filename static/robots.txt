@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qing-shan.vercel.app/sitemap.xml
