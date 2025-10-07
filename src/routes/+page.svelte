@@ -263,14 +263,51 @@ const count = images.length;
 
 
 <SlideInSection direction="right" delay={0}>
-    <h1 class="text-3xl mt-50 md:text-4xl mb-50 font-bold text-yellow-500 leading-tight text-center">
+    <h2 class="text-3xl mt-50 md:text-4xl mb-50 font-bold text-yellow-500 leading-tight text-center">
       讓我們帶你認識萬華的靈魂
-    </h1>
+    </h2>
 </SlideInSection>
 
-<h1 class="sr-only"> 艋舺青山宮、靈安尊王、暗訪
-
+<h1 class="sr-only">
+  艋舺青山宮｜萬華靈安尊王信仰與暗訪文化介紹
 </h1>
+
+<h2 class="sr-only">
+  艋舺青山宮的歷史與靈安尊王信仰
+</h2>
+<p>
+  艋舺青山宮位於台北萬華，是清朝時期建立的古廟，主祀靈安尊王。
+  廟宇香火鼎盛，見證了艋舺兩百多年來的繁華與人文歷史。
+  青山王信仰深植於萬華居民心中，融合祈福、文化與信仰傳承。
+</p>
+
+<h2 class="sr-only">
+  艋舺青山宮暗訪文化與青山王遶境活動
+</h2>
+<p>
+  每年農曆十月舉行的「暗訪」儀式，是艋舺青山宮最具代表性的信仰活動。
+  由靈安尊王率領眾神夜巡萬華街區，象徵淨化與守護地方平安。
+  鼓聲與燈火交錯的夜色，展現萬華信仰與民俗文化的獨特魅力。
+</p>
+
+<h2 class="sr-only">
+  萬華艋舺的信仰與庶民文化
+</h2>
+<p>
+  艋舺是台北最早開發的地區之一，擁有豐富的信仰與生活文化。
+  艋舺青山宮作為靈安尊王的信仰中心，串聯起萬華的廟宇、商圈與民俗活動，
+  讓宗教信仰與地方生活緊密相連。
+</p>
+<h2 class="sr-only">
+  艋舺青山宮的文化保存與信仰傳承
+</h2>
+<p>
+  從清代建廟至今，艋舺青山宮持續見證萬華的歷史變遷。
+  靈安尊王信仰與暗訪文化延續兩百年，透過宗教儀式、文物保存與社區參與，
+  成為台北民俗文化的重要象徵。
+</p>
+
+
 
 
 
