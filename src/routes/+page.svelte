@@ -17,10 +17,6 @@
   <meta name="twitter:description" content="探索艋舺青山宮的歷史與靈安尊王的信仰起源，體驗年度暗訪夜巡的神秘氛圍，深入了解艋舺文化與人們心中守護的信念。" />
   <meta name="twitter:image" content="https://qing-shan.vercel.app/images/qsbg.jpg" />
 
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-    {JSON.stringify(schema)}
-  </script>
 
   
   
