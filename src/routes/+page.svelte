@@ -1,12 +1,12 @@
 <svelte:head>
   <!-- 網頁標題與描述 -->
   <title>艋舺青山宮</title>
-  <meta name="description" content="探索艋舺青山宮的歷史與文化，透過沉浸式互動體驗感受古老廟宇的魅力與故事。" />
+  <meta name="description" content="探索艋舺青山宮的歷史與靈安尊王的信仰起源，體驗年度暗訪夜巡的神秘氛圍，深入了解艋舺文化與人們心中守護的信念。" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="艋舺青山宮｜沉浸式文化體驗與歷史探索" />
-  <meta property="og:description" content="探索艋舺青山宮的歷史與文化，透過沉浸式互動體驗感受古老廟宇的魅力與故事。" />
+  <meta property="og:description" content="探索艋舺青山宮的歷史與靈安尊王的信仰起源，體驗年度暗訪夜巡的神秘氛圍，深入了解艋舺文化與人們心中守護的信念。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://qing-shan.vercel.app" />
   <meta property="og:image" content="https://qing-shan.vercel.app/images/qsbg.jpg" />
@@ -14,7 +14,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="艋舺青山宮｜沉浸式文化體驗與歷史探索" />
-  <meta name="twitter:description" content="探索艋舺青山宮的歷史與文化，透過沉浸式互動體驗感受古老廟宇的魅力與故事。" />
+  <meta name="twitter:description" content="探索艋舺青山宮的歷史與靈安尊王的信仰起源，體驗年度暗訪夜巡的神秘氛圍，深入了解艋舺文化與人們心中守護的信念。" />
   <meta name="twitter:image" content="https://qing-shan.vercel.app/images/qsbg.jpg" />
 
   <!-- Schema.org JSON-LD -->
@@ -267,6 +267,10 @@ const count = images.length;
       讓我們帶你認識萬華的靈魂
     </h1>
 </SlideInSection>
+
+<h1 class="absolute translate-999"> 艋舺青山宮、靈安尊王、暗訪
+
+</h1>
 
 
 
