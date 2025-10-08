@@ -18,9 +18,7 @@
   <meta name="twitter:image" content="https://qing-shan.vercel.app/images/qsbg.jpg" />
 
   <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-    {JSON.stringify(schema)}
-  </script>
+  
 </svelte:head>
 
 <script>
