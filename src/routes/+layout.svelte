@@ -40,7 +40,8 @@
   },
   "sameAs": [
     "https://zh.wikipedia.org/wiki/艋舺青山宮",
-    "https://www.facebook.com/qingshanpalace"
+    "https://www.facebook.com/qingshanpalace",
+    "https://www.instagram.com/qingshan.ics/"
   ]
 }
 </script>
