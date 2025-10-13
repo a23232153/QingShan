@@ -18,9 +18,7 @@
       <li><a href="/qingshan">探索青山</a></li>
       <li><a href="/interaction">互動體驗</a></li>
       
-      <li><a href="/videos">影音專區 </a></li>
-      <li><a href="/articles"> 感謝香油 </a></li>
-      
+      <li><a href="/videos">影音專區 </a></li>      
       <li><a href="/team"> 關於我們 </a></li>
       
     </ul>
