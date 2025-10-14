@@ -12,10 +12,10 @@
 
 	const videoCategories = [
 		{
-			title: '正日遶境與千秋祭典 (Main Parade & Festival)',
+			title: '遶境與祭典 (Main Parade & Festival)',
 			videos: [
-				{ id: 1, title: '2024 艋舺青山王祭 正日千秋遶境 完整記錄', youtubeUrl: 'https://www.youtube.com/watch?v=Pp7EchOzBpQ', type: '遶境', imageId: 2 },
-				{ id: 2, title: '靈安尊王 聖誕正日 轎班、神將紀錄', youtubeUrl: 'https://www.youtube.com/watch?v=Pp7EchOzBpQ', type: '紀實', imageId: 3 },
+				{ id: 1, title: '2024 艋舺青山王祭  完整記錄', youtubeUrl: 'https://www.youtube.com/watch?v=Pp7EchOzBpQ', type: '繞境', imageId: 2 },
+				{ id: 2, title: '靈安尊王  轎班、神將紀錄', youtubeUrl: 'https://www.youtube.com/watch?v=Pp7EchOzBpQ', type: '紀實', imageId: 3 },
 				{ id: 3, title: '台北文化盛事：艋舺青山王祭展開｜新聞報導', youtubeUrl: 'https://www.youtube.com/watch?v=54QXEWf0GVk', type: '新聞', imageId: 4 },
 				{ id: 4, title: '艋舺大拜拜：震撼鞭炮與陣頭精選', youtubeUrl: 'https://www.youtube.com/watch?v=Pp7EchOzBpQ', type: '精華', imageId: 5 },
 			]
@@ -46,7 +46,7 @@
 <header class="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent p-4 transition duration-300">
 	<div class="flex justify-between items-center max-w-[1900px] mx-auto">
 		<div class="flex items-center space-x-8">
-			<a href="/" class="text-red-600 text-3xl font-bold tracking-widest">青山宮</a>
+			<a href="/" class="text-red-600 text-3xl font-bold tracking-widest"></a>
 			<nav class="hidden md:flex space-x-6 text-sm">
 				{#each navItems as item}
 					<a href="#" class="text-white hover:text-gray-300 transition duration-150 font-medium">
