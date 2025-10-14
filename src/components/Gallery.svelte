@@ -187,6 +187,7 @@ const createItemElement = (title: string, imageUrl: string, col: number, row: nu
   img.style.transform = `scale(1)`;
   img.src = imageUrl; // ✅ 改成 galleryItems[index].image
   img.alt = title;    // ✅ title
+  img.loading = "lazy";
   img.onload = () => gsap.to(img, { opacity: 1, duration: 0.3 });
 
   const caption = document.createElement("div");

@@ -18,9 +18,6 @@
   <script src="/js/smoothscroll.js"></script>
 
 
-  <script type="module" src="/js/index.js"></script>
-
-
   <script type="application/ld+json">
   
     {JSON.stringify({
