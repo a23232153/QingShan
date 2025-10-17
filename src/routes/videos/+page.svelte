@@ -4,8 +4,8 @@
 
     
     const heroVideo = {
-        title: '艋舺大拜拜：青山王祭典精華',
-        description: '萬華年度盛事，台北三大慶典之一！靈安尊王出巡，暗訪抓鬼，三天兩夜的宮廟文化嘉年華，體驗最在地、最震撼的百年傳統。',
+        title: '艋舺青山宮：活動紀錄與精華',
+        description: '探索艋舺青山宮的精彩活動與文化，觀看完整的記錄與精華影片。',
         youtubeUrl: 'https://www.youtube.com/watch?v=54QXEWf0GVk', // 範例精華影片連結
         placeholderImageId: 1 // 用於佔位圖的 ID
     };
@@ -114,7 +114,8 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
         </div>
 
-        <div class="relative z-10 p-6 md:p-16 lg:p-24 max-w-4xl mb-12">
+        <div class="relative z-10 p-6 md:p-16 lg:p-24 max-w-4xl 
+		">
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 drop-shadow-lg">
                 {heroVideo.title}
             </h1>
@@ -132,7 +133,7 @@
                     立即觀看
                 </button>
                 <a 
-                    href="https://www.qingshantemple.org.tw/" 
+                    href="https://www.mjcsg.org.tw/" 
                     target="_blank" 
                     class="flex items-center px-6 py-3 bg-gray-500/70 text-white font-bold rounded hover:bg-gray-500/50 transition"
                 >
@@ -147,7 +148,7 @@
 
     <section class="relative z-20 -mt-20">
         {#each videoCategories as category}
-            <div class="mb-12 pl-6 md:pl-16 lg:pl-24">
+            <div class=" pl-6 md:pl-16 lg:pl-24">
                 <h2 class="text-2xl font-semibold mb-4 hover:text-gray-300 transition cursor-pointer">
                     {category.title}
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-2 align-text-bottom" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -198,6 +199,8 @@
     </section>
 </main>
 
+<footer class="bg-black h-10" ></footer>
+
 <style>
     /* 自定義滾動條樣式，使其更隱形，類似 Netflix 效果 */
     .custom-scrollbar {
@@ -219,4 +222,7 @@
         z-index: 50;
         box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
+	body {
+    background-color: black;
+}
 </style>

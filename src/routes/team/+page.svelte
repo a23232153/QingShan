@@ -16,7 +16,7 @@
         { name: '臺北永靈會', logo: '/images/臺北永靈會.png' },
         { name: '艋舺青山宮', logo: '/images/艋舺青山宮.png' },
         { name: '艋舺青山宮神將班', logo: '/images/艋舺青山宮神將班.png' },
-        { name: '寶華影像工作室.jpg', logo: '/images/寶華影像工作室.jpg' },
+        { name: '寶華影像工作室', logo: '/images/寶華影像工作室.jpg' },
     ];
   
 
@@ -269,7 +269,7 @@
     <div class="py-8 md:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <h3 class="text-xl font-bold text-center text-gray-300 mb-6 ">
-            贊助單位
+            合作單位
         </h3>
 
         <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-6">
@@ -279,7 +279,7 @@
                     <img 
                         src={sponsor.logo} 
                         alt={sponsor.name} 
-                        class="h-12 sm:h-16 w-auto object-contain mb-2 filter grayscale opacity-75"
+                        class="h-12 sm:h-16 w-auto object-contain mb-2  opacity-75"
                     >
                     
                     <p class="text-xs font-medium text-gray-400 text-center whitespace-nowrap">
