@@ -3,7 +3,7 @@
 
     
     const heroVideo = {
-        title: '青山 Qingshan｜畢展影音紀錄與精華',
+        title: '青山｜畢展影音紀錄與精華',
         description: '用影像保存文化現場，用紀錄回應時間在這裡，我們用鏡頭記錄艋舺的重要文化記憶，包含遶境實況、宮廟專訪、傳統儀式與團隊製作過程。每支影片都是與在地對話的一次嘗試，也是我們對青山精神的回應',
         youtubeUrl: 'https://www.youtube.com/watch?v=54QXEWf0GVk', 
         placeholderImageId: 1 
@@ -45,34 +45,7 @@
 
             ]
         },
-        {
-            title: '校內展覽',
-            videos: [
-                { id: 5, title: '艋舺青山王祭 - 台灣重大祭典與暗訪介紹 (紀錄片)', youtubeUrl: 'https://m.youtube.com/watch?v=R804Gn4L6Qc', type: '紀錄片', imageId: 6 },
-                { id: 6, title: '青山王夜間出巡：暗訪萬華街道緝捕鬼魅', youtubeUrl: 'https://m.youtube.com/watch?v=R804Gn4L6Qc', type: '暗訪', imageId: 7 },
-                { id: 7, title: '神將團幕後花絮：傳承與準備過程', youtubeUrl: 'https://www.youtube.com/watch?v=Pp7EchOzBpQ', type: '花絮', imageId: 8 },
-                { id: 8, title: '青山王主題曲 MV 女唱版', youtubeUrl: 'https://www.youtube.com/watch?v=54QXEWf0GVk', type: '花絮', imageId: 9 },
-            ]
-        },
-        {
-            title: '校外展覽 coming soon',
-            videos: [
-                { id: 5, title: '艋舺青山王祭 - 台灣重大祭典與暗訪介紹 (紀錄片)', youtubeUrl: 'https://m.youtube.com/watch?v=R804Gn4L6Qc', type: '紀錄片', imageId: 6 },
-                { id: 6, title: '青山王夜間出巡：暗訪萬華街道緝捕鬼魅', youtubeUrl: 'https://m.youtube.com/watch?v=R804Gn4L6Qc', type: '暗訪', imageId: 7 },
-                { id: 7, title: '神將團幕後花絮：傳承與準備過程', youtubeUrl: 'https://www.youtube.com/watch?v=Pp7EchOzBpQ', type: '花絮', imageId: 8 },
-                { id: 8, title: '青山王主題曲 MV 女唱版', youtubeUrl: 'https://www.youtube.com/watch?v=54QXEWf0GVk', type: '花絮', imageId: 9 },
-            ]
-        },
-        {
-            title: '青山季 coming soon',
-            videos: [
-                { id: 5, title: '艋舺青山王祭 - 台灣重大祭典與暗訪介紹 (紀錄片)', youtubeUrl: 'https://m.youtube.com/watch?v=R804Gn4L6Qc', type: '紀錄片', imageId: 6 },
-                { id: 6, title: '青山王夜間出巡：暗訪萬華街道緝捕鬼魅', youtubeUrl: 'https://m.youtube.com/watch?v=R804Gn4L6Qc', type: '暗訪', imageId: 7 },
-                { id: 7, title: '神將團幕後花絮：傳承與準備過程', youtubeUrl: 'https://www.youtube.com/watch?v=Pp7EchOzBpQ', type: '花絮', imageId: 8 },
-                { id: 8, title: '青山王主題曲 MV 女唱版', youtubeUrl: 'https://www.youtube.com/watch?v=54QXEWf0GVk', type: '花絮', imageId: 9 },
-            ]
-        }
-    ];
+	]
 
     // 模擬的 Navbar 導航項目
     const navItems = ['首頁', '青山王祭', '暗訪花絮', '宮廟介紹', '最新消息'];
