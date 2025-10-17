@@ -15,11 +15,25 @@
         {
             title: '校內快閃 ',
             videos: [
-                { id: 1, title: '快閃精華', youtubeUrl: 'https://www.youtube.com/shorts/8oGEqxDAPyE', type: '繞境', imageId: 2,
-				imageUrl: '/images/快閃2.png'
-},
+                { 
+                id: 1, 
+                title: '快閃精華', 
+                youtubeUrl: 'https://www.youtube.com/shorts/8oGEqxDAPyE', 
+                type: '繞境', 
+                imageId: 2,
+                imageUrl: '/images/快閃2.png',
+                layout: 'tall' // ✅ 直式
+            }, 
 
-				{ id: 4, title: '完整記錄', youtubeUrl: 'https://www.youtube.com/watch?v=x6oaH50xSRs', type: '繞境', imageId: 1,imageUrl: '/images/校內快閃.png' },
+				{ 
+                id: 4, 
+                title: '完整記錄', 
+                youtubeUrl: 'https://www.youtube.com/watch?v=x6oaH50xSRs', 
+                type: '繞境', 
+                imageId: 1,
+                imageUrl: '/images/校內快閃.png',
+                layout: 'tall' // ✅ 橫式
+            },
 				
                 // 為了展示多個橫式項目，我在此處加入一些假數據
                 { id: 2, title: '快閃活動精選圖片一', youtubeUrl: '#', type: '活動圖集', imageId: 3 },
@@ -88,29 +102,7 @@
     }
 </script>
 
-<header class="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent p-4 transition duration-300">
-    <div class="flex justify-between items-center max-w-[1900px] mx-auto">
-        <div class="flex items-center space-x-8">
-            <a href="/" class="text-red-600 text-3xl font-bold tracking-widest"></a>
-            <nav class="hidden md:flex space-x-6 text-sm">
-                {#each navItems as item}
-                    <a href="#" class="text-white hover:text-gray-300 transition duration-150 font-medium">
-                        {item}
-                    </a>
-                {/each}
-            </nav>
-        </div>
 
-        <div class="flex items-center space-x-4">
-            <button class="text-white hover:text-gray-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-            </button>
-            <div class="h-8 w-8 bg-red-600 rounded cursor-pointer"></div>
-        </div>
-    </div>
-</header>
 
 <main class="bg-black min-h-screen text-white">
     <section class="relative h-[90vh] sm:h-[95vh] flex items-end">
@@ -164,37 +156,41 @@
                 <div class="flex overflow-x-scroll space-x-4 pb-4 custom-scrollbar">
                     {#each category.videos as item, index}
                         
-                        {@const isVerticalVideo = index === 0}
+                        {@const isVerticalVideo = item.layout === 'tall'}
                         
                         <div 
-                            class="{isVerticalVideo ? TALL_CARD_CLASSES : WIDE_CARD_CLASSES} flex-shrink-0 cursor-pointer group transform hover:scale-110 transition-all duration-300 ease-out z-10 {isVerticalVideo ? 'hover:z-50' : 'hover:z-30'} rounded-md overflow-hidden shadow-lg bg-[#141414]"
-                            on:click={() => handleVideoClick(item.youtubeUrl)}
-                            role="button"
-                            tabindex="0"
-                        >
-                            <div class="{isVerticalVideo ? TALL_IMAGE_CLASSES : WIDE_IMAGE_CLASSES} w-full overflow-hidden relative">
-                                <img 
-                                   src="{item.imageUrl || `https://picsum.photos/400/250?random=${item.imageId}`}"  
-                                    alt="{item.title} 縮圖"
-                                    class="w-full h-full object-cover transition duration-300 group-hover:scale-[1.05]"
-                                    loading="lazy"
-                                />
+					class="{isVerticalVideo ? TALL_CARD_CLASSES : WIDE_CARD_CLASSES} 
+						flex-shrink-0 cursor-pointer group transform hover:scale-110 
+						transition-all duration-300 ease-out z-10 
+						{isVerticalVideo ? 'hover:z-50' : 'hover:z-30'} 
+						rounded-md overflow-hidden shadow-lg bg-[#141414]"
+					on:click={() => handleVideoClick(item.youtubeUrl)}
+					role="button"
+					tabindex="0"
+				>
+					<div class="{isVerticalVideo ? TALL_IMAGE_CLASSES : WIDE_IMAGE_CLASSES} w-full overflow-hidden relative">
+						<img 
+							src={item.imageUrl || `https://picsum.photos/400/250?random=${item.imageId}`}  
+							alt={`${item.title} 縮圖`}
+							class="w-full h-full object-cover transition duration-300 group-hover:scale-[1.05]"
+							loading="lazy"
+						/>
 
-                                <div class="absolute inset-0 flex items-center justify-center bg-black/30 {isVerticalVideo ? 'opacity-0 group-hover:opacity-100' : 'opacity-0'} transition-opacity">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                            </div>
+						<div class="absolute inset-0 flex items-center justify-center bg-black/30 {isVerticalVideo ? 'opacity-0 group-hover:opacity-100' : 'opacity-0'} transition-opacity">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+							</svg>
+						</div>
+					</div>
 
-                            <div class="p-3">
-                                <h3 class="text-sm font-semibold truncate text-white">{item.title}</h3>
-                                <div class="flex items-center justify-between text-xs mt-1 text-gray-400">
-                                    <span class="border border-gray-500/50 px-1 rounded-sm">{item.type}</span>
-                                    <span>{isVerticalVideo ? 'YouTube 影片' : '站內圖片'}</span>
-                                </div>
-                            </div>
-                        </div>
+					<div class="p-3">
+						<h3 class="text-sm font-semibold truncate text-white">{item.title}</h3>
+						<div class="flex items-center justify-between text-xs mt-1 text-gray-400">
+							<span class="border border-gray-500/50 px-1 rounded-sm">{item.type}</span>
+						</div>
+					</div>
+				</div>
+
                     {/each}
 
                     <div class="w-6 flex-shrink-0"></div>
