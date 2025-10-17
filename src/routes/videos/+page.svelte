@@ -15,8 +15,12 @@
         {
             title: '校內快閃 ',
             videos: [
-                { id: 1, title: '快閃精華', youtubeUrl: 'https://www.youtube.com/shorts/8oGEqxDAPyE', type: '繞境', imageId: 2 },
-				{ id: 4, title: '完整記錄', youtubeUrl: 'https://www.youtube.com/watch?v=x6oaH50xSRs', type: '繞境', imageId: 1 },
+                { id: 1, title: '快閃精華', youtubeUrl: 'https://www.youtube.com/shorts/8oGEqxDAPyE', type: '繞境', imageId: 2,
+				imageUrl: '/images/快閃2.png'
+},
+
+				{ id: 4, title: '完整記錄', youtubeUrl: 'https://www.youtube.com/watch?v=x6oaH50xSRs', type: '繞境', imageId: 1,imageUrl: '/images/校內快閃.png' },
+				
                 // 為了展示多個橫式項目，我在此處加入一些假數據
                 { id: 2, title: '快閃活動精選圖片一', youtubeUrl: '#', type: '活動圖集', imageId: 3 },
                 { id: 3, title: '快閃活動精選圖片二', youtubeUrl: '#', type: '活動圖集', imageId: 4 },
@@ -38,7 +42,7 @@
             ]
         },
         {
-            title: '校外展覽',
+            title: '校外展覽 coming soon',
             videos: [
                 { id: 5, title: '艋舺青山王祭 - 台灣重大祭典與暗訪介紹 (紀錄片)', youtubeUrl: 'https://m.youtube.com/watch?v=R804Gn4L6Qc', type: '紀錄片', imageId: 6 },
                 { id: 6, title: '青山王夜間出巡：暗訪萬華街道緝捕鬼魅', youtubeUrl: 'https://m.youtube.com/watch?v=R804Gn4L6Qc', type: '暗訪', imageId: 7 },
@@ -47,7 +51,7 @@
             ]
         },
         {
-            title: '青山季',
+            title: '青山季 coming soon',
             videos: [
                 { id: 5, title: '艋舺青山王祭 - 台灣重大祭典與暗訪介紹 (紀錄片)', youtubeUrl: 'https://m.youtube.com/watch?v=R804Gn4L6Qc', type: '紀錄片', imageId: 6 },
                 { id: 6, title: '青山王夜間出巡：暗訪萬華街道緝捕鬼魅', youtubeUrl: 'https://m.youtube.com/watch?v=R804Gn4L6Qc', type: '暗訪', imageId: 7 },
@@ -170,7 +174,7 @@
                         >
                             <div class="{isVerticalVideo ? TALL_IMAGE_CLASSES : WIDE_IMAGE_CLASSES} w-full overflow-hidden relative">
                                 <img 
-                                    src="https://picsum.photos/400/250?random={item.imageId}" 
+                                   src="{item.imageUrl || `https://picsum.photos/400/250?random=${item.imageId}`}"  
                                     alt="{item.title} 縮圖"
                                     class="w-full h-full object-cover transition duration-300 group-hover:scale-[1.05]"
                                     loading="lazy"
