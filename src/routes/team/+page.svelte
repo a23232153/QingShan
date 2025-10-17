@@ -1,7 +1,24 @@
 <script>
-  import { onMount, afterUpdate, tick } from 'svelte';
+  
+  import { onMount, afterUpdate, tick, onDestroy} from 'svelte';
   import { browser } from '$app/environment';
   import SlideInSection from '../../components/SlideInSection.svelte';
+  import {gsap} from 'gsap';
+  
+
+// 贊助商資料陣列
+    const sponsors = [
+        { name: '中華文化總會', logo: '/images/中華文化總會.png'},
+        { name: '台北五帝會', logo: '/images/台北五帝會.jpg' },
+        { name: '台北宣敬堂', logo: '/images/台北宣敬堂.png' },
+        { name: '四湖參天宮', logo: '/images/四湖參天宮.png' },
+        { name: '找廟公', logo: '/images/找廟公.jpg' },
+        { name: '臺北永靈會', logo: '/images/臺北永靈會.png' },
+        { name: '艋舺青山宮', logo: '/images/艋舺青山宮.png' },
+        { name: '艋舺青山宮神將班', logo: '/images/艋舺青山宮神將班.png' },
+        { name: '寶華影像工作室.jpg', logo: '/images/寶華影像工作室.jpg' },
+    ];
+  
 
   // 範例資料
   const goalsText = `
@@ -19,36 +36,47 @@
     傳統信仰的深層意涵與文化價值。
   `;
 
+
+ 
+    
+
+
   const teamMembers = [
     {
       name: '任皓煒',
       role: '專案經理',
       bio: '負責專案規劃與執行',
-      avatar: '/images/team1.jpg'
+      avatar: '/images/m6.png'
     },
     {
       name: '涂凱傑',
       role: '前端工程師',
       bio: '開發互動式網頁',
-      avatar: '/images/team1.jpg'
+      avatar: '/images/m1.png'
     },
     {
       name: '姜兆揚',
       role: '內容總監',
       bio: '負責內容策劃與發想',
-      avatar: '/images/team1.jpg'
+      avatar: '/images/m3.png'
     },
     {
       name: '徐偉峻',
       role: '公關行銷',
       bio: '負責媒體宣傳與活動推廣',
-      avatar: '/images/team1.jpg'
+      avatar: '/images/m2.png'
     },
     {
       name: '黃盛隆',
       role: '美術設計',
       bio: '負責視覺設計與美編',
-      avatar: '/images/team1.jpg'
+      avatar: '/images/m1.png'
+    },
+    {
+      name: '江信昱',
+      role: '指導老師',
+      bio: '負責指導專題方向、提供專業建議並協助完成製作。',
+      avatar: '/images/m5.png'
     }
 
 
@@ -68,6 +96,7 @@
     console.error(`Image load failed: ${failedSrc} at ${new Date().toISOString()}`);
   }
 
+  // @ts-ignore
   // @ts-ignore
   function handleHeroImageError(event) {
     const failedSrc = event.target.getAttribute('src');
@@ -210,7 +239,7 @@
         我們的團隊
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-3  justify-items-center gap-6" data-testid="team-grid">
-        {#each teamMembers.slice(0, 5) as member}
+        {#each teamMembers.slice(0, 6) as member}
           <div class="team-card bg-white text-black p-6 rounded-lg shadow-md border-2 border-[#113F67] hover:border-yellow-500 hover:scale-105 transition transform duration-300 min-h-[300px] w-full md:basis-1/3 md:grow-0 md:shrink-0 max-w-md"
           >
             <img
@@ -230,7 +259,39 @@
 
     </SlideInSection>
   </section>
+  
+
+  
 </main>
+
+<footer class="bg-gray-900 text-white border-t border-gray-700 font-bakudai-md">
+    
+    <div class="py-8 md:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <h3 class="text-xl font-bold text-center text-gray-300 mb-6 ">
+            贊助單位
+        </h3>
+
+        <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-6">
+            {#each sponsors as sponsor}
+                <div class="flex flex-col items-center justify-center p-2 w-32 sm:w-40 transition-transform duration-300 hover:scale-105">
+                    
+                    <img 
+                        src={sponsor.logo} 
+                        alt={sponsor.name} 
+                        class="h-12 sm:h-16 w-auto object-contain mb-2 filter grayscale opacity-75"
+                    >
+                    
+                    <p class="text-xs font-medium text-gray-400 text-center whitespace-nowrap">
+                        {sponsor.name}
+                    </p>
+                </div>
+            {/each}
+        </div>
+        
+        <div class="mt-8 border-t border-gray-800"></div>
+    
+</footer>
 
 <style>
 
