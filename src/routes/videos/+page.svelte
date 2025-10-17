@@ -36,7 +36,7 @@
 				
                 // 為了展示多個橫式項目，我在此處加入一些假數據
                 { id: 2, title: '快閃活動精選圖片集', youtubeUrl: 'https://drive.google.com/drive/folders/1uI1VLql64NWNZBBOaQ9VY9_bsbzuM-rZ', type: '活動圖集', imageId: 3,imageUrl: '/images/快閃4.jpg'},
-                { id: 3, title: '快閃活動精選圖片二', youtubeUrl: '#', type: '活動圖集', imageId: 4 },
+                
                 
             ],
             // 由於模板只迭代 videos 陣列，img 陣列在此處暫不使用，但保留其結構。
@@ -79,12 +79,12 @@
 
     // Helper constants for class names for clarity and easier adjustments
     // 直式 (Vertical / Tall) 樣式
-    const TALL_CARD_CLASSES = 'w-40 md:w-48 h-72';
+    const TALL_CARD_CLASSES = 'w-40 md:w-60 h-80';
     const TALL_IMAGE_CLASSES = 'h-48 md:h-56';
     
     // 橫式 (Horizontal / Wide) 樣式
-    const WIDE_CARD_CLASSES = 'w-full md:w-56 h-auto'; // h-auto 讓高度適應內容
-    const WIDE_IMAGE_CLASSES = 'h-24 md:h-60 ' ;
+    const WIDE_CARD_CLASSES = 'w-full md:w-70 h-auto'; // h-auto 讓高度適應內容
+    const WIDE_IMAGE_CLASSES = 'h-24 md:h-60  ' ;
     
 
     /**
