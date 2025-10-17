@@ -15,7 +15,8 @@
         {
             title: '校內快閃 ',
             videos: [
-                { id: 1, title: '2024 艋舺青山王祭 完整記錄', youtubeUrl: 'https://www.youtube.com/watch?v=Pp7EchOzBpQ', type: '繞境', imageId: 2 },
+                { id: 1, title: '快閃精華', youtubeUrl: 'https://www.youtube.com/shorts/8oGEqxDAPyE', type: '繞境', imageId: 2 },
+				{ id: 4, title: '完整記錄', youtubeUrl: 'https://www.youtube.com/watch?v=x6oaH50xSRs', type: '繞境', imageId: 1 },
                 // 為了展示多個橫式項目，我在此處加入一些假數據
                 { id: 2, title: '快閃活動精選圖片一', youtubeUrl: '#', type: '活動圖集', imageId: 3 },
                 { id: 3, title: '快閃活動精選圖片二', youtubeUrl: '#', type: '活動圖集', imageId: 4 },

@@ -279,7 +279,7 @@
                     <img 
                         src={sponsor.logo} 
                         alt={sponsor.name} 
-                        class="h-12 sm:h-16 w-auto object-contain mb-2  opacity-75"
+                        class="h-12 sm:h-16 w-auto object-contain mb-2" 
                     >
                     
                     <p class="text-xs font-medium text-gray-400 text-center whitespace-nowrap">
