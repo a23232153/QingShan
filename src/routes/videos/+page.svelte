@@ -1,16 +1,15 @@
 <script lang="ts">
-    // 影片資料來源：根據 Google Search 找到的青山宮相關 YouTube 連結
-    // 備註：在實際應用中，您應使用 SvelteKit 的 load function 從外部 API 或文件載入這些資料。
+    
 
     
     const heroVideo = {
-        title: '艋舺青山宮：活動紀錄與精華',
-        description: '探索艋舺青山宮的精彩活動與文化，觀看完整的記錄與精華影片。',
-        youtubeUrl: 'https://www.youtube.com/watch?v=54QXEWf0GVk', // 範例精華影片連結
-        placeholderImageId: 1 // 用於佔位圖的 ID
+        title: '青山 Qingshan｜畢展影音紀錄與精華',
+        description: '用影像保存文化現場，用紀錄回應時間在這裡，我們用鏡頭記錄艋舺的重要文化記憶，包含遶境實況、宮廟專訪、傳統儀式與團隊製作過程。每支影片都是與在地對話的一次嘗試，也是我們對青山精神的回應',
+        youtubeUrl: 'https://www.youtube.com/watch?v=54QXEWf0GVk', 
+        placeholderImageId: 1 
     };
 
-    // 影片類別數據 (已包含您提供的所有資料)
+   
     const videoCategories = [
         {
             title: '校內快閃 ',
@@ -21,7 +20,7 @@
                 youtubeUrl: 'https://www.youtube.com/shorts/8oGEqxDAPyE', 
                 type: '繞境', 
                 imageId: 2,
-                imageUrl: '/images/快閃2.png',
+                imageUrl: '/images/快閃3.png',
                 layout: 'tall' // ✅ 直式
             }, 
 
@@ -36,7 +35,7 @@
             },
 				
                 // 為了展示多個橫式項目，我在此處加入一些假數據
-                { id: 2, title: '快閃活動精選圖片一', youtubeUrl: '#', type: '活動圖集', imageId: 3 },
+                { id: 2, title: '快閃活動精選圖片集', youtubeUrl: 'https://drive.google.com/drive/folders/1uI1VLql64NWNZBBOaQ9VY9_bsbzuM-rZ', type: '活動圖集', imageId: 3,imageUrl: '/images/快閃4.jpg'},
                 { id: 3, title: '快閃活動精選圖片二', youtubeUrl: '#', type: '活動圖集', imageId: 4 },
                 
             ],
@@ -85,7 +84,7 @@
     
     // 橫式 (Horizontal / Wide) 樣式
     const WIDE_CARD_CLASSES = 'w-full md:w-56 h-auto'; // h-auto 讓高度適應內容
-    const WIDE_IMAGE_CLASSES = 'h-24 md:h-32';
+    const WIDE_IMAGE_CLASSES = 'h-24 md:h-60 ' ;
     
 
     /**
