@@ -70,7 +70,7 @@
       name: '黃盛隆',
       role: '美術設計',
       bio: '負責視覺設計與美編',
-      avatar: '/images/m1.png'
+      avatar: '/images/m4.png'
     },
     {
       name: '江信昱',
