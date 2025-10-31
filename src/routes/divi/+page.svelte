@@ -1,28 +1,54 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
   import Animation from "../../components/Animation.svelte";
-  import onDestroy from 'svelte';
+  import { DotLottie } from '@lottiefiles/dotlottie-web';
+  import { onMount } from "svelte";
+  
 
   let firstdraw = false; // 是否第一次擲茭
   let drawstreak = 0; // 擲茭連續次數
   let isVisible = false; // 動畫顯示
+
   let drawButton = true; // 是否顯示擲杯按鈕
   let drawpoem: { id: number; poem: string; explanation: string } | null = null;
   let canStartStreak = false; // 是否進入連續聖杯階段
   let isSolved = false; // 是否已經解籤
   let showResultText = true; // 是否顯示「擲茭結果」
   let lotsShow = false; // 是否顯示「已抽到籤」
-  let result = ""; // 擲茭結果
+
+  type CupResult = "聖杯" | "笑杯" | "陰杯";
+  const options = ["聖杯", "笑杯", "陰杯"] as const;
+
+  let result: "" | CupResult = "";
+  let animationSrc = "";
+
+  const animations: Record<CupResult, string> = {
+    聖杯: "https://lottie.host/60526843-3173-4b77-a85b-596f5173bcc3/Hw2Otbs0Dr.lottie",
+    笑杯: "https://lottie.host/326c0933-792d-434a-a91e-f04eb25c96c2/1doaoqO2eQ.lottie",
+    陰杯: "https://lottie.host/9f5dc1fd-dda9-4aef-85f7-35e91874b24f/37F9JdRra5.lottie",
+  };
+  
+
+  onMount(() => {
+    
+    Object.values(animations).forEach((url) => {
+      fetch(url).then(() => {
+        
+      }).catch((err) => console.error(` 載入動畫失敗：${url}`, err));
+    });
+  });
+
 
   function draw() {
     isVisible = false;
-    const options = ["聖杯", "笑杯", "無杯"];
     result = options[Math.floor(Math.random() * options.length)];
     isVisible = true;
 
+    animationSrc = animations[result];
+
     setTimeout(() => {
       isVisible = false;
-    }, 1500);
+    }, 4500);
 
     if (result === "聖杯") {
       showResultText = false;
@@ -60,7 +86,7 @@
     lotsShow = true;
   }
 
-  // 🔘 按鈕點擊包裝器
+  //  按鈕點擊包裝器
   function handleClick(fn: Function) {
     fn();
   }
@@ -72,7 +98,7 @@
     class="absolute bg-white top-1/2 left-1/2 w-[80vw] h-[80vh] flex items-center justify-center pt-[7vh] z-5 -translate-x-1/2 -translate-y-1/2"
     transition:fade
   >
-    <Animation showAni="https://lottie.host/5c52d7c8-7def-4287-a398-361655323943/iVEVCJUc6y.lottie" />
+    <Animation showAni={animationSrc} />
   </div>
 {/if}
 
