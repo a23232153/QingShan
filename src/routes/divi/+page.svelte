@@ -143,13 +143,13 @@
 
         <!-- 擲茭結果 -->
         {#if showResultText}
-          <h2 class:hidden={!result} class="mt-10">擲茭結果為：{result}</h2>
+          <h2 class:hidden={!result} class="mt-10 font-bold">擲茭結果為：{result}</h2>
         {/if}
 
         <!-- 籤詩提示 -->
         <div class:hidden={!lotsShow}>
           {#if drawpoem}
-            <h2 class="mt-10">您已抽到第 {drawpoem.id} 籤，您必須擲出聖杯方能解籤</h2>
+            <h2 class="mt-10 ">您已抽到第 {drawpoem.id} 籤，您必須擲出聖杯方能解籤</h2>
           {/if}
         </div>
 
@@ -165,11 +165,11 @@
             
             <div class="flex flex-row items-start max-w-4xl space-x-6"> 
               
-              <div class="flex-shrink-0 "> 
+              <div class="flex-shrink-0"> 
                 <img 
                   src="/images/fortune_poem{drawpoem.id}.png" 
                   alt="籤詩圖片" 
-                  class="w-32 h-auto pb-30 rounded-lg shadow-xl " 
+                  class="w-32 h-auto pb-30 rounded-lg  " 
                   loading="lazy" 
                 />
               </div>
