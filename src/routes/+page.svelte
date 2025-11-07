@@ -415,26 +415,6 @@ const count = images.length;
      />
 
 
-
-
-
-
-
-
- <!-- 
-  <section class=" h-[70vh]  flex items-center justify-center bg-black relative overflow-hidden">
-    <SlideInSection direction="right" delay={0.2}>
-      <div class="container mx-auto px-4 md:px-8 text-center">
-        <h2 class="text-4xl md:text-4xl  mb-6 text-white leading-tight tracking-tight">
-          <span class="block fade-in-text !font-black pb-1" style="animation-delay: 0.5s;">在萬華最深的記憶裡</span>
-          <span class="block fade-in-text " style="animation-delay: 0.5s;">還有一位默默守護百年的存在</span>
-        </h2>
-      </div>
-    </SlideInSection>
-  </section>
-  part3.-->
-
-
  <div class="relative">
 
   <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" class="relative z-10">

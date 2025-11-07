@@ -4,6 +4,44 @@
 
   let userInput = '';
   let isLoading = false;
+
+  const lotteryDataString = `
+[
+  // --- 第 1 籤：青山王顯聖 (吉) ---
+  {
+    id: 1,
+    title: "青山王顯聖：逢凶化吉，安然渡過",
+    poem: "青山王顯聖\\n青山巍巍鎮艋舺\\n百年庇佑福滿家\\n信心不懼風波起\\n神威護佑定安然",
+    explanation: "此籤象徵逢凶化吉、安然渡過。只要心存信念，不因困難退縮，即有貴人與神明護持，終能化險為夷。總結：有信心、有貴人，凡事終能逢凶化吉。"
+  },
+
+  // --- 第 2 籤：興華風舺艋 (大吉) ---
+  {
+    id: 2,
+    title: "興華風舺艋：時來運轉，財運亨通",
+    poem: "興華風舺艋\\n百業興隆貿易旺\\n千帆過海財祿長\\n時來運轉風帆起\\n富貴榮華世代昌",
+    explanation: "此籤核心是運勢興隆、財祿長久。象徵時機成熟，事業旺盛，財運暢通。應順勢而為，努力不懈。總結：時來運轉、風帆正起；財運暢旺、家運昌隆。"
+  },
+
+  // --- 第 3 籤：祐庇齊山青 (吉上) ---
+  {
+    id: 3,
+    title: "祐庇齊山青：守正行穩，百事安康",
+    poem: "祐庇齊山青\\n青山神力護四方\\n百福齊臨心自昌\\n宜行正道得吉運\\n百事順遂自安康",
+    explanation: "此籤象徵青山王神威庇佑，行事當守正道，必得福運。貴人助力顯著，凡事平順，財運穩定。總結：守正行穩，百事安康，福運自來。"
+  },
+
+  // --- 第 4 籤：疫除王山青 (中吉) ---
+  {
+    id: 4,
+    title: "疫除王山青：災厄退散，新機將臨",
+    poem: "疫除王山青\\n青疫厄橫行亂世驚\\n青山神令護蒼生\\n退災厄，青山王三度顯聖救艋舺\\n正氣長存，祈願安康\\n雷霆法令，妖邪盡滅\\n福佑人間，萬象更新",
+    explanation: "此籤意味災難漸退、正氣回歸，能轉危為安、逢凶化吉。事業短期仍不穩，宜靜觀其變。為中吉之象，新機將臨。總結：靜以待變，正以禦邪；風波將止，福運再興。"
+  }
+]
+`;
+
+
   let messages = [
   
     {
@@ -15,7 +53,11 @@
         - 靈安尊王: The main deity, believed to originate from Hui'an, Fujian, with strong protective powers. The annual festival celebrates his birthday, attracting thousands.
         - Historical milestones: Founded in 1854, rebuilt in 1920 with dragon pillars, first festival in 1960, listed as cultural heritage in 1995, digitized in 2020 with online worship and livestreams.
         - 青山季: A major annual festival celebrating 靈安尊王, featuring grand ceremonies and attracting many devotees and tourists.
+        以下是艋舺青山宮的籤詩內容與解讀，請參考這些資料來回答與籤詩相關的問題：
+        ${lotteryDataString}
       `
+
+      
     }
   ];
   let AIreply = '';
