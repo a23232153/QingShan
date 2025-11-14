@@ -6,7 +6,7 @@
   export let subtitle: string = "";
   export let height: string = "h-screen"; // 高度，預設全螢幕
 
-  let scrollY = -200; // 初始偏移
+  let scrollY = 0; // 初始偏移
   let heroSection: HTMLElement;
 
   onMount(() => {
@@ -18,12 +18,16 @@
           if (heroSection) {
             const rect = heroSection.getBoundingClientRect();
             const viewHeight = window.innerHeight;
-            const baseY = -200;
+            const baseY = -(rect.height * 0.15);
+            const multiplier = rect.height * 0.4;
+
+            // 3. 最大偏移量也設為相對值 (例如元素高度的 50%)
+            const maxScroll = rect.height * 0.5;
 
             if (rect.top < viewHeight && rect.bottom > 0) {
               const ratio =
                 (viewHeight - rect.top) / (viewHeight + rect.height);
-              scrollY = baseY + Math.min(ratio * 480, 1200);
+              scrollY = baseY + Math.min(ratio * multiplier, maxScroll);
             }
           }
           ticking = false;

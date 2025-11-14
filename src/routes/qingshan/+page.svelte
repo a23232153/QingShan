@@ -274,7 +274,7 @@
 
   <section class="w-[100vw] h-[80vh] flex ">
     {#each galleryItems as item}
-      <FoldImages image={item.image} title={item.title} description={item.description} />
+      <FoldImages image={item.image} title={item.title} description={item.description} link={""} />
     {/each}
 
   </section>

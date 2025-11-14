@@ -2,6 +2,8 @@
   export let image;
   export let title;
   export let description;
+  export let link = "";
+  export let showLink = false;
 </script>
 
 <div
@@ -17,6 +19,9 @@
   >
     <div class="text-center px-4">
       <h2 class="text-xl font-bold mb-2">{title}</h2>
+      {#if showLink}
+      <a href={link}> 點擊查看  </a>
+      {/if}
       <p class="text-sm">{description}</p>
     </div>
   </div>
