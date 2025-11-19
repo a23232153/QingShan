@@ -25,8 +25,8 @@
 
 </script>
 
-<button class="button pt-20" on:click={click}>
-   {label}
+<button class="button pt-20 font-bakudai-lg" on:click={click}>
+   {label} 
 </button>
 
 
@@ -40,7 +40,7 @@
     border: 1px solid #afe6ff;
     box-sizing: border-box;
     color: #00132C;
-    font-family: "Avenir Next LT W01 Bold",sans-serif;
+    
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;

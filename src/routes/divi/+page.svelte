@@ -16,6 +16,7 @@
   let isSolved = false; // 是否已經解籤
   let showResultText = true; // 是否顯示「擲茭結果」
   let lotsShow = false; // 是否顯示「已抽到籤」
+  let insSen = true; // 是否顯示說明文字
 
   type CupResult = "聖杯" | "笑杯" | "陰杯";
   const options = ["聖杯", "笑杯", "陰杯"] as const;
@@ -44,6 +45,7 @@
     isVisible = false;
     result = options[Math.floor(Math.random() * options.length)];
     isVisible = true;
+    insSen = false;
 
     animationSrc = animations[result];
 
@@ -183,9 +185,25 @@
   </div>
 {/if}
 
-<main class="relative  w-full h-screen flex items-center justify-center pt-[7vh] z-0 font-bakudai-md">
-  <div
-    class="absolute top-1/2 left-1/2 w-[80vw] h-[80vh] bg-white rounded-lg shadow-lg items-center flex justify-center -translate-x-1/2 -translate-y-1/2 pt-16"
+
+
+<main class="relative  w-full h-screen flex items-center justify-center pt-[7vh] z-0 font-bakudai-md bg-[url('/images/sketchTemple.png')] bg-cover bg-center
+
+">
+
+      {#if insSen}
+        <div class="absolute inset-x-0 bottom-20 z-50 p-4">
+          <h1 class="
+            text-1xl font-bold text-center 
+            text-black bg-gray-400 rounded-xl shadow-lg 
+            border border-white max-w-3xl mx-auto p-6
+          ">
+            歡迎來到艋舺青山宮求籤解籤互動體驗！透過擲杯來抽取籤詩，請誠心祈求，並根據籤詩的指引，尋找生活中的智慧與啟示。祝您求籤順利，心想事成！
+          </h1>
+        </div>
+      {/if}
+  <div class="absolute top-1/2 left-1/2 w-[80vw] h-[80vh]  bg-white/30 backdrop-blur-sm 
+  rounded-lg shadow-lg items-center flex justify-center -translate-x-1/2 -translate-y-1/2 pt-16"
   >
     {#if !isVisible}
       <div class="flex flex-col items-center w-full">

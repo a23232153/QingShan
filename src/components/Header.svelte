@@ -20,7 +20,7 @@
       
       <li><a href="/videos">影音專區 </a></li>      
       <li><a href="/team"> 關於我們 </a></li>
-      <li><a href="/divi"> 求籤解籤 </a></li>
+      <!-- <li><a href="/divi"> 求籤解籤 </a></li> -->
       
     </ul>
   </div>

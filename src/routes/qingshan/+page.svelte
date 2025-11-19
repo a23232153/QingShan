@@ -58,7 +58,7 @@
     },
     {
       image: "/images/義英社.jpg",
-      title: "義音社神將",
+      title: "義英社神將",
       description: "艋舺青山宮-義英社，最早由西門市場的魚販組成，青山宮軒社，承載地方文化，日治曾赴日展傳統技藝。."
     },
     {
@@ -189,7 +189,7 @@
     </div>
     <div class="md:w-1/2 h-full max-h-full flex items-center justify-end">
       <SlideInSection direction="right">
-        <img src="/images/靈安尊王-2.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
+        <img src="/images/main god.jpg" alt="靈安尊王" class="w-full max-h-[95vh]  rounded-full border-2 border-tw-blue shadow-lg hover:scale-105 transition object-contain " />
       </SlideInSection>
     </div>
   </div>
@@ -203,7 +203,7 @@
     </div> 
     
     <div class="md:w-1/2 px-4 " >
-      <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">尊王夫人</h2>
+      <h2 class="text-3xl font-bold mb-4 text-title font-bakudai-md">顯慶王妃</h2>
       <p class="py-4 text-lg bg-gray-900 border-l-4 border-amber-300 leading-relaxed">
          艋舺青山宮後殿主祀顯慶王妃。顯慶王妃為靈安尊王的配偶，不僅陪伴主神，也展現柔和與庇佑的一面。<br><br>
          民間普遍視妃神為守護家庭、福澤子嗣的神祇，因此後殿常成為信眾祈求婚姻和合、子嗣平安的重要所在。

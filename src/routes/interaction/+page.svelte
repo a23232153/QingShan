@@ -49,9 +49,9 @@
       <div class="w-full sm:w-1/2 md:w-3/10 max-w-sm text-center  ">
         
         <h2 class="
-            text-3xl font-extrabold mb-4 
+            text-3xl font-extrabold mb-4 border-x-4 border-x-gray-300 border-y-4 border-y-gray-300
             p-2 rounded-lg 
-            bg-white/40                 
+            bg-white                
             backdrop-blur-md             
                   ">
             {item.title}
@@ -63,7 +63,7 @@
           <img 
             src={item.image} 
             alt={item.title} 
-            class="w-full max-h-[30vh] object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            class="w-full h-[30vh] object-cover transition-transform duration-300 group-hover:scale-[1.15]"
           />
           
           <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
