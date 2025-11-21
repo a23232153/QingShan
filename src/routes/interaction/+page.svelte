@@ -58,6 +58,8 @@
         </h2>
 
         <a href={item.link} 
+           target="_blank"
+           rel="noopener noreferrer"
            class="block relative overflow-hidden rounded-lg shadow-xl group cursor-pointer"
         >
           <img 

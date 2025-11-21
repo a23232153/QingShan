@@ -160,75 +160,77 @@
 
   
 </script>
+<main class="font-bakudai-md">
 
-<!-- 右下角觸發按鈕 -->
-<button
-  on:click={toggleChat}
-  class="fixed bottom-4 right-4 z-[1000] bg-yellow-500 text-black p-4 rounded-full shadow-lg hover:bg-yellow-600 transition transform hover:scale-105"
-  title="開啟客服機器人"
-> 
-  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-  </svg>
-</button>
+    <!-- 右下角觸發按鈕 -->
+    <button
+      on:click={toggleChat}
+      class="fixed bottom-4 right-4 z-[1000] bg-yellow-500 text-black p-4 rounded-full shadow-lg hover:bg-yellow-600 transition transform hover:scale-105"
+      title="開啟客服機器人"
+    > 
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+      </svg>
+    </button>
 
-<!-- 聊天視窗 -->
-{#if isOpen}
-  <div
-    transition:fade={{ duration: 300 }}
-    class="fixed bottom-16 right-4 z-[1000] w-[300px] h-[400px] bg-gray-900 rounded-lg shadow-xl flex flex-col overflow-hidden"
-  >
-    <!-- 標題與關閉按鈕 -->
-    <div class="bg-yellow-500 text-black p-3 flex justify-between items-center">
-      <h3 class="font-bold">青山宮客服</h3>
-      <button on:click={toggleChat} class="text-black hover:text-gray-700">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
+    <!-- 聊天視窗 -->
+    {#if isOpen}
+      <div
+        transition:fade={{ duration: 300 }}
+        class="fixed bottom-16 right-4 z-[1000] w-[300px] h-[400px] bg-gray-900 rounded-lg shadow-xl flex flex-col overflow-hidden"
+      >
+        <!-- 標題與關閉按鈕 -->
+        <div class="bg-yellow-500 text-black p-3 flex justify-between items-center">
+          <h3 class="font-bold">青山宮客服</h3>
+          <button on:click={toggleChat} class="text-black hover:text-gray-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
 
-    <!-- 訊息顯示區 -->
-    <div class="flex-1 p-4 overflow-y-auto">
-      {#each messages.filter(m => m.role !== 'system') as message}
-        <div class="{message.role === 'user' ? 'text-right' : 'text-left'} mb-2">
-          <span class="inline-block p-2 rounded-lg {message.role === 'user' ? 'bg-yellow-500 text-black' : 'bg-gray-800 text-white'}">
-            {message.content}
+        <!-- 訊息顯示區 -->
+        <div class="flex-1 p-4 overflow-y-auto">
+          {#each messages.filter(m => m.role !== 'system') as message}
+            <div class="{message.role === 'user' ? 'text-right' : 'text-left'} mb-2">
+              <span class="inline-block p-2 rounded-lg {message.role === 'user' ? 'bg-yellow-500 text-black' : 'bg-gray-800 text-white'}">
+                {message.content}
+              </span>
+            </div>
+          {/each}
+
+          {#if isLoading}
+        <div class="text-left mb-2">
+          <span class="inline-block p-2 rounded-lg bg-gray-800 text-white opacity-70 italic">
+            思考中...
           </span>
         </div>
-      {/each}
+          {/if}
+          
+          {#if errorMessage}
+            <div class="text-red-500 text-center p-2">{errorMessage}</div>
+          {/if}
+        </div>
 
-      {#if isLoading}
-    <div class="text-left mb-2">
-      <span class="inline-block p-2 rounded-lg bg-gray-800 text-white opacity-70 italic">
-        思考中...
-      </span>
-    </div>
-      {/if}
-      
-      {#if errorMessage}
-        <div class="text-red-500 text-center p-2">{errorMessage}</div>
-      {/if}
-    </div>
-
-    <!-- 輸入區 -->
-    <div class="p-4 bg-gray-800 flex gap-2">
-      <input
-        bind:value={userInput}
-        on:keypress={handleKeyPress}
-        placeholder="輸入問題..."
-        class="flex-1 p-2 rounded-md bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"
-      />
-      <button
-        on:click={sendMessage}
-        class="bg-yellow-500 text-black px-4 py-2 rounded-md hover:bg-yellow-600 disabled:opacity-50"
-        disabled={!userInput.trim()}
-      >
-        發送
-      </button>
-    </div>
-  </div>
-{/if}
+        <!-- 輸入區 -->
+        <div class="p-4 bg-gray-800 flex gap-2">
+          <input
+            bind:value={userInput}
+            on:keypress={handleKeyPress}
+            placeholder="輸入問題..."
+            class="flex-1 p-2 rounded-md bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"
+          />
+          <button
+            on:click={sendMessage}
+            class="bg-yellow-500 text-black px-4 py-2 rounded-md hover:bg-yellow-600 disabled:opacity-50"
+            disabled={!userInput.trim()}
+          >
+            發送
+          </button>
+        </div>
+      </div>
+    {/if}
+</main>
 
 <style>
   .overflow-y-auto::-webkit-scrollbar {
