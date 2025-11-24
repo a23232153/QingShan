@@ -122,7 +122,7 @@
 
     <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
       <h1 class="hero-title text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-500 tracking-widest mb-6 drop-shadow-lg">
-        艋舺青山宮
+        青山
       </h1>
       <div class="hero-title text-2xl md:text-4xl font-light tracking-[0.5em] text-stone-200 mb-12 border-t border-b border-yellow-500/50 py-4 inline-block">
         數位傳承文化之美
@@ -235,10 +235,10 @@
                         <img 
                             src={sponsor.logo} 
                             alt={sponsor.name} 
-                            class="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100" 
+                            class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100" 
                         />
                     </div>
-                    <p class="text-xs font-medium text-stone-500 group-hover:text-yellow-500 transition-colors">
+                    <p class="text-base font-medium text-stone-500 group-hover:text-yellow-500 transition-colors">
                         {sponsor.name}
                     </p>
                 </div>

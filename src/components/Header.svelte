@@ -10,7 +10,7 @@
   
   
   <!-- Header 結構 -->
-  <div class="bg-{headerColor} text-white w-full flex justify-between items-center p-4 h-[7vh] fixed top-0 z-6000 font-bakudai-md">
+  <div class="bg-{headerColor} text-white bg-black w-full flex justify-between items-center p-4 h-[7vh] fixed top-0 z-6000 font-bakudai-md">
     <h1 class="list-none"> <a href="/"> 首頁 </a> </h1>
   
     <ul class="flex items-center justify-end gap-4 text-gray-300">

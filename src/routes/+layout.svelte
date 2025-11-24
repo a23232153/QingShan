@@ -23,7 +23,7 @@
     {JSON.stringify({
       "@context": "https://schema.org",
       "@type": "TouristAttraction",
-      name: "艋舺青山宮",
+      name: "青山",
       description:
         "艋舺青山宮位於台北萬華，是歷史悠久的信仰與文化中心，以靈安尊王信仰與艋舺文化聞名。",
       image: "https://qing-shan.vercel.app/images/qsbg.jpg",
@@ -52,7 +52,7 @@
 <script lang="">
 // @ts-nocheck
 
-  
+  import { page } from '$app/stores';
   import '../app.css';
   import Header from '../components/Header.svelte';
   export let data;
@@ -61,10 +61,14 @@
 
   injectSpeedInsights();
 
+  $: showHeader = !$page.data.hideHeader;
+
   
 </script>
 
-<Header headerColor={data?.headerColor ?? 'black'} />
+{#if showHeader}
+  <Header />
+{/if}
 
 <slot />
 

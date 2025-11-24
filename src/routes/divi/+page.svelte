@@ -14,16 +14,16 @@
   let isSolved = false;     
   let insSen = true;        
 
-  type CupResult = "聖杯" | "笑杯" | "陰杯";
-  const options = ["聖杯", "笑杯", "陰杯"] as const;
+  type CupResult = "聖茭" | "笑茭" | "陰茭";
+  const options = ["聖茭", "笑茭", "陰茭"] as const;
 
   let result: "" | CupResult = ""; 
   let animationSrc = "";
 
   const animations: Record<CupResult, string> = {
-    聖杯: "https://lottie.host/60526843-3173-4b77-a85b-596f5173bcc3/Hw2Otbs0Dr.lottie",
-    笑杯: "https://lottie.host/326c0933-792d-434a-a91e-f04eb25c96c2/1doaoqO2eQ.lottie",
-    陰杯: "https://lottie.host/9f5dc1fd-dda9-4aef-85f7-35e91874b24f/37F9JdRra5.lottie",
+    聖茭: "https://lottie.host/60526843-3173-4b77-a85b-596f5173bcc3/Hw2Otbs0Dr.lottie",
+    笑茭: "https://lottie.host/326c0933-792d-434a-a91e-f04eb25c96c2/1doaoqO2eQ.lottie",
+    陰茭: "https://lottie.host/9f5dc1fd-dda9-4aef-85f7-35e91874b24f/37F9JdRra5.lottie",
   };
 
   onMount(() => {
@@ -41,7 +41,7 @@
 
     setTimeout(() => {
       result = newResult;
-      if (result === "聖杯") {
+      if (result === "聖茭") {
         drawstreak++;
         if (lotsShow) { 
             isSolved = true;
@@ -92,7 +92,7 @@
 
 {#if isVisible}
   <div
-    id="animation-杯"
+    id="animation-茭"
     class="absolute bg-black/60 backdrop-blur-sm top-0 left-0 w-full h-full flex items-center justify-center z-[1000]"
     transition:fade
   >
@@ -116,11 +116,11 @@
   >
 
     {#if insSen}
-        <div class="absolute inset-x-0 bottom-4 md:bottom-0 z-50 px-4 flex justify-center" transition:fly="{{ y: 20, duration: 500 }}">
+        <div class="absolute inset-x-0 bottom-2 md:bottom-2 z-50 px-4 flex justify-center" transition:fly="{{ y: 20, duration: 500 }}">
             <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-yellow-500/30 w-full md:max-w-2xl p-4 md:p-6 text-center">
                 <h1 class="text-sm md:text-lg font-medium text-gray-800 leading-relaxed tracking-wide">
                     <span class="text-red-700 font-bold block mb-1 md:mb-2 text-lg md:text-2xl">🏮 歡迎蒞臨艋舺青山宮</span>
-                    請誠心祈求，透過擲杯與求籤，尋找神明的指引與生活中的智慧。
+                    請誠心祈求，透過擲茭與求籤，尋找神明的指引與生活中的智慧。
                 </h1>
             </div>
         </div>
@@ -142,15 +142,15 @@
                <div class="mb-2 md:mb-4">
                   <span class="text-gray-500 text-xs md:text-sm block mb-1">擲茭結果</span>
                   <span class="text-3xl md:text-4xl font-bold drop-shadow-sm" 
-                        class:text-red-600={result === '聖杯'} 
-                        class:text-stone-600={result !== '聖杯'}>
+                        class:text-red-600={result === '聖茭'} 
+                        class:text-stone-600={result !== '聖茭'}>
                     {result}
                   </span>
                </div>
             {/if}
 
             {#if !insSen}
-                {#if firstdraw && !lotsShow && result !== '' && result !== '聖杯' && drawpoem}
+                {#if firstdraw && !lotsShow && result !== '' && result !== '聖茭' && drawpoem}
                      <div class="bg-red-50 border-l-4 border-red-600 p-3 md:p-4 rounded-r-lg shadow-md w-full flex flex-col items-center" transition:fly="{{ y: 10 }}">
                         <h2 class="font-bold text-lg md:text-xl text-red-800 mb-1 flex items-center">
                              <span class="text-lg mr-2"></span> 此籤未獲應允
@@ -160,14 +160,14 @@
                         </p>
                      </div>
 
-                {:else if !firstdraw && result !== '' && result !== '聖杯'}
+                {:else if !firstdraw && result !== '' && result !== '聖茭'}
                      <h2 class="text-lg md:text-xl text-stone-600 font-medium">
-                        心誠則靈，請<span class="text-red-600 font-bold mx-1">重新擲杯</span>直至聖杯。
+                        心誠則靈，請<span class="text-red-600 font-bold mx-1">重新擲茭</span>直至聖茭。
                      </h2>
 
-                {:else if firstdraw && !lotsShow && (result === '聖杯' || result === '')}
+                {:else if firstdraw && !lotsShow && (result === '聖茭' || result === '')}
                      <div class="text-center">
-                        <div class="text-amber-300 font-bold text-xl md:text-2xl mb-2">獲得允杯</div>
+                        <div class="text-amber-500 font-bold text-xl md:text-2xl mb-2">獲得允茭</div>
                         <p class="text-stone-600 text-sm md:text-base">請點擊按鈕，抽取您的靈籤。</p>
                      </div>
 
@@ -179,7 +179,7 @@
                         <div class="text-3xl md:text-4xl font-bold text-yellow-800 mb-2 md:mb-3 tracking-widest">第 {drawpoem?.id} 籤</div>
                         <div class="h-px w-full bg-yellow-200 my-2"></div>
                         <div class="text-red-600 font-bold animate-bounce mt-2 text-sm md:text-base">
-                            ⬇ 必須擲出聖杯，方可解籤 ⬇
+                            ⬇ 必須擲出聖茭，方可解籤 ⬇
                         </div>
                      </div>
                 {/if}
@@ -194,7 +194,7 @@
                     on:click={() => handleClick(draw)}
                   >
                       <span class="relative z-10 group-hover:scale-110 transition-transform duration-300 inline-block">
-                             誠心擲杯
+                             誠心擲茭
                       </span>
                       <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-red-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
@@ -218,8 +218,8 @@
         <div class="w-full animate-fade-in flex flex-col items-center pb-8">
             
             <div class="text-center mb-4 md:mb-8">
-                <h2 class="text-amber-200 font-bold text-xl md:text-2xl mb-1"> 聖杯確認！</h2>
-                <p class="text-stone-500 text-xs md:text-sm">神明已賜下指引</p>
+                <h2 class="text-amber-300 font-bold text-2xl md:text-3xl mb-1"> 聖茭確認！</h2>
+                <p class="text-stone-500 text-xs md:text-2xl">神明已賜下指引</p>
             </div>
 
             <div class="flex flex-col md:flex-row items-start w-full max-w-4xl gap-6 md:gap-8"> 
@@ -253,13 +253,14 @@
                     </div>
                     
                     <div class="mt-6 md:mt-8 pt-4 border-t border-dashed border-stone-300 text-center">
-                        <p class="text-xs md:text-sm text-stone-400">
+                        
+                         <p class="text-xs md:text-xl text-black mt-2">
+                            如想具體了解籤詩含義，歡迎使用下方 AI 聊天功能進行詢問。
+                         </p>
+                         <p class="text-xs md:text-sm text-stone-400">
                             艋舺青山宮 靈安尊王 庇佑平安 <br/>
                            
                         </p>
-                         <p class="text-xs md:text-sm text-black mt-2">
-                            如想具體了解籤詩含義，歡迎使用下方 AI 聊天功能進行詢問。
-                         </p>
                     </div>
                 </div>
             </div>

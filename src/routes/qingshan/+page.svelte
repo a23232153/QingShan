@@ -1,6 +1,6 @@
 <svelte:head>
   <!-- SEO  -->
-  <title>艋舺青山宮｜探索青山</title>
+  <title>青山</title>
   <meta name="description" content="深入探索艋舺青山宮的歷史與文化，一起了解青山宮的現在與過去。" />
   <meta name="robots" content="index, follow" />
 
@@ -138,7 +138,7 @@
     <!-- Hero  -->  
     <div class="relative z-10 flex flex-col items-center justify-center h-full px-6">
       <h1 class="md:text-6xl font-bold leading-tight drop-shadow-xl backdrop-blur border-yellow-500 border-b-4 pb-2 mb-2 py-2 px-2">
-        艋舺青山宮
+        青山
       </h1>
       <p class="mt-8 text-lg md:text-2xl backdrop-blur">走進信仰與歷史交織的聖地</p>
       

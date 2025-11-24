@@ -21,13 +21,13 @@
       link: "https://tour.panoee.net/iframe/qingshan"
     },
     {
-      image: "/images/青山會神將.jpg",
+      image: "/images/gamePhoto.png",
       title: "青山行傳",
       description: "艋舺青山宮-青山會創立推廣艋舺文化，傳承技藝並促進地方繁榮。",
       link: "https://qingshanics.github.io/qingshanics"
     },
     {
-      image: "/images/drawPoem.png",
+      image: "/images/draw2.png",
       title: "求籤解籤",
       description: "艋舺青山宮-青山會創立推廣艋舺文化，傳承技藝並促進地方繁榮。",
       link: "/divi"
