@@ -14,37 +14,12 @@
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
   
 
-  <script src="/js/lenis.min.js"></script>
-  <script src="/js/smoothscroll.js"></script>
+<script src="/js/lenis.min.js"></script>
+<script src="/js/smoothscroll.js"></script>
 
+{@html jsonLdScript}
 
-  <script type="application/ld+json">
-  
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "TouristAttraction",
-      name: "青山",
-      description:
-        "艋舺青山宮位於台北萬華，是歷史悠久的信仰與文化中心，以靈安尊王信仰與艋舺文化聞名。",
-      image: "https://qing-shan.vercel.app/images/qsbg.jpg",
-      url: "https://qing-shan.vercel.app/",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "台北市萬華區",
-        addressCountry: "台灣",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 25.0367,
-        longitude: 121.4993,
-      },
-      sameAs: [
-        "https://zh.wikipedia.org/wiki/艋舺青山宮",
-        "https://www.facebook.com/qingshanpalace",
-        "https://www.instagram.com/qingshan.ics/",
-      ],
-    })}
-  </script>
+ 
 </svelte:head>
 
 
@@ -62,6 +37,34 @@
   injectSpeedInsights();
 
   $: showHeader = !$page.data.hideHeader;
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: "青山",
+    description: "艋舺青山宮位於台北萬華，是歷史悠久的信仰與文化中心，以靈安尊王信仰與艋舺文化聞名。",
+    image: "https://qing-shan.vercel.app/images/qsbg.jpg",
+    url: "https://qing-shan.vercel.app/",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "台北市萬華區",
+      addressCountry: "台灣",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 25.0367,
+      "longitude": 121.4993,
+    },
+    sameAs: [
+      "https://zh.wikipedia.org/wiki/艋舺青山宮",
+      "https://www.facebook.com/qingshanpalace",
+      "https://www.instagram.com/qingshan.ics/",
+    ],
+  };
+
+  
+  const jsonLdScript = `<script type="application/ld+json">${JSON.stringify(schemaData)}<\/script>`;
+
 
   
 </script>
