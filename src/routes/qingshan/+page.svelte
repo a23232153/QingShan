@@ -47,7 +47,7 @@
 
    const galleryItems = [
     {
-      image: "/images/青山會神將.jpg",
+      image: "/images/gang1.jpg",
       title: "青山會神將",
       description: "艋舺青山宮-青山會創立推廣艋舺文化，傳承技藝並促進地方繁榮。"
     },
