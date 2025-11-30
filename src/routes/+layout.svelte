@@ -41,7 +41,7 @@
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "TouristAttraction",
-    name: "青山",
+    name: "青山QING SHAN",
     description: "艋舺青山宮位於台北萬華，是歷史悠久的信仰與文化中心，以靈安尊王信仰與艋舺文化聞名。",
     image: "https://qing-shan.vercel.app/images/qsbg.jpg",
     url: "https://qing-shan.vercel.app/",
