@@ -1,5 +1,5 @@
 <svelte:head>
-
+<title>青山 qingshan</title>
 
 <link rel="preload" href="/fonts/Bakudai-Medium.woff2" as="font" type="font/woff2" crossorigin>
 
