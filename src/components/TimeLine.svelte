@@ -7,7 +7,7 @@
         {
             year: "1854 ",
             month: "",
-            text: "艋舺在1854年（咸豐4年）發生瘟疫，惠安縣漁民，於是特地將惠安青山宮的鄉土守護神——青山靈安尊王神像分靈至艋舺...",
+            text: "艋舺在1854年（咸豐4年）發生瘟疫，惠安縣漁民，於是特地將惠安青山宮的鄉土守護神——青山靈安尊王神像分靈至艋舺祈求庇佑。",
             img: "/images/緣起.jpg",
             link: "https://whdo.gov.taipei/News_Content.aspx?n=2B790586BA4E1E7A&sms=15EB41D4C772E746&s=3B99BF9862969F85" 
         },
@@ -51,14 +51,14 @@
             month:"",
             text: "受邀前往日本表演，展現青山宮祭典文化的國際交流",
             img: "/images/日本.png",
-            link: "https://www.youtube.com/watch?app=desktop&v=8lLFVVt8vlg"
+            link: "https://www.youtube.com/watch?v=eDVoavye9KM"
         },
         {
             year:"2024" ,
             month:"",
             text: "重現百年傳統「詩意閣」，於萬華再度登場，讓青山祭典的文化美學重新展現於世人眼前",
             img: "/images/藝閣.png",
-            link: "https://www.youtube.com/watch?v=DthBsDdHv4o&t=31s"
+            link: "https://tw.news.yahoo.com/2024%E9%9D%92%E5%B1%B1%E7%8E%8B%E7%A5%AD-%E7%9D%BD%E9%81%95117%E5%B9%B4%E8%97%9D%E9%96%A3%E8%BB%8A%E9%87%8D%E5%9B%9E%E8%89%8B%E8%88%BA-%E4%B8%89%E9%A2%AF%E8%88%9E%E5%86%8D%E7%8F%BE-%E6%AB%BB%E8%8A%B1%E5%A6%B9-%E7%8B%82%E5%90%B8%E7%B2%89-120500148.html"
         },
     ];
 
