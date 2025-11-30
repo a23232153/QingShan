@@ -81,13 +81,13 @@
                 { id: 101, title: '圖片合集', url: 'https://drive.google.com/drive/folders/1Wi6cqMp36W5WebrQ97YbQjJEUwojHccn', 
                 typeLabel: '活動圖集', imageUrl: '/images/exhi-cover.jpg', layout: 'wide', isImageOnly: true },
 
-                { id: 102, title: '精華影片', url: '#', typeLabel: '影片', imageUrl: '/images/celebrate (44).jpg',url:"https://youtube.com/shorts/JPzuTYox5gg?feature=share",
+                { id: 102, title: '精華影片',  typeLabel: '影片', imageUrl: '/images/school-cover.jpg', url:"https://youtube.com/shorts/JPzuTYox5gg?feature=share",
                 layout: 'square', isImageOnly: false },
                // { id: 103, title: '虔誠信眾', url: '#', typeLabel: '攝影', imageUrl: 'https://picsum.photos/400/400?random=22', layout: 'square', isImageOnly: true },
             ]
         },
         {
-            title: '青山王季',
+            title: '2025 艋舺青山宮 恭迎 北港朝天宮糖郊媽蒞臨艋舺賜福遶境',
             subtitle: ' ',
             items: [
                 { id: 201, title: '特寫', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate1.jpg', layout: 'tall', isImageOnly: true },
