@@ -81,7 +81,7 @@
                 { id: 101, title: '圖片合集', url: 'https://drive.google.com/drive/folders/1Wi6cqMp36W5WebrQ97YbQjJEUwojHccn', 
                 typeLabel: '活動圖集', imageUrl: '/images/exhi-cover.jpg', layout: 'wide', isImageOnly: true },
 
-                { id: 102, title: '陣頭風采', url: '#', typeLabel: '攝影', imageUrl: '/images/celebrate (44).jpg', 
+                { id: 102, title: '精華影片', url: '#', typeLabel: '影片', imageUrl: '/images/celebrate (44).jpg',url:"https://youtube.com/shorts/JPzuTYox5gg?feature=share",
                 layout: 'square', isImageOnly: false },
                // { id: 103, title: '虔誠信眾', url: '#', typeLabel: '攝影', imageUrl: 'https://picsum.photos/400/400?random=22', layout: 'square', isImageOnly: true },
             ]
@@ -150,15 +150,7 @@
             <p class="text-sm sm:text-base md:text-lg text-gray-300 mb-8 max-w-xl leading-relaxed drop-shadow-md line-clamp-3 md:line-clamp-none">
                 {heroVideo.description}
             </p>
-            <button 
-                class="flex items-center px-6 py-3 md:px-8 md:py-4 bg-red-700 hover:bg-red-800 text-white font-bold rounded-md transition-all duration-300 shadow-lg hover:shadow-red-900/50 group"
-                on:click={() => handleClick({ ...heroVideo, id: 0, url: heroVideo.youtubeUrl, typeLabel: '', imageUrl: '', layout: 'wide' })}
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-                </svg>
-                立即觀看
-            </button>
+            
         </div>
     </section>
 
