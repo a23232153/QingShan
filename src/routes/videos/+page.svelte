@@ -135,7 +135,9 @@
     <section class="relative h-[85vh] md:h-[95vh] w-full overflow-hidden">
         <div class="absolute inset-0 z-0">31
             <div class="w-full h-full bg-cover bg-center transition-transform duration-[10s] hover:scale-105" 
-                 style="background-image: url('https://picsum.photos/1920/1080?random={heroVideo.placeholderImageId}');">
+                 style="background-image: url('/images/celebrate2.jpg');">
+
+
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/40 to-transparent"></div>
             <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent"></div>
