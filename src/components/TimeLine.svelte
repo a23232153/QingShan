@@ -5,19 +5,13 @@
     // 1. 在這裡新增 link 屬性放入網址
     let items = [
         {
-            year: "1854 緣起",
+            year: "1854 ",
             month: "",
             text: "艋舺在1854年（咸豐4年）發生瘟疫，惠安縣漁民，於是特地將惠安青山宮的鄉土守護神——青山靈安尊王神像分靈至艋舺...",
             img: "/images/緣起.jpg",
-            link: "https://nrch.culture.tw/nrch/zh-tw/nrchdata/972597" 
+            link: "https://whdo.gov.taipei/News_Content.aspx?n=2B790586BA4E1E7A&sms=15EB41D4C772E746&s=3B99BF9862969F85" 
         },
-        {
-            year: "1856 重建",
-            month: "",
-            text: "由於祂靈驗的神蹟廣為流傳，使得善信日增。1856年建築新廟",
-            img: "/images/黑白照2.jpg",
-            link: "https://nrch.culture.tw/nrch/zh-tw/nrchdata/972597"
-        },
+       
         {
             year:"1904",
             text:"鼠疫過後，地方為祈求平安，延續祭典並發展出「迎請青山王遶境」，逐漸形成萬華的重要廟會習俗",
@@ -42,14 +36,15 @@
             month:"",
             text: "因新冠疫情多數宗教活動停辦，但於青山王祭典前疫情好轉解封，因此決定擴大舉辦青山王祭典活動",
             img: "/images/青山王祭.jpg",
-            link: "https://example.com/2020"
+            link: "https://news.ltn.com.tw/news/life/breakingnews/3373991"
+
         },
         {
             year:"2021" ,
             month:"",
             text: "臺北燈節將艋舺青山宮納入展區，展現「無圍牆博物館」特色，吸引國內外參觀者",
             img: "/images/燈節.png",
-            link: "https://example.com/2021"
+            link: "https://reurl.cc/qYXWj3"
         },
          {
             year:"2023" ,
