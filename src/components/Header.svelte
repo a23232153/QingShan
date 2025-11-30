@@ -11,8 +11,14 @@
   
   <!-- Header 結構 -->
   <div class="bg-{headerColor} text-white bg-black w-full flex justify-between items-center p-4 h-[7vh] fixed top-0 z-6000 font-bakudai-md">
-    <h1 class="list-none"> <a href="/"> 首頁 </a> </h1>
-  
+    <a href="/" class="block w-fit hover:opacity-80 transition-opacity">
+        <img 
+            src="/images/logo.png" 
+            alt="青山王季首頁" 
+            class="h-10 w-auto object-contain" 
+        />
+    </a>
+    
     <ul class="flex items-center justify-end gap-4 text-gray-300">
       
       <li><a href="/qingshan">探索青山</a></li>
