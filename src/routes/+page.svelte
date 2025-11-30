@@ -1,6 +1,6 @@
 <svelte:head>
   <!-- 網頁標題與描述 -->
-  <title>青山 QINGSHAN</title>
+  <title>青山 qingshan</title>
   <meta name="description" content="探索艋舺青山宮的歷史與靈安尊王的信仰起源，體驗年度暗訪夜巡的神秘氛圍，深入了解艋舺文化與人們心中守護的信念。" />
   <meta name="robots" content="index, follow" />
 

@@ -1,6 +1,6 @@
 <svelte:head>
   <!-- SEO  -->
-  <title>青山</title>
+  
   <meta name="description" content="深入探索艋舺青山宮的歷史與文化，一起了解青山宮的現在與過去。" />
   <meta name="robots" content="index, follow" />
 

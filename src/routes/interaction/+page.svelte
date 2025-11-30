@@ -27,7 +27,7 @@
       link: "https://qingshanics.github.io/qingshanics"
     },
     {
-      image: "/images/draw.png",
+      image: "/images/draw-cover.png",
       title: "求籤解籤",
       description: "艋舺青山宮-青山會創立推廣艋舺文化，傳承技藝並促進地方繁榮。",
       link: "/divi"
