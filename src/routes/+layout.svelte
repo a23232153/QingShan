@@ -43,7 +43,7 @@
     "@type": "TouristAttraction",
     name: "青山 qingshan",
     description: "艋舺青山宮位於台北萬華，是歷史悠久的信仰與文化中心，以靈安尊王信仰與艋舺文化聞名。",
-    image: "https://qing-shan.vercel.app/images/qsbg.jpg",
+    image: "https://qing-shan.vercel.app/images/qsbg.png",
     url: "https://qing-shan.vercel.app/",
     address: {
       "@type": "PostalAddress",

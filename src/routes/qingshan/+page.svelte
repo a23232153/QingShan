@@ -9,13 +9,13 @@
   <meta property="og:description" content="深入探索艋舺青山宮的歷史與文化，一起了解青山宮的現在與過去。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://qing-shan.vercel.app" />
-  <meta property="og:image" content="https://qing-shan.vercel.app/images/qsbg.jpg" />
+  <meta property="og:image" content="https://qing-shan.vercel.app/images/qsbg.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="艋舺青山宮｜沉浸式文化體驗與歷史探索" />
   <meta name="twitter:description" content="探索艋舺青山宮的歷史與文化，透過沉浸式互動體驗感受古老廟宇的魅力與故事。" />
-  <meta name="twitter:image" content="https://qing-shan.vercel.app/images/qsbg.jpg" />
+  <meta name="twitter:image" content="https://qing-shan.vercel.app/images/qsbg.png" />
 
   <!-- Schema.org JSON-LD -->
   
@@ -123,10 +123,10 @@
     <!-- 背景圖，視差滑動 -->
     <div
       class="absolute top-0 left-0 w-full h-[120%] bg-cover bg-center z-0"
-      style={`transform: translateY(${scrollY}px); transition: transform 0.1s ease-out; background-image: url('/images/qsbg.jpg');`}
+      style={`transform: translateY(${scrollY}px); transition: transform 0.1s ease-out; background-image: url('/images/qsbg.png');`}
     >
       <img
-        src="/images/qsbg.jpg"
+        src="/images/qsbg.png"
         alt="艋舺青山宮正門"
         title="艋舺青山宮正門燈籠門牌"
         class="sr-only"
