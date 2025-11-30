@@ -15,7 +15,7 @@
         <img 
             src="/images/logo2.png" 
             alt="青山王季首頁" 
-            class="h-15 w-auto object-contain" 
+            class="h-10 w-auto object-contain" 
         />
     </a>
 
