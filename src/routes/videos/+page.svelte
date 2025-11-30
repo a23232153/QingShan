@@ -81,7 +81,7 @@
                 { id: 101, title: '圖片合集', url: 'https://drive.google.com/drive/folders/1Wi6cqMp36W5WebrQ97YbQjJEUwojHccn', 
                 typeLabel: '活動圖集', imageUrl: '/images/exhi-cover.jpg', layout: 'wide', isImageOnly: true },
 
-                { id: 102, title: '陣頭風采', url: '#', typeLabel: '攝影', imageUrl: 'https://picsum.photos/400/400?random=21', 
+                { id: 102, title: '陣頭風采', url: '#', typeLabel: '攝影', imageUrl: '/images/celebrate (44).jpg', 
                 layout: 'square', isImageOnly: false },
                // { id: 103, title: '虔誠信眾', url: '#', typeLabel: '攝影', imageUrl: 'https://picsum.photos/400/400?random=22', layout: 'square', isImageOnly: true },
             ]
