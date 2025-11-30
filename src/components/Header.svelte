@@ -15,10 +15,10 @@
         <img 
             src="/images/logo.png" 
             alt="青山王季首頁" 
-            class="h-10 w-auto object-contain" 
+            class="h-15 w-auto object-contain" 
         />
     </a>
-    
+
     <ul class="flex items-center justify-end gap-4 text-gray-300">
       
       <li><a href="/qingshan">探索青山</a></li>
