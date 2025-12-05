@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+    import { onMount } from 'svelte';   
 
     // --- 資料定義區 ---
 
@@ -89,20 +89,54 @@
         {
             title: '2025 艋舺青山宮 恭迎 北港朝天宮糖郊媽蒞臨艋舺賜福遶境',
             subtitle: ' ',
-            items: [
-                { id: 201, title: '特寫', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate1.jpg', layout: 'tall', isImageOnly: true },
-                { id: 202, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate2.jpg', layout: 'tall', isImageOnly: true },
-                { id: 202, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (4).jpg', layout: 'tall', isImageOnly: true },
-                { id: 202, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (13).jpg', layout: 'tall', isImageOnly: true },
-                { id: 202, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (15).jpg', layout: 'tall', isImageOnly: true },
-                { id: 202, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (19).jpg', layout: 'tall', isImageOnly: true },
-                { id: 202, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (21).jpg', layout: 'tall', isImageOnly: true },
-                { id: 202, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (24).jpg', layout: 'tall', isImageOnly: true },
-                { id: 202, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (30).jpg', layout: 'tall', isImageOnly: true },
-                { id: 202, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (33).jpg', layout: 'tall', isImageOnly: true },
-                { id: 202, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (37).jpg', layout: 'tall', isImageOnly: true },
-                { id: 202, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (40).jpg', layout: 'tall', isImageOnly: true },
-            ]
+            items: 
+            [
+                { id: 201, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (1).jpg', layout: 'tall', isImageOnly: true },
+                { id: 202, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (2).jpg', layout: 'tall', isImageOnly: true },
+                { id: 203, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (3).jpg', layout: 'tall', isImageOnly: true },
+                { id: 204, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (4).jpg', layout: 'tall', isImageOnly: true },
+                { id: 205, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (5).jpg', layout: 'tall', isImageOnly: true },
+                { id: 206, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (6).jpg', layout: 'tall', isImageOnly: true },
+                { id: 207, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (7).jpg', layout: 'tall', isImageOnly: true },
+                { id: 208, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (8).jpg', layout: 'tall', isImageOnly: true },
+                { id: 209, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (9).jpg', layout: 'tall', isImageOnly: true },
+                { id: 210, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (10).jpg', layout: 'tall', isImageOnly: true },
+                { id: 211, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (11).jpg', layout: 'tall', isImageOnly: true },
+                { id: 212, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (12).jpg', layout: 'tall', isImageOnly: true },
+                { id: 213, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (13).jpg', layout: 'tall', isImageOnly: true },
+                { id: 214, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (14).jpg', layout: 'tall', isImageOnly: true },
+                { id: 215, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (15).jpg', layout: 'tall', isImageOnly: true },
+                { id: 216, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (16).jpg', layout: 'tall', isImageOnly: true },
+                { id: 217, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (17).jpg', layout: 'tall', isImageOnly: true },
+                { id: 218, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (18).jpg', layout: 'tall', isImageOnly: true },
+                { id: 219, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (19).jpg', layout: 'tall', isImageOnly: true },
+                { id: 220, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (20).jpg', layout: 'tall', isImageOnly: true },
+                { id: 221, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (21).jpg', layout: 'tall', isImageOnly: true },
+                { id: 222, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (22).jpg', layout: 'tall', isImageOnly: true },
+                { id: 223, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (23).jpg', layout: 'tall', isImageOnly: true },
+                { id: 224, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (24).jpg', layout: 'tall', isImageOnly: true },
+                { id: 225, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (25).jpg', layout: 'tall', isImageOnly: true },
+                { id: 226, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (26).jpg', layout: 'tall', isImageOnly: true },
+                { id: 227, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (27).jpg', layout: 'tall', isImageOnly: true },
+                { id: 228, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (28).jpg', layout: 'tall', isImageOnly: true },
+                { id: 229, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (29).jpg', layout: 'tall', isImageOnly: true },
+                { id: 230, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (30).jpg', layout: 'tall', isImageOnly: true },
+                { id: 231, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (31).jpg', layout: 'tall', isImageOnly: true },
+                { id: 232, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (32).jpg', layout: 'tall', isImageOnly: true },
+                { id: 233, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (33).jpg', layout: 'tall', isImageOnly: true },
+                { id: 234, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (34).jpg', layout: 'tall', isImageOnly: true },
+                { id: 235, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (35).jpg', layout: 'tall', isImageOnly: true },
+                { id: 236, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (36).jpg', layout: 'tall', isImageOnly: true },
+                { id: 237, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (37).jpg', layout: 'tall', isImageOnly: true },
+                { id: 238, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (38).jpg', layout: 'tall', isImageOnly: true },
+                { id: 239, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (39).jpg', layout: 'tall', isImageOnly: true },
+                { id: 240, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (40).jpg', layout: 'tall', isImageOnly: true },
+                { id: 241, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (41).jpg', layout: 'tall', isImageOnly: true },
+                { id: 242, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (42).jpg', layout: 'tall', isImageOnly: true },
+                { id: 243, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (43).jpg', layout: 'tall', isImageOnly: true },
+                { id: 244, title: '', url: '#', typeLabel: '圖片', imageUrl: '/images/celebrate (44).jpg', layout: 'tall', isImageOnly: true },
+    
+        ]
         }
     ];
 
@@ -128,14 +162,26 @@
             });
         }
     }
+
+    const MIN_IMAGE_NUMBER = 1;        const MAX_IMAGE_NUMBER = 44;
+
+   
+    function getRandomNumber(min: number, max: number): number {
+        
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    const randomNumber = getRandomNumber(MIN_IMAGE_NUMBER, MAX_IMAGE_NUMBER);
+
+    const randomImagePath = `/images/celebrate (${randomNumber}).jpg`;
 </script>
 
 <main class="bg-[#0a0a0a] min-h-screen text-gray-100 font-sans selection:bg-red-900 selection:text-white pb-20 font-bakudai-md">
     
     <section class="relative h-[85vh] md:h-[95vh] w-full overflow-hidden">
-        <div class="absolute inset-0 z-0">31
+        <div class="absolute inset-0 z-0">
             <div class="w-full h-full bg-cover bg-center transition-transform duration-[10s] hover:scale-105" 
-                 style="background-image: url('/images/celebrate2.jpg');">
+                 style="background-image: url('{randomImagePath}');">
 
 
             </div>
