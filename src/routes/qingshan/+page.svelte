@@ -211,13 +211,13 @@
       
       <div class="text-stone-300 text-base md:text-lg leading-loose bg-stone-900/60 backdrop-blur-md border border-stone-800 p-6 md:p-8 rounded-2xl shadow-xl space-y-6">
         <div>
-            <h3 class="text-xl font-bold text-amber-400 mb-2 border-b border-amber-500/30 pb-1 inline-block">顯慶妃（大媽）</h3>
+            <h3 class="text-xl font-bold text-amber-400 mb-2 border-b border-amber-500/30 pb-1 inline-block">顯慶妃</h3>
             <p>
                 生前名為華氏，為尊王正室，受封「昭順夫人」晉封「顯慶妃」。象徵柔和與守護，信眾多祈求<span class="text-stone-100">婚姻順遂、家庭和樂</span>。
             </p>
         </div>
         <div>
-            <h3 class="text-xl font-bold text-amber-400 mb-2 border-b border-amber-500/30 pb-1 inline-block">慶安妃（二媽）</h3>
+            <h3 class="text-xl font-bold text-amber-400 mb-2 border-b border-amber-500/30 pb-1 inline-block">慶安妃</h3>
             <p>
                 惠安李姓女子，幼時立約「拋手帕上梁不落者為尊王夫人」，後於宮內坐化。民間盛傳「二媽比大媽顯」，早期多由二媽降乩。
             </p>
