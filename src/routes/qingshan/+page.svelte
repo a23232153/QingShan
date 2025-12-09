@@ -271,7 +271,7 @@
 
 <footer class="bg-[#050505] text-stone-500 py-12 text-center text-sm border-t border-stone-900 font-bakudai-md px-4">
     <div class="mb-4">
-        <h3 class="text-lg text-stone-300 font-bold tracking-widest mb-1">艋舺青山宮</h3>
+        <h3 class="text-lg text-stone-300 font-bold tracking-widest mb-1">青山</h3>
         <p></p>
     </div>
   &copy; {new Date().getFullYear()} 艋舺青山宮數位專題團隊——青山. All rights reserved.
