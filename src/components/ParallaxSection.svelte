@@ -1,13 +1,13 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  export let image: string = ""; // 背景圖片路徑
+  export let image: string = "";
   export let title: string = "";
   export let subtitle: string = "";
-  export let height: string = "h-screen"; // 高度，預設全螢幕
+  export let height: string = "h-[100dvh]";
 
-  let scrollY = 0; // 初始偏移
   let heroSection: HTMLElement;
+  let bgElement: HTMLElement;
 
   onMount(() => {
     let ticking = false;
@@ -15,19 +15,29 @@
     const onScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          if (heroSection) {
+          if (heroSection && bgElement) {
             const rect = heroSection.getBoundingClientRect();
             const viewHeight = window.innerHeight;
-            const baseY = -(rect.height * 0.15);
-            const multiplier = rect.height * 0.4;
+            const sectionHeight = rect.height;
 
-            // 3. 最大偏移量也設為相對值 (例如元素高度的 50%)
-            const maxScroll = rect.height * 0.5;
+            // 檢查是否在視窗內
+            if (rect.bottom > 0 && rect.top < viewHeight) {
+              
+              // 1. 計算進度 (0 ~ 1)
+              const ratio = (viewHeight - rect.top) / (viewHeight + sectionHeight);
 
-            if (rect.top < viewHeight && rect.bottom > 0) {
-              const ratio =
-                (viewHeight - rect.top) / (viewHeight + rect.height);
-              scrollY = baseY + Math.min(ratio * multiplier, maxScroll);
+              // 2. 設定最大移動幅度 (Percentage)
+              // 我們圖片高 150%，上下各有 25% 的緩衝
+              // 為了讓效果明顯，我們用掉其中 20% 的空間來移動
+              // 這表示圖片會有總共 40% (20*2) 的大幅度位移，非常有感
+              const range = 20; 
+
+              // 3. 計算位移
+              // 當 ratio 0 -> 1，位置從 -20% 移動到 +20%
+              // 這會讓圖片在往下滑時「慢慢往下沉」，產生強烈景深
+              const yPercent = -range + (ratio * range * 2);
+
+              bgElement.style.transform = `translate3d(0, ${yPercent.toFixed(2)}%, 0)`;
             }
           }
           ticking = false;
@@ -36,8 +46,8 @@
       }
     };
 
-    window.addEventListener("scroll", onScroll);
-    onScroll(); // 初始計算
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
 
     return () => {
       window.removeEventListener("scroll", onScroll);
@@ -45,41 +55,24 @@
   });
 </script>
 
-<svelte:head>
-  <style>
-    :global(html, body) {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-    :global(*) {
-      box-sizing: border-box;
-    }
-    :global(main, div:not(.absolute)) {
-      overflow-y: visible !important;
-      height: auto;
-    }
-  </style>
-</svelte:head>
-
 <section
   bind:this={heroSection}
-  id="hero"
-  class={`relative ${height} overflow-hidden text-white text-center bg-black`}
+  class={`relative ${height} w-full overflow-hidden text-white text-center bg-black flex flex-col items-center justify-center`}
 >
-  <!-- 背景圖，視差滑動 -->
   <div
-    class="absolute top-0 left-0 w-full h-[120%] bg-contain bg-center bg-no-repeat z-0"
-    style={`transform: translateY(${scrollY}px); background-image: url(${image});`}
+    bind:this={bgElement}
+    class="absolute top-[-25%] left-0 w-full h-[150%] bg-cover bg-center bg-no-repeat pointer-events-none will-change-transform"
+    style={`background-image: url(${image});`}
   ></div>
 
-  <!-- Hero 內容 -->
-  <div class="relative z-10 flex flex-col items-center justify-center h-full px-6">
-    <h1 class="md:text-6xl font-bold leading-tight drop-shadow-xl">
-      {title}
-    </h1>
-    <p class="mt-8 text-lg md:text-2xl">{subtitle}</p>
+  <div class="relative z-10 flex flex-col items-center justify-center px-6 max-w-4xl mx-auto">
+    {#if title}
+      <h1 class="text-4xl md:text-6xl font-bold leading-tight drop-shadow-xl mb-4">
+        {title}
+      </h1>
+    {/if}
+    {#if subtitle}
+      <p class="text-lg md:text-2xl drop-shadow-md">{subtitle}</p>
+    {/if}
   </div>
 </section>
