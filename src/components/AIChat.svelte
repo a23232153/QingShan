@@ -96,6 +96,8 @@
         - 青山季: A major annual festival celebrating 靈安尊王, featuring grand ceremonies and attracting many devotees and tourists.
         以下是艋舺青山宮的籤詩內容與解讀，請參考這些資料來回答與籤詩相關的問題：
         ${lotteryDataString}
+
+        籤詩解讀不要重複籤詩上的內容，直接解籤。
       `
 
       
