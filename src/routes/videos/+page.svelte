@@ -47,7 +47,7 @@
 
     const CARD_BASE = "flex-shrink-0 cursor-pointer group relative rounded-lg overflow-hidden transition-all duration-300 ease-out bg-zinc-900 shadow-lg hover:shadow-2xl hover:scale-[1.02] md:hover:scale-105 hover:z-20 border border-white/5";
 
-    // --- 自動生成 44 張遶境圖片資料 ---
+   
     const celebrateImages: ContentItem[] = Array.from({ length: 44 }, (_, i) => ({
         id: 201 + i,
         title: '',
@@ -58,15 +58,38 @@
         isImageOnly: true
     }));
 
-    const pilImages: ContentItem[] = Array.from({ length: 300 }, (_, i) => ({
+    const pilImagesDay2: ContentItem[] = Array.from({ length: 300 }, (_, i) => ({
         id: 301 + i,
         title: '',
         url: '#',
         typeLabel: '圖片',
-        imageUrl: `/images/Pilgrimage (${i + 1}).jpg`,
+        imageUrl: `/images/pilgrimage-day2 (${i + 1}).jpg`,
         layout: 'tall', // 這裡設定 layout，但會被 MULTI_ROW_CLASSES 覆蓋
         isImageOnly: true
     }));
+
+    const pilImagesDay1: ContentItem[] = Array.from({ length: 96 }, (_, i) => ({
+        id: 301 + i,
+        title: '',
+        url: '#',
+        typeLabel: '圖片',
+        imageUrl: `/images/pilgrimage-day1 (${i + 1}).jpg`,
+        layout: 'tall', // 這裡設定 layout，但會被 MULTI_ROW_CLASSES 覆蓋
+        isImageOnly: true
+    }));
+
+    const pilImagesDay3: ContentItem[] = Array.from({ length: 96 }, (_, i) => ({
+        id: 301 + i,
+        title: '',
+        url: '#',
+        typeLabel: '圖片',
+        imageUrl: `/images/pilgrimage-day3 (${i + 1}).jpg`,
+        layout: 'tall', // 這裡設定 layout，但會被 MULTI_ROW_CLASSES 覆蓋
+        isImageOnly: true
+    }));
+
+
+
 
 
     const contentCategories: Category[] = [
@@ -95,12 +118,25 @@
             displayMode: 'multi-row', 
             items: celebrateImages 
         },
+        
         {
-            title: '2025 艋舺青山宮 恭祝靈安尊王聖誕暨建宮170周年 正日繞境',
+            title: '2025 艋舺青山宮 恭祝靈安尊王聖誕暨建宮170周年 暗訪繞境 第一天',
             subtitle: ' ',
             displayMode: 'multi-row', 
-            items: pilImages
-        }
+            items: pilImagesDay1
+        },
+        {
+            title: '2025 艋舺青山宮 恭祝靈安尊王聖誕暨建宮170周年 暗訪繞境 第二天',
+            subtitle: ' ',
+            displayMode: 'multi-row', 
+            items: pilImagesDay2
+        },
+        {
+            title: '2025 艋舺青山宮 恭祝靈安尊王聖誕暨建宮170周年 正日遶境 第三天',
+            subtitle: ' ',
+            displayMode: 'multi-row', 
+            items: pilImagesDay3
+        },
     ];
 
     function handleClick(item: ContentItem) {
