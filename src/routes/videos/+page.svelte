@@ -10,7 +10,7 @@
         placeholderImageId: 1
     };
 
-    // 定義內容結構
+    
     type ContentItem = {
         id: number;
         title: string;
@@ -92,13 +92,13 @@
         {
             title: '2025 艋舺青山宮 恭迎 北港朝天宮糖郊媽蒞臨艋舺賜福遶境',
             subtitle: ' ',
-            displayMode: 'multi-row', // [設定] 這裡改成三行滑動模式
+            displayMode: 'multi-row', 
             items: celebrateImages 
         },
         {
             title: '2025 艋舺青山宮 恭祝靈安尊王聖誕暨建宮170周年 正日繞境',
             subtitle: ' ',
-            displayMode: 'multi-row', // [設定] 這裡改成三行滑動模式
+            displayMode: 'multi-row', 
             items: pilImages
         }
     ];

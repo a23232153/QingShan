@@ -109,7 +109,7 @@
   
   <div class="absolute inset-0 bg-stone-100/20 backdrop-blur-[2px]"></div>
 
-  <div class="absolute top-1/2 left-1/2 w-[95vw] md:w-[90vw] max-w-4xl h-[85vh] md:h-[80vh] 
+  <div class="absolute top-1/2 left-1/2 w-95 md:w-[90vw]  h-[85vh] md:h-[90vh]  z-999
     bg-white/60 backdrop-blur-lg rounded-2xl md:rounded-3xl shadow-2xl 
     border border-white/40 flex flex-col items-center 
     -translate-x-1/2 -translate-y-1/2 py-6 md:py-10 px-2 md:px-4 transition-all duration-500"
@@ -225,7 +225,7 @@
             <div class="flex flex-col md:flex-row items-start w-full max-w-4xl gap-6 md:gap-8"> 
                 
                 <div class="flex-shrink-0 w-full md:w-1/3 flex justify-center"> 
-                    <div class="relative p-2 bg-white shadow-lg rounded-lg w-1/3 md:w-3/7 rotate-1 hover:rotate-0 transition-transform duration-500">
+                    <div class="relative p-2 bg-white shadow-lg rounded-lg w-1/3 md:w-5/7 rotate-1 hover:rotate-0 transition-transform duration-500">
                         <img 
                             src="/images/fortune_poem{drawpoem.id}.png" 
                             alt="籤詩圖片" 
@@ -235,7 +235,7 @@
                     </div>
                 </div>
 
-                <div class="flex-grow w-full md:w-2/3 bg-[#FFFDF5] rounded-xl shadow-xl border-t-4 border-yellow-600 p-6 md:p-8 relative"> 
+                <div class="flex-grow w-full md:w-4/5 bg-[#FFFDF5] rounded-xl shadow-xl border-t-4 border-yellow-600 p-6 md:p-8 relative"> 
                     <div class="hidden md:block absolute top-4 right-6 opacity-10 pointer-events-none">
                         <svg width="100" height="100" viewBox="0 0 24 24" fill="currentColor" class="text-red-800"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
                     </div>
@@ -246,8 +246,8 @@
                     </h2>
                     
                     <div>
-                        <h3 class="text-base md:text-lg font-bold text-yellow-700 mb-2 md:mb-4">【 聖意解說 】</h3>
-                        <p class="text-base md:text-lg font-medium text-stone-700 leading-loose whitespace-pre-line text-justify tracking-wide">
+                        <h3 class="text-base md:text-xl font-bold text-yellow-700 mb-2 md:mb-4">【 聖意解說 】</h3>
+                        <p class="text-base md:text-xl font-bold text-stone-700 leading-loose whitespace-pre-line text-justify tracking-wide">
                             {drawpoem.explanation}
                         </p>
                     </div>
