@@ -14,8 +14,8 @@
   let isSolved = false;     
   let insSen = true;        
 
-  type CupResult = "聖茭" | "笑茭" | "陰茭";
-  const options = ["聖茭", "笑茭", "陰茭"] as const;
+  type CupResult = "聖茭" | "笑茭" | "陰茭" |"聖茭" ;
+  const options = ["聖茭", "笑茭", "陰茭", "聖茭"] as const;
 
   let result: "" | CupResult = ""; 
   let animationSrc = "";
