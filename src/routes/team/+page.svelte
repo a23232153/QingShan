@@ -6,15 +6,15 @@
 
   // 贊助商資料
   const sponsors = [
-    { name: '中華文化總會', logo: '/images/中華文化總會.png'},
-    { name: '台北五帝會', logo: '/images/台北五帝會.jpg' },
-    { name: '台北宣敬堂', logo: '/images/台北宣敬堂.png' },
-    { name: '四湖參天宮', logo: '/images/四湖參天宮.png' },
-    { name: '找廟公', logo: '/images/找廟公.jpg' },
-    { name: '臺北永靈會', logo: '/images/臺北永靈會.png' },
-    { name: '艋舺青山宮', logo: '/images/艋舺青山宮.png' },
-    { name: '艋舺青山宮神將班', logo: '/images/艋舺青山宮神將班.png' },
-    { name: '寶華影像工作室', logo: '/images/寶華影像工作室.jpg' },
+    { name: '中華文化總會', logo: '/images/中華文化總會.webp'},
+    { name: '台北五帝會', logo: '/images/台北五帝會.webp' },
+    { name: '台北宣敬堂', logo: '/images/台北宣敬堂.webp' },
+    { name: '四湖參天宮', logo: '/images/四湖參天宮.webp' },
+    { name: '找廟公', logo: '/images/找廟公.webp' },
+    { name: '臺北永靈會', logo: '/images/臺北永靈會.webp' },
+    { name: '艋舺青山宮', logo: '/images/艋舺青山宮.webp' },
+    { name: '艋舺青山宮神將班', logo: '/images/艋舺青山宮神將班.webp' },
+    { name: '寶華影像工作室', logo: '/images/寶華影像工作室.webp' },
   ];
 
   // 為了做無限滾動，將陣列複製一份
@@ -24,12 +24,12 @@
   const backgroundText = `本專題旨在探索宮廟文化的現代傳承方式，結合數位科技與實體活動，讓更多年輕人了解傳統信仰的深層意涵與文化價值。`;
 
   const teamMembers = [
-    { name: '任皓煒', role: '專案經理', bio: '負責專案規劃與執行', avatar: '/images/m6.png' },
-    { name: '涂凱傑', role: '前端工程師', bio: '開發互動式網頁', avatar: '/images/m1.png' },
-    { name: '姜兆揚', role: '內容總監', bio: '負責內容策劃與發想', avatar: '/images/m3.png' },
-    { name: '徐偉峻', role: '公關行銷', bio: '負責媒體宣傳推廣', avatar: '/images/m2.png' },
-    { name: '黃盛隆', role: '美術設計', bio: '負責視覺設計與美編', avatar: '/images/m4.png' },
-    { name: '江信昱', role: '指導老師', bio: '負責指導專題方向', avatar: '/images/m5.png' }
+    { name: '任皓煒', role: '專案經理', bio: '負責專案規劃與執行', avatar: '/images/m6.webp' },
+    { name: '涂凱傑', role: '前端工程師', bio: '開發互動式網頁', avatar: '/images/m1.webp' },
+    { name: '姜兆揚', role: '內容總監', bio: '負責內容策劃與發想', avatar: '/images/m3.webp' },
+    { name: '徐偉峻', role: '公關行銷', bio: '負責媒體宣傳推廣', avatar: '/images/m2.webp' },
+    { name: '黃盛隆', role: '美術設計', bio: '負責視覺設計與美編', avatar: '/images/m4.webp' },
+    { name: '江信昱', role: '指導老師', bio: '負責指導專題方向', avatar: '/images/m5.webp' }
   ];
 
   let heroSection: HTMLElement;
@@ -114,7 +114,7 @@
     class="relative h-screen flex flex-col items-center justify-center overflow-hidden"
   >
     <div 
-        class="absolute inset-0 bg-[url('/images/牌樓-.jpg')] bg-cover bg-center bg-no-repeat opacity-60"
+        class="absolute inset-0 bg-[url('/images/牌樓-.webp')] bg-cover bg-center bg-no-repeat opacity-60"
         style="background-attachment: fixed;"
     ></div>
     

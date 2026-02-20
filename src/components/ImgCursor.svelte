@@ -3,19 +3,18 @@
   import { browser } from "$app/environment";
 
   export let projects = [
-    { id: 1, title: "青草巷", image: "/images/青草巷.jpg" },
-    { id: 2, title: "西門町", image: "/images/西門町.jpg" },
-    { id: 3, title: "廣州街夜市", image: "/images/廣州街.jpg" },
-    { id: 4, title: "華西街", image: "/images/華西街.jpg" },
-    { id: 5, title: "西門紅樓", image: "/images/西門紅樓-2.jpg" },
-    { id: 6, title: "牌樓", image: "/images/牌樓.jpg" }
+    { id: 1, title: "青草巷", image: "/images/青草巷.webp" },
+    { id: 2, title: "西門町", image: "/images/西門町.webp" },
+    { id: 3, title: "廣州街夜市", image: "/images/廣州街.webp" },
+    { id: 4, title: "華西街", image: "/images/華西街.webp" },
+    { id: 5, title: "西門紅樓", image: "/images/西門紅樓-2.webp" },
+    { id: 6, title: "牌樓", image: "/images/牌樓.webp" },
   ];
 
-
-  export let defaultBg = "/images/NM.jpg";
+  export let defaultBg = "/images/NM.webp";
 
   let backgroundImage: HTMLImageElement;
- 
+
   // 初始動畫
   const initialAnimation = () => {
     const items = document.querySelectorAll(".project-item");
@@ -79,13 +78,10 @@
     if (backgroundImage) backgroundImage.src = defaultBg;
     initialAnimation();
     setupHoverEvents();
-    preloadImages();
   });
 </script>
 
-
-<main class="relative  w-full ">
-
+<main class="relative w-full">
   <div id="background-image-container" class="w-full h-[120%vh]">
     <img
       id="background-image"
@@ -99,23 +95,30 @@
   <div class="container">
     <div class="projects-container items-center text-center">
       {#each projects as project}
-        <div class="project-item items-center text-center" data-image={project.image}>
-          <p class="project-title text-white" > {project.title}</p>
-          <img src={project.image} alt="{project.title} - 艋舺青山宮" class="sr-only" />
+        <div
+          class="project-item items-center text-center"
+          data-image={project.image}
+        >
+          <p class="project-title text-white">{project.title}</p>
+          <img
+            src={project.image}
+            alt="{project.title} - 艋舺青山宮"
+            class="sr-only"
+          />
         </div>
       {/each}
     </div>
-  </div>`
-
+  </div>
+  `
 </main>
 
 <style>
-
-  html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
   :root {
     --warm-off-black: #1a1917;
     --warm-off-white: #f8f5f2;
@@ -123,7 +126,7 @@
 
   .container {
     width: 100%;
-    
+
     height: 100%;
     display: flex;
     align-items: center;
@@ -139,7 +142,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    
+
     z-index: 0;
     overflow: hidden;
   }
@@ -175,9 +178,9 @@
   .project-item {
     position: relative;
     display: flex;
-    align-items: center;   /* 垂直置中 */
+    align-items: center; /* 垂直置中 */
     justify-content: center; /* 水平置中 */
-    
+
     padding: 0.7rem 0;
     border-bottom: 1px solid rgba(248, 245, 242, 0.1);
     cursor: pointer;
@@ -220,15 +223,14 @@
   }
 
   .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 </style>

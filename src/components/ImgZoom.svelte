@@ -3,10 +3,10 @@
   import { onMount } from "svelte";
 
   const projects = [
-    { id: 1, title: "The Space Between Notes", image: '/images/scene3.jpg' },
-    { id: 2, title: "Love as the Fourth Dimension", image: '/images/scene3.jpg' },
-    { id: 3, title: "The Art of Letting Go", image: '/images/scene3.jpg' },
-    { id: 4, title: "Creativity as Prayer", image: '/images/scene3.jpg' },
+    { id: 1, title: "The Space Between Notes", image: '/images/scene3.webp' },
+    { id: 2, title: "Love as the Fourth Dimension", image: '/images/scene3.webp' },
+    { id: 3, title: "The Art of Letting Go", image: '/images/scene3.webp' },
+    { id: 4, title: "Creativity as Prayer", image: '/images/scene3.webp' },
     { id: 5, title: "The Universe Conspires", image: "" },
     { id: 6, title: "Designing from Source", image: "" },
     { id: 7, title: "The Frequency of Truth", image: "" },

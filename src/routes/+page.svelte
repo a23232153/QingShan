@@ -73,29 +73,29 @@
  
 
   const Gimages=[
-    '/images/grid1.jpg',
-    '/images/grid2.jpg',
-    '/images/grid3.jpg',
-    '/images/grid4.jpg',
-    '/images/grid5.jpg',
-    '/images/grid6.jpg',
-    '/images/grid7.jpg',
-    '/images/grid8.jpg',
-    '/images/grid9.jpg',
-    '/images/grid10.jpg',
+    '/images/grid1.webp',
+    '/images/grid2.webp',
+    '/images/grid3.webp',
+    '/images/grid4.webp',
+    '/images/grid5.webp',
+    '/images/grid6.webp',
+    '/images/grid7.webp',
+    '/images/grid8.webp',
+    '/images/grid9.webp',
+    '/images/grid10.webp',
   ]
 
   const images=[
-    '/images/1.jpg',
-    '/images/2.jpg',
-    '/images/3.jpg',
-    '/images/4.jpg',
-    '/images/5.jpg',
-    '/images/6.jpg',
-    '/images/7.jpg',
-    '/images/8.jpg',
-    '/images/9.jpg',
-    '/images/10.jpg',
+    '/images/1.webp',
+    '/images/2.webp',
+    '/images/3.webp',
+    '/images/4.webp',
+    '/images/5.webp',
+    '/images/6.webp',
+    '/images/7.webp',
+    '/images/8.webp',
+    '/images/9.webp',
+    '/images/10.webp',
   ]
  
   
@@ -319,7 +319,7 @@ const count = images.length;
 <div class="relative z-10 blurani bg-contain bg-no-repeat min-h-screen w-full overflow-hidden mt-[50vh]">
     
     <div class="container mx-auto px-4 mt-16 w-full bg-contain bg-no-repeat bg-center min-h-[60vh] flex items-center justify-center">
-      <img src="/images/scene9.jpg" alt="艋舺青山宮" class="w-[40vw] h-[50vh] container object-contain" />
+      <img src="/images/scene9.webp" alt="艋舺青山宮" loading="lazy" decoding="async" class="w-[40vw] h-[50vh] container object-contain" />
 
       
     </div>
@@ -364,14 +364,15 @@ const count = images.length;
   </SlideInSection>
 
 
-<div class="blurani mt-16 mb-32 w-full bg-[url('/images/門口.jpg')] bg-cover bg-no-repeat bg-center min-h-[60vh] flex items-center justify-center ">
+<div class="blurani mt-16 mb-32 w-full bg-[url('/images/門口.webp')] bg-cover bg-no-repeat bg-center min-h-[60vh] flex items-center justify-center ">
       <SlideInSection direction="left" delay={0.25} rootMargin="0px 0px 200px 0px" threshold={0.5}>
         <div class="text-center ">
           
           <div class="w-full absolute  h-[35vh] flex items-end justify-start overflow-hidden rounded-xl shadow-lg ">
             <img 
-              src="/images/google-map.jpg" 
+              src="/images/google-map.webp" 
               alt="艋舺青山宮地圖" 
+              loading="lazy" decoding="async"
               class="h-full w-[35vh] object-contain rounded-full shadow-lg  "
             />
             </div>
@@ -399,19 +400,19 @@ const count = images.length;
     title="歡迎參拜艋舺青山宮"
     subtitle=""
     height="h-screen" 
-    image="/images/正殿.jpg" 
+    image="/images/正殿.webp" 
      />
 
      <ParallaxSection 
     
     height="h-screen" 
-    image="/images/grid6.jpg"
+    image="/images/grid6.webp"
      />
 
      <ParallaxSection 
     
     height="h-screen" 
-    image="/images/grid8.jpg"
+    image="/images/grid8.webp"
      />
 
 
@@ -608,7 +609,7 @@ const count = images.length;
   grid-auto-rows: 1fr;
   --color-bg: #000;
   gap: 1.5rem;
-  background: linear-gradient(to bottom, var(--color-bg), rgba(0,0,0,0.4), var(--color-bg)), url(/images/bg.jpg) no-repeat 50% -10%;
+  background: linear-gradient(to bottom, var(--color-bg), rgba(0,0,0,0.4), var(--color-bg)), url(/images/bg.webp) no-repeat 50% -10%;
   background-size: cover;
   
   

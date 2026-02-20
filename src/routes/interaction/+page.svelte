@@ -15,19 +15,19 @@
   // 您的資料陣列
   const items = [
     {
-      image: "/images/vr3602.png",
+      image: "/images/vr3602.webp",
       title: "VR360導覽",
       description: "艋舺青山宮-青山會創立推廣艋舺文化，傳承技藝並促進地方繁榮。",
       link: "https://tour.panoee.net/iframe/qingshan"
     },
     {
-      image: "/images/gamePhoto.png",
+      image: "/images/gamePhoto.webp",
       title: "青山行傳",
       description: "艋舺青山宮-青山會創立推廣艋舺文化，傳承技藝並促進地方繁榮。",
       link: "https://qingshanics.github.io/qingshanics"
     },
     {
-      image: "/images/draw-cover.png",
+      image: "/images/draw-cover.webp",
       title: "求籤解籤",
       description: "艋舺青山宮-青山會創立推廣艋舺文化，傳承技藝並促進地方繁榮。",
       link: "/divi"
@@ -42,7 +42,7 @@
   <section class="flex flex-wrap justify-center gap-6 pt-[20vh]">
 
     <img 
-    src="/images/lantern.jpg" alt="互動體驗" class="w-64 h-auto absolute bottom-10 right-0" 
+    src="/images/lantern.webp" alt="互動體驗" class="w-64 h-auto absolute bottom-10 right-0" 
     />
     
     {#each items as item}

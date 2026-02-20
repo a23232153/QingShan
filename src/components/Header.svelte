@@ -13,7 +13,7 @@
   <div class="bg-{headerColor} text-white bg-black w-full flex justify-between items-center p-4 h-[7vh] fixed top-0 z-6000 font-bakudai-md">
     <a href="/" class="block w-fit hover:opacity-80 transition-opacity">
         <img 
-            src="/images/logo2.png" 
+            src="/images/logo2.webp" 
             alt="青山王季首頁" 
             class="h-10 w-auto object-contain" 
         />

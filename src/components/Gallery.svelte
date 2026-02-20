@@ -21,16 +21,16 @@
 
   // === 資料 ===
   const galleryItems = [
-  { title: "尊王爐", image: "/images/尊王爐.jpg" },
-  { title: "前殿天井", image: "/images/前殿天井.jpg" },
-  { title: "前殿橫梁", image: "/images/前殿橫梁.jpg" },
-  { title: "正殿虎邊朝中對聯", image: "/images/正殿虎邊朝中對聯.jpg" },
-  { title: "正殿匾額", image: "/images/正殿匾額.jpg" },
-  { title: "龍門", image: "/images/龍門.jpg" },
-  { title: "拜殿牆堵", image: "/images/拜殿牆堵.jpg" },
-  { title: "天井燈籠", image: "/images/天井燈籠.jpg" },
-  { title: "門神", image: "/images/門神-1.jpg" },
-  { title: "拜殿龍邊燈籠", image: "/images/拜殿龍邊燈籠.jpg" },
+  { title: "尊王爐", image: "/images/尊王爐.webp" },
+  { title: "前殿天井", image: "/images/前殿天井.webp" },
+  { title: "前殿橫梁", image: "/images/前殿橫梁.webp" },
+  { title: "正殿虎邊朝中對聯", image: "/images/正殿虎邊朝中對聯.webp" },
+  { title: "正殿匾額", image: "/images/正殿匾額.webp" },
+  { title: "龍門", image: "/images/龍門.webp" },
+  { title: "拜殿牆堵", image: "/images/拜殿牆堵.webp" },
+  { title: "天井燈籠", image: "/images/天井燈籠.webp" },
+  { title: "門神", image: "/images/門神-1.webp" },
+  { title: "拜殿龍邊燈籠", image: "/images/拜殿龍邊燈籠.webp" },
 ];
 
 

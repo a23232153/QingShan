@@ -103,7 +103,7 @@
 {/if}
 
 <main class="relative w-full h-[100vh] flex items-center justify-center pt-[7vh] z-0 font-bakudai-md 
-  bg-[url('/images/sketchTemple.png')] bg-cover bg-center 
+  bg-[url('/images/sketchTemple.webp')] bg-cover bg-center 
   text-gray-800 overflow-hidden
 ">
   
@@ -227,7 +227,7 @@
                 <div class="flex-shrink-0 w-full md:w-1/3 flex justify-center"> 
                     <div class="relative p-2 bg-white shadow-lg rounded-lg w-1/3 md:w-5/7 rotate-1 hover:rotate-0 transition-transform duration-500">
                         <img 
-                            src="/images/fortune_poem{drawpoem.id}.png" 
+                            src="/images/fortune_poem{drawpoem.id}.webp" 
                             alt="籤詩圖片" 
                             class="w-full h-auto rounded border border-stone-100" 
                             loading="lazy" 

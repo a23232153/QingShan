@@ -8,34 +8,34 @@
             year: "1854 ",
             month: "",
             text: "艋舺在1854年（咸豐4年）發生瘟疫，惠安縣漁民，於是特地將惠安青山宮的鄉土守護神——青山靈安尊王神像分靈至艋舺祈求庇佑。",
-            img: "/images/緣起.jpg",
+            img: "/images/緣起.webp",
             link: "https://whdo.gov.taipei/News_Content.aspx?n=2B790586BA4E1E7A&sms=15EB41D4C772E746&s=3B99BF9862969F85" 
         },
        
         {
             year:"1904",
             text:"鼠疫過後，地方為祈求平安，延續祭典並發展出「迎請青山王遶境」，逐漸形成萬華的重要廟會習俗",
-            img: "/images/黑白青山王祭.jpg",
+            img: "/images/黑白青山王祭.webp",
             link: "https://nrch.culture.tw/nrch/zh-tw/nrchdata/972597"
         },
         {
             year:"2007",
             text:"艋舺青山宮首次選出外籍爐主（法國籍），顯示青山宮信仰的國際化與多元性。",
-            img: "/images/news.jpg",
+            img: "/images/news.webp",
             link: "https://news.tvbs.com.tw/life/303424"
         },
         {
             year: "2013 祝融之災",
             month: "",
             text: "晚間因電線走火，致使三川殿和左右過水廊的天花、鑿花、雕作等木構件受表層損傷嚴重",
-            img: "/images/火災.jpg",
+            img: "/images/火災.webp",
             link: "https://www.setn.com/News.aspx?NewsID=4520"
         },
         {
             year:"2020" ,
             month:"",
             text: "因新冠疫情多數宗教活動停辦，但於青山王祭典前疫情好轉解封，因此決定擴大舉辦青山王祭典活動",
-            img: "/images/青山王祭.jpg",
+            img: "/images/青山王祭.webp",
             link: "https://news.ltn.com.tw/news/life/breakingnews/3373991"
 
         },
@@ -43,21 +43,21 @@
             year:"2021" ,
             month:"",
             text: "臺北燈節將艋舺青山宮納入展區，展現「無圍牆博物館」特色，吸引國內外參觀者",
-            img: "/images/燈節.png",
+            img: "/images/燈節.webp",
             link: "https://reurl.cc/qYXWj3"
         },
          {
             year:"2023" ,
             month:"",
             text: "受邀前往日本表演，展現青山宮祭典文化的國際交流",
-            img: "/images/日本.png",
+            img: "/images/日本.webp",
             link: "https://www.youtube.com/watch?v=eDVoavye9KM"
         },
         {
             year:"2024" ,
             month:"",
             text: "重現百年傳統「詩意閣」，於萬華再度登場，讓青山祭典的文化美學重新展現於世人眼前",
-            img: "/images/藝閣.png",
+            img: "/images/藝閣.webp",
             link: "https://tw.news.yahoo.com/2024%E9%9D%92%E5%B1%B1%E7%8E%8B%E7%A5%AD-%E7%9D%BD%E9%81%95117%E5%B9%B4%E8%97%9D%E9%96%A3%E8%BB%8A%E9%87%8D%E5%9B%9E%E8%89%8B%E8%88%BA-%E4%B8%89%E9%A2%AF%E8%88%9E%E5%86%8D%E7%8F%BE-%E6%AB%BB%E8%8A%B1%E5%A6%B9-%E7%8B%82%E5%90%B8%E7%B2%89-120500148.html"
         },
     ];

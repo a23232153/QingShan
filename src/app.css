@@ -8,7 +8,7 @@
        url('/fonts/MyFont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 
   
 }
@@ -16,14 +16,14 @@
 @font-face {
   font-family: 'Bakudai-lg'; 
   src: url("/fonts/Bakudai-Light.woff2") format("woff2");
-  font-display: block;
+  font-display: swap;
        
 }
 
 @font-face {
   font-family: 'Bakudai-exlg'; 
   src: url("/fonts/Bakudai-ExtraLight.woff2") format("woff2");
-  font-display: block;
+  font-display: swap;
        
 }
 

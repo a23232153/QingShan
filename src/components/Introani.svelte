@@ -15,7 +15,7 @@
   const gridX = 2500; // 橫向粒子數
   const gridY = 1250;  // 縱向粒子數
   const fontSize = 0.23; // 字體大小倍率，調整這個就像 font-size
-  const imgSrc = '/images/qingshan-text-2.png';
+  const imgSrc = '/images/qingshan-text-2.webp';
   const threshold = 0.6; // alpha 閾值，決定哪些地方顯示粒子
 
   onMount(async () => {

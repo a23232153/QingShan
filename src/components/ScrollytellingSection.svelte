@@ -34,14 +34,14 @@
 
     
     {
-      image: '/images/scene5.jpg',
+      image: '/images/scene5.webp',
       title: '',
       description: '萬華區曾被稱為艋舺\n為台北最早的開發地區\n人來人往間\n萬般華美的在地信仰\n悄然浮現',
       duration: 8000,
       textClass: 'top-30 right-40 items-end text-left' // 右下角
     },
     {
-      image: '/images/scene4.jpg',
+      image: '/images/scene4.webp',
       title: '',
       description: '從萬華車站走下\n穿梭在華西街夜市\n看著人潮湧動',
       duration: 6000,
@@ -50,7 +50,7 @@
 
     },
     {
-      image: '/images/scene7.jpg',
+      image: '/images/scene7.webp',
       title: '',
       description: '走著走著\n抬頭一望\n龍山寺\n這是艋舺人的在地信仰',
       duration: 4500,
@@ -59,14 +59,14 @@
     
     
     {
-      image: '/images/scene3.jpg',
+      image: '/images/scene3.webp',
       title: '',
       description: '往旁邊小巷一走\n喝著百年青草茶\n再繼續前行',
       duration: 4000,
       textClass: 'absolute bottom-5 left-1/2 -translate-x-1/2 text-center' 
     },
     {
-      image: '/images/牌樓.jpg',
+      image: '/images/牌樓.webp',
       title: '',
       description: '看到台北第一街\n艋舺青山宮乍現\n但你真的了解這片土地的在地信仰嗎？',      
       duration: 8000,
@@ -157,7 +157,7 @@
             style="animation-delay: {index * 0.2}s;"
           >
             <div class="relative w-full h-full overflow-hidden">
-              <img src={scene.image} alt={scene.title} class="w-full h-full object-cover object-center" />
+              <img src={scene.image} alt={scene.title} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" class="w-full h-full object-cover object-center" />
 
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
             </div>

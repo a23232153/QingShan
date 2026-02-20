@@ -25,22 +25,22 @@
 
   const galleryItems = [
     {
-      image: "/images/gang1.jpg",
+      image: "/images/gang1.webp",
       title: "青山會神將",
       description: "艋舺青山宮-青山會創立推廣艋舺文化，傳承技藝並促進地方繁榮。"
     },
     {
-      image: "/images/義安社.jpg",
+      image: "/images/義安社.webp",
       title: "義安社神將",
       description: "艋舺青山宮-義安社於民國10年創立，塑謝范將軍新像，鬢角上梳成特色，成為台北信仰經典。"
     },
     {
-      image: "/images/義英社.jpg",
+      image: "/images/義英社.webp",
       title: "義英社神將",
       description: "艋舺青山宮-義英社，最早由西門市場的魚販組成，青山宮軒社，承載地方文化，日治曾赴日展傳統技藝。"
     },
     {
-      image: "/images/鳳音社.jpg",
+      image: "/images/鳳音社.webp",
       title: "鳳音社神將",
       description: "艋舺青山宮-鳳音社原隸新興宮，抗戰後轉附青山宮，延續原勢力範圍。"
     },
@@ -96,7 +96,7 @@
  <section id="hero" class="relative h-screen w-full overflow-hidden text-white text-center bg-black" bind:this={heroSection}>
     <div
       class="absolute top-0 left-0 w-full h-[120%] bg-cover bg-center z-0"
-      style={`transform: translateY(${scrollY}px); transition: transform 0.1s ease-out; background-image: url('/images/qsbg.png');`}
+      style={`transform: translateY(${scrollY}px); transition: transform 0.1s ease-out; background-image: url('/images-backup/qsbg.png');`}
     >
       <img
         src="/images/qsbg.png"
@@ -127,7 +127,7 @@
         <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-amber-600 to-yellow-600 rounded-full blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
             <img 
-            src="/images/門口燈籠.jpg" 
+            src="/images/門口燈籠.webp" 
             alt="艋舺青山宮照片" 
             loading="lazy" 
             class="relative w-full max-w-[320px] md:max-w-[450px] aspect-square object-cover rounded-full border border-stone-600 shadow-2xl group-hover:scale-[1.02] transition duration-700 ease-out" 
@@ -198,7 +198,7 @@
         <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-amber-300 to-pink-500 rounded-full blur opacity-20 group-hover:opacity-50 transition duration-1000"></div>
             <img 
-            src="/images/尊王夫人.jpg" 
+            src="/images/尊王夫人.webp" 
             alt="靈安尊王夫人" 
             class="relative w-full max-w-[320px] md:max-w-[450px] aspect-square object-cover rounded-full border border-stone-600 shadow-2xl group-hover:scale-[1.02] transition duration-700 ease-out" 
             />
@@ -247,7 +247,7 @@
       <div class="w-full md:w-[60vw] flex items-center justify-center perspective-1000">
         <SlideInSection direction="right">
           <img 
-            src="/images/青山祭.jpg" 
+            src="/images/青山祭.webp" 
             alt="青山祭" 
             class="w-full h-auto max-h-[60vh] rounded-xl border border-stone-700 shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_50px_rgba(251,191,36,0.15)] transition duration-500 object-cover" 
           />
